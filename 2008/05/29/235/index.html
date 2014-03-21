@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>除了 Google AJAX Libraries API 以外的選擇 - TaopaiC 的異想世界</title>
+  <meta name="author" content="TaopaiC">
+
+  
+  <meta name="description" content="Google AJAX Libraries API 提供幾個知名的 javascript 函式庫的 hosting, 但是 google 就沒有提供肥滋滋的 ExtJS, 除此之外還有啥選擇呢? 如果你是使用&#8230; YUI &#8211; The Yahoo! User Interface &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.pctao.org/2008/05/29/235">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="TaopaiC 的異想世界" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55755-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TaopaiC 的異想世界</a></h1>
+  
+    <h2>TaopaiC's blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.pctao.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">除了 Google AJAX Libraries API 以外的選擇</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-29T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="http://pctao.org/2008/05/28/232/">Google AJAX Libraries API</a> 提供幾個知名的 javascript 函式庫的 hosting, 但是 google 就沒有提供肥滋滋的 <a href="http://extjs.com/">ExtJS</a>, 除此之外還有啥選擇呢?</p>
+
+<p>如果你是使用&#8230;<!--more--></p>
+
+<h3><a href="http://developer.yahoo.com/yui/">YUI &#8211; The Yahoo! User Interface Library</a></h3>
+
+<p><a href="http://developer.yahoo.com/yui/articles/hosting/">官方就提供 CDN</a> 了..例如:<br/>
+<code>&lt;script type="text/javascript" src="http://yui.yahooapis.com/2.5.1/build/yahoo/yahoo-min.js" &gt;&lt;/script&gt;</code></p>
+
+<h3><a href="http://dojotoolkit.org/">DOJO</a></h3>
+
+<p>AOL 有提供 <a href="http://dev.aol.com/dojo">dojo 的 CDN</a> , 例如<br/>
+<code>&lt;script type="text/javascript" src="http://o.aolcdn.com/dojo/1.1.1/dojo/dojo.xd.js"&gt;&lt;/script&gt;</code></p>
+
+<h3><a href="http://jquery.com/">JQuery</a></h3>
+
+<p>官方有<br/>
+<code>&lt;script type="text/javascript" src="http://code.jquery.com/jquery-latest.pack.js"&gt;&lt;/script&gt;</code><br/>
+或者是放於 <a href="http://code.google.com/p/jqueryjs/downloads/list">google code</a> 的<br/>
+<code>&lt;script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.js"&gt;&lt;/script&gt;</code><br/>
+( <del datetime="2008-05-29T22:11:40+00:00">誰可以告訴我, 直接使用以上這兩個連結合法嗎?</del> )<br/>
+<ins datetime="2008-05-29T22:11:40+00:00">update: 有興趣可以看 <a href="http://blog.gslin.org/">gslin長輩</a> 提供的<a href="http://dean.edwards.name/weblog/2007/03/google-it/#comment84791">討論連結</a></ins><br/>
+老實說, 這兩個比不上 Google AJAX lib API 提供的, 前者用 AmazonS3 只有 ETAG , 後者的過期時間才一個禮拜. 反正<a href="http://www.google.com.tw/search?q=%22http%3A%2F%2Fjqueryjs.googlecode.com%2Ffiles%2F%22">很多人</a>使用放於 google code 的 jquery , 所以 google 乾脆把他變成官方服務吧..</p>
+
+<h3><a href="http://cachefile.net">cachefile.net</a></h3>
+
+<p>這是本篇的主角, 在 google 之前就有好心人提供差不多的服務, cachefile 不只有<a href="http://cachefile.net/scripts/">很多 js lib</a> , 還有<a href="http://cachefile.net/graphics/">圖示</a>等等, 例如知名的 <a href="http://www.famfamfam.com/lab/icons/">famfamfam icon</a> 也有 (<a href="http://cachefile.net/graphics/ui/famfamfam/">在此</a>) . 使用方法就自行找該檔案連結, 例如:<br/>
+<code>&lt;script type="text/javascript" src="http://cachefile.net/scripts/dojo/1.0.0/dojo/dojo.js"&gt;&lt;/script&gt;</code><br/>
+除此之外, 還可以自行控制過期時間<br/>
+<code>&lt;script type="text/javascript" src="http://cachefile.net/scripts/dojo/1.0.0/dojo/dojo.js&lt;br /&gt;
+?expires=Thu,+01+Jan+2009+00:00:00+GMT"&gt;&lt;/script&gt;</code><br/>
+注意: 控制過期時間因為有 query string 所以<strong>是不同的 URI , 無法享受到快取的優點</strong>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">TaopaiC</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-29T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/web/'>web</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2008/05/29/234" title="Previous Post: 不再只是平面的Google地圖 &#8211; Google Earth 遊覽器外掛">&laquo; 不再只是平面的Google地圖 &#8211; Google Earth 遊覽器外掛</a>
+      
+      
+        <a class="basic-alignment right" href="/2008/05/30/236" title="Next Post: [wordpress] Google AJAX Libraries API Plugin">[wordpress] Google AJAX Libraries API Plugin &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/06/12/358">HTTP Redirect 和 URL Fragments</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/06/345">jQuery XSS With $(location.hash)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/08/329">安裝 Redmine 1.1.1 遇到 Version_requirements 的暫時解法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/305">2010年底近況更新</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/310">對你家美術好一點 @ Ruby Tuesday #15 的經驗分享</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - TaopaiC -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'taopaicsblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>在 Linux 上幫照片加上GPS資訊 - TaopaiC 的異想世界</title>
+  <meta name="author" content="TaopaiC">
+
+  
+  <meta name="description" content="我用 ubuntu linux, 但我使用的軟體並不限 gnome 的, KDE 的東西我也有用, 像是 digiKam 和 Amarok 等優秀軟體. digiKam 是個很棒的照片管理程式, 記得要加裝 kipi-plugins , 這個套件提供許多功能, 像是上傳至flickr,編輯meta &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.pctao.org/2008/01/10/206">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="TaopaiC 的異想世界" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55755-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TaopaiC 的異想世界</a></h1>
+  
+    <h2>TaopaiC's blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.pctao.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">在 Linux 上幫照片加上GPS資訊</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-01-10T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="http://www.flickr.com/photos/69004123@N00/2181415707/" title="Screenshot-Google Earth.png"><img src="http://static.flickr.com/2316/2181415707_1e97476a40_m.jpg" align="right" border="0" /></a>我用 ubuntu linux, 但我使用的軟體並不限 gnome 的, KDE 的東西我也有用, 像是 <a href="http://www.digikam.org/">digiKam</a> 和 <a href="http://amarok.kde.org/">Amarok</a> 等優秀軟體. digiKam 是個很棒的照片管理程式, 記得要加裝 kipi-plugins , 這個套件提供許多功能, 像是上傳至flickr,編輯meta data,還有本篇重點 Geolocalization Editor .<!--more--></p>
+
+<p><a href="http://www.kipi-plugins.org/">kipi</a> 是 <strong>K</strong>DE <strong>I</strong>mage <strong>P</strong>lugin <strong>I</strong>nterface 的簡稱 , 其實並不只有 <a href="http://www.digikam.org/">digiKam</a> 能用, <a href="http://ktown.kde.org/kphotoalbum/">KPhotoAlbum</a> ,<a href="http://www.jalix.org/projects/showimg">Showimg</a> , <a href="http://gwenview.sourceforge.net/">GwenView</a> 等也能使用, 挑喜歡的用即可.</p>
+
+<p><a href="http://www.flickr.com/photos/69004123@N00/2181298217/" title="Screenshot-CIMG8334.JPG - Edit Geographical Coordinates - digiKam.png"><img src="http://static.flickr.com/2350/2181298217_c33a69c125_m.jpg" align="left" border="0" /></a>首先挑選照片, 使用 圖像->Geolocalization->Edit Coordinates , 則會開啟一個有 GMAP 的視窗, 在 GMAP 上點選位置即可.</p>
+
+<p>如果你有 GPS 紀錄的話, 則可以使用 圖像->Geolocalization->Correlator , 載入 GPX 檔案, 自動填上資料, 再手動微調即可 <img src='http://pctao.org/wp-includes/images/smilies/icon_biggrin.gif' alt=':D' class='wp-smiley' /> ~<a href="http://www.flickr.com/photos/69004123@N00/2181298045/" title="Screenshot-Geolocalization - digiKam-1.png"><img src="http://static.flickr.com/2225/2181298045_83efefcfab_m.jpg" align="right" border="0" /></a></p>
+
+<p>如果, 你忘記調整相機時間, 造成GPS和照片的時間不一樣, 做GPS Sync時則會有誤差. kipi-plugins可以編輯 EXIF , 但是 Geolocalization Editor 並不認識編輯過的 EXIF .<br/>
+這時可以搬出 jhead ,這個程式也可以批次處理 EXIF . 例: 我要將照片時間往前2分鐘</p>
+
+<blockquote><p>jhead -ta-00:02 *.jpg</p></blockquote>
+
+<p>-ta 的參數是-ta&lt;+|&ndash;>h[:mm[:ss]] , 可以指定要加或減時間.</p>
+
+<p>時間處理好, 再重做 GPS SYNC , 地理資訊就是對的了.</p>
+
+<p>最後看是要直接輸出成 KML檔案, 或者是上傳到flickr再用<a href="http://www2.adamfranco.com/photosetToKML.php">Flickr Photo Set to KML</a>, 搭配 Google Map 就可以在網頁上展示, 或者搭配 Google Earth 觀看也可.</p>
+
+<p><a href="http://www.flickr.com/photos/69004123@N00/2181415707/" title="Screenshot-Google Earth.png"><img src="http://static.flickr.com/2316/2181415707_1e97476a40_d.jpg" border="0" /></a></p>
+
+<p><small><a href="http://maps.google.com/maps?f=q&hl=en&geocode=&time=&date=&ttype=&q=http:%2F%2Fpctao.org%2Fwp-content%2F20072008.kml&ie=UTF8&om=1&ll=25.039785,121.564987&spn=0.009332,0.013733&z=16&source=embed" style="color: #0000ff; text-align: left">View Larger Map</a></small></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">TaopaiC</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-01-10T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/software/'>Software</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2008/01/10/205" title="Previous Post: 再探 Google 月曆顯示天氣預報">&laquo; 再探 Google 月曆顯示天氣預報</a>
+      
+      
+        <a class="basic-alignment right" href="/2008/01/21/210" title="Next Post: Google 與 Yahoo 提供 OpenID !!">Google 與 Yahoo 提供 OpenID !! &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/06/12/358">HTTP Redirect 和 URL Fragments</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/06/345">jQuery XSS With $(location.hash)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/08/329">安裝 Redmine 1.1.1 遇到 Version_requirements 的暫時解法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/305">2010年底近況更新</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/310">對你家美術好一點 @ Ruby Tuesday #15 的經驗分享</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - TaopaiC -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'taopaicsblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

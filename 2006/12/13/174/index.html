@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>在 Ubuntu Edgy 上安裝 Google Toolbar - TaopaiC 的異想世界</title>
+  <meta name="author" content="TaopaiC">
+
+  
+  <meta name="description" content="最近硬碟壞掉, 重灌 ubuntu 才遇到的問題. 裝 Google Toolbar 時, 會跳出不支援該平台的對話框. 這是 ubuntu / debian 的變種 firefox 的問題. 可以修改 install.rdf 的內容暫時解決. 下載該 .xpi cd /tmp wget http &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.pctao.org/2006/12/13/174">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="TaopaiC 的異想世界" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55755-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TaopaiC 的異想世界</a></h1>
+  
+    <h2>TaopaiC's blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.pctao.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">在 Ubuntu Edgy 上安裝 Google Toolbar</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-12-13T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>最近硬碟壞掉, 重灌 ubuntu 才遇到的問題. 裝 <a href="http://www.google.com/tools/firefox/toolbar/index.html">Google Toolbar</a> 時, 會跳出不支援該平台的對話框.</p>
+
+<p>這是 ubuntu / debian 的變種 firefox 的問題. 可以修改 install.rdf 的內容暫時解決.<!--more--></p>
+
+<ol>
+<li><p>下載該 .xpi</p>
+
+<blockquote><p>cd /tmp</p>
+
+<p>wget <a href="http://dl.google.com/firefox/google-toolbar-linux.xpi">http://dl.google.com/firefox/google-toolbar-linux.xpi</a></p></blockquote></li>
+<li><p>解開</p>
+
+<blockquote><p>mkdir /tmp/google ; cd /tmp/google</p>
+
+<p>unzip /tmp/google-toolbar-linux.xpi</p></blockquote></li>
+<li><p>修改 install.rdf , 將</p>
+
+<blockquote><p>&lt;em:targetplatform>Linux&lt;/em:targetplatform></p></blockquote>
+
+<p>改為</p>
+
+<blockquote><p>&lt;em:targetplatform>linux-gnu_x86-gcc3&lt;/em:targetplatform>linux-gnu_x86-gcc3</p></blockquote></li>
+<li><p>將檔案封裝回 .xpi</p>
+
+<blockquote><p>zip -r google-toolbar.xpi *</p></blockquote></li>
+<li><p>將做好的 google-toolbar.xpi 拖拉到 firefox 的視窗, 就可以正常安裝了</p></li>
+</ol>
+
+
+<p>參考資料:</p>
+
+<ul>
+<li><a href="http://groups.google.com/group/FFToolbar-Group-Bugs/browse_thread/thread/3d48b5cf7413904f/5e3db65b97f6e878">Google Groups:Google Toolbar Firefox Help</a></li>
+<li><a href="https://launchpad.net/distros/ubuntu/+source/firefox/+bug/68663">Launchpad: [Edgy] Incompatible with Google Toolbar</a></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">TaopaiC</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-12-13T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>Linux</a>, <a class='category' href='/blog/categories/software/'>Software</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2006/11/01/173" title="Previous Post: Zotero &#8211; 管理研究資源的工具">&laquo; Zotero &#8211; 管理研究資源的工具</a>
+      
+      
+        <a class="basic-alignment right" href="/2006/12/14/175" title="Next Post: Google Toolbar 3 beta (for firefox)">Google Toolbar 3 beta (for firefox) &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/06/12/358">HTTP Redirect 和 URL Fragments</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/06/345">jQuery XSS With $(location.hash)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/08/329">安裝 Redmine 1.1.1 遇到 Version_requirements 的暫時解法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/305">2010年底近況更新</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/310">對你家美術好一點 @ Ruby Tuesday #15 的經驗分享</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - TaopaiC -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'taopaicsblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

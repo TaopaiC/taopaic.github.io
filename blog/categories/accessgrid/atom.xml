@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: AccessGrid | TaopaiC 的異想世界]]></title>
+  <link href="http://blog.pctao.org/blog/categories/accessgrid/atom.xml" rel="self"/>
+  <link href="http://blog.pctao.org/"/>
+  <updated>2014-03-22T02:39:11+08:00</updated>
+  <id>http://blog.pctao.org/</id>
+  <author>
+    <name><![CDATA[TaopaiC]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Access Grid 3.0 Beta1 !!]]></title>
+    <link href="http://blog.pctao.org/2006/01/31/117"/>
+    <updated>2006-01-31T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2006/01/31/access-grid-30-beta1</id>
+    <content type="html"><![CDATA[<p>過完年回來，就看到Access Grid在ag-announce(<a href="http://www.accessgrid.org/community/mailinglists.html">訂閱</a>)發表3.0 beta1版。</p>
+
+<p><a href="http://www.mcs.anl.gov/fl/research/accessgrid/software/releases/3.0-beta1">3.0 beta 1 介紹與下載網頁</a>。</p>
+
+<ul>
+<li>Jabber client integration</li>
+<li>Integrated meeting schedule viewer</li>
+<li>Improved venue navigation
+
+<ul>
+<li>View all Venues on server, exits from current Venue, or MyVenues</li>
+<li>Tree-based perusal of Venue space (without entering)</li>
+</ul>
+</li>
+<li>VenueClient user preferences</li>
+<li>Certificate not required by VenueClient</li>
+<li>Improved control of media tools through VenueClient</li>
+<li>Multicast indicator on VenueClient</li>
+<li>Integrated per-Venue Multicast Beacon client</li>
+<li>Integrated beacon matrix</li>
+<li>New bridging facility (available in any venue)</li>
+<li>Encrypted network communications throughout</li>
+<li>Simplified node configuration through discovery of node services and service managers</li>
+<li>RAT: silence suppression off by default</li>
+<li>VIC: stale streams time out and are removed</li>
+<li>Windows users: WDM capture device support, enabling use of capture cards with newer drivers (e.g. Winnov, iTuner)</li>
+</ul>
+
+
+<p>過陣子來測測看。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[AG聚會 &#8211; 台東]]></title>
+    <link href="http://blog.pctao.org/2005/12/19/100"/>
+    <updated>2005-12-19T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2005/12/19/ag%e8%81%9a%e6%9c%83-%e5%8f%b0%e6%9d%b1</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/taopaic/75041042"><img src="http://static.flickr.com/39/75041042_7032655276_m.jpg" width="240" height="180" alt="台東航空站" border="4" align="left" /></a> 今天又是<a href="http://www.nttu.edu.tw/ag/">AG例行聚會</a>，地點在台東大學，早上從松山機場作立榮的飛機去台東。原本對立榮沒啥感覺(對每家航空公司都沒啥感覺,只希望不要做到常出事的就是了)，後來在飛機上看到手巾寫EVA AIR，有點親切感，(是因為EVA，不是因為長榮)&#8230; 還是不懂立榮跟長榮的關係..<!--more--></p>
+
+<p>台北的天氣和台東差很多，下飛機熱的要命。</p>
+
+<p>晚上七點的飛機回台北，但是聚會4點半就結束了 T_T.. 用NDS打發時間吧</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[為什麼他們都睡著了?]]></title>
+    <link href="http://blog.pctao.org/2005/12/13/97"/>
+    <updated>2005-12-13T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2005/12/13/%e7%82%ba%e4%bb%80%e9%ba%bc%e4%bb%96%e5%80%91%e9%83%bd%e7%9d%a1%e8%91%97%e4%ba%86</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/taopaic/73056487"><img src="http://static.flickr.com/34/73056487_b51c6bf422_m.jpg" width="240" height="96" alt="SC2005_NCCU" border="0" align="left" /></a>這是上個月，陳年興老師在SC2005的展示，但老師因為腳傷，也就沒去現場，用視訊遠距展示。</p>
+
+<p>展示的其中一項是用Access Grid做遠距教學，當時正是11點下課的時候，在遠距教室的學生都呼呼大睡&#8230;. 哈哈哈<br/>
+最後的提問時間，有人就發問:&ldquo;為什麼他們都睡著了?&rdquo;&#8230; ^^|||</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Beacon 1.3]]></title>
+    <link href="http://blog.pctao.org/2005/09/04/92"/>
+    <updated>2005-09-04T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2005/09/04/beacon-13</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/taopaic/40119426/" title="Photo Sharing"><img width="240" height="188" align="left" src="http://static.flickr.com/25/40119426_79ea119b0f_m.jpg" alt="Beacon" /></a><a href="http://dast.nlanr.net/Projects/beacon/">Beacon</a>是個測試multicast連接情況的軟體。</p>
+
+<ul>
+<li><a href="http://dast.nlanr.net/Projects/beacon/">http://dast.nlanr.net/Projects/beacon/ <br/>
+</a></li>
+</ul>
+
+
+<p>這個月大家都出新版是怎麼回事。</p>
+
+<p>1.3版的ChangeLog</p>
+
+<ul>
+<li>Cleaned up socket code to separate TCP and UDP socket handling. Connections<br/>
+are now far more robust.</li>
+</ul>
+
+
+<p>官方的central server目前是<a href="http://beacon.ncsa.uiuc.edu/">1.1</a>和<a href="http://beacon2.ncsa.uiuc.edu/">1.3</a>並存，9/7/05後就只會留下1.3的。</p>
+
+<p>除了官方的central server，TWAREN也有一個<a href="http://measurement.twaren.net/">central server</a>，不過要申請才能使用。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ConferenceXP 3.2]]></title>
+    <link href="http://blog.pctao.org/2005/09/03/90"/>
+    <updated>2005-09-03T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2005/09/03/conferencexp-32</id>
+    <content type="html"><![CDATA[<p>把<a href="http://bloglines.com/" title="bloglines">Bloglines</a>許久未讀的清一清，發現<span class="Head"><a title="ConferenceXP" href="http://www.conferencexp.net">ConferenceXP</a>也出3.2版了。</span></p>
+
+<p>這個<span class="Head">ConferenceXP 3.2是<a title="Microsoft Research" href="http://www.research.microsoft.com/">Microsoft Research</a>那邊的東西，感覺跟<a title="Access Grid" href="http://www.accessgrid.org">Access Grid</a>做的事情是一樣的。</span></p>
+
+<p>介面較漂亮、較具親和力(和MS的其他產品同一個風格)，使用MS自家的codec (Windows Media API)等等..</p>
+
+<p>但是<span class="Head">Access Grid和ConferenceXP</span>並不能共同使用，<a href="http://www-unix.mcs.anl.gov/web-mail-archive/lists/ag-tech/maillist.html">AG的mailing list</a>最近有提這個話題討論 &#8211; <a href="http://www-unix.mcs.anl.gov/web-mail-archive/lists/ag-tech/2005/08/msg00102.html">Conference XP vs AG</a>，<a href="http://www.conferencexp.net/Community/messageboard/Home.aspx">ConfXP的討論版</a><a href="http://www.conferencexp.net/community/messageboard/Thread.aspx?tabindex=12&amp;#038;id=71">[1]</a><a href="http://www.conferencexp.net/Community/messageboard/Thread.aspx?tabindex=12&amp;#038;id=149">[2]</a>上說是因為AG使用的視訊程式 &#8211; vic，常使用的codec是H.261，ConferenceXP沒有H.261 codec，且MS他們家NetMeeting的H.261 codec使用的是intel的，有限制使用目的，無法使用在<span class="Head">ConferenceXP，有版權問題。</span></p>
+
+<ul>
+<li><a href="http://www.conferencexp.net/community/Default.aspx?tabindex=12&amp;#038;tabid=122" title="ConferenceXP 3.2 Release Notes"><span class="Head">ConferenceXP 3.2 Release Notes</span> </a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

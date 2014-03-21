@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Facebook 平台釋出部份原始碼 - TaopaiC 的異想世界</title>
+  <meta name="author" content="TaopaiC">
+
+  
+  <meta name="description" content="上禮拜提到 Facebook 將放出原始碼, 就在不久前釋出了, 有興趣請到這下載. Facebook 宣稱此舉是回饋給發展社群, TechCrunch 則認為主要是對抗 Google/MySpace/Yahoo/AOL 主導的 OpenSearch . 這次釋出的部份是 REST API, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.pctao.org/2008/06/03/237">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="TaopaiC 的異想世界" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55755-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TaopaiC 的異想世界</a></h1>
+  
+    <h2>TaopaiC's blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.pctao.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Facebook 平台釋出部份原始碼</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-03T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>上禮拜提到 <a href="http://pctao.org/2008/05/28/233/">Facebook 將放出原始碼</a>, 就在不久前釋出了, 有興趣<a href="http://developers.facebook.com/fbopen/">請到這下載</a>.</p>
+
+<p><a href="http://developers.facebook.com/news.php?blog=1&amp;story=117">Facebook 宣稱此舉是回饋給發展社群</a>, <a href="http://www.techcrunch.com/2008/06/02/facebook-turns-platfrom-open-source-via-fbopen/">TechCrunch</a> 則認為主要是對抗 Google/MySpace/Yahoo/AOL 主導的 <a href="http://en.wikipedia.org/wiki/OpenSocial">OpenSearch</a> .</p>
+
+<p>這次釋出的部份是 REST API, FBML parser, FQL parser, 和 FBJS sanitizer and proxy .</p>
+
+<p>授權方面, Facebook Open Platform 除了 FBML parser 的部份, 皆以 <a href="http://developers.facebook.com/fbopen/cpal.html">Common Public Attribution License</a> (CPAL) , 而 FBML parser 則因為含有部份 <a href="http://developers.facebook.com/fbopen/mpl.html">mozilla Public License</a> (MPL) 授權的 Mozilla 的原始碼, 所以以 MPL 釋出.</p>
+
+<h3>相關文章</h3>
+
+<ul>
+<li><a href="http://developers.facebook.com/news.php?blog=1&amp;story=117">Happy Anniversary (and Facebook Open Platform) @ Facebook Developers | Facebook Developers News</a> &#8211; 官方新聞</li>
+<li><a href="http://developers.facebook.com/opensource.php/">Facebook Open Source Projects</a> &#8211; 官方下載網站</li>
+<li><a href="http://www.techcrunch.com/2008/06/02/facebook-turns-platfrom-open-source-via-fbopen/">Facebook Platform Now Open Source: fbOpen Released @ TechCrunch</a> &#8211; 知名科技部落格TechCrunch 的文章</li>
+<li><a href="http://www.pcworld.com/businesscenter/article/146578/facebook_open_sources_parts_of_its_app_development_platform.html">Facebook Open Sources Parts of Its App Development Platform @ PC World</a></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">TaopaiC</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-03T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/social-network/'>Social Network</a>, <a class='category' href='/blog/categories/web/'>web</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2008/05/30/236" title="Previous Post: [wordpress] Google AJAX Libraries API Plugin">&laquo; [wordpress] Google AJAX Libraries API Plugin</a>
+      
+      
+        <a class="basic-alignment right" href="/2008/06/04/238" title="Next Post: 超炫的遊覽景點照片方式 &#8211; Panoramio look around">超炫的遊覽景點照片方式 &#8211; Panoramio look around &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/06/12/358">HTTP Redirect 和 URL Fragments</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/06/345">jQuery XSS With $(location.hash)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/08/329">安裝 Redmine 1.1.1 遇到 Version_requirements 的暫時解法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/305">2010年底近況更新</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/310">對你家美術好一點 @ Ruby Tuesday #15 的經驗分享</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - TaopaiC -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'taopaicsblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

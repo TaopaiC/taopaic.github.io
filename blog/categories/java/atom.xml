@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Java | TaopaiC 的異想世界]]></title>
+  <link href="http://blog.pctao.org/blog/categories/java/atom.xml" rel="self"/>
+  <link href="http://blog.pctao.org/"/>
+  <updated>2014-03-22T02:39:11+08:00</updated>
+  <id>http://blog.pctao.org/</id>
+  <author>
+    <name><![CDATA[TaopaiC]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu Feisty 的問題: xcb_xlib.c:50: Xcb_xlib_unlock: Assertion `c->xlib.lock&#8217; Failed.]]></title>
+    <link href="http://blog.pctao.org/2007/03/05/177"/>
+    <updated>2007-03-05T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2007/03/05/ubuntu-feisty-%e7%9a%84%e5%95%8f%e9%a1%8c-xcb_xlibc50-xcb_xlib_unlock-assertion-c-xliblock-failed</id>
+    <content type="html"><![CDATA[<p>自從2月初的 libxcb-xlib0 的更新之後, 一些視窗程式都會發生 assertion , 像是 java , vmware 都有影響.</p>
+
+<blockquote><p>java: xcb_xlib.c:50: xcb_xlib_unlock: Assertion `c->xlib.lock&#8217; failed.</p></blockquote>
+
+<p><a href="http://xcb.freedesktop.org/wiki/" title="XCB">X protocol C-language Binding</a> (xcb) 將取代 xlib , 且提供 transport layer 讓尚未修改的程式使用 ( <a href="http://xcb.freedesktop.org/wiki/XlibXcb" title="Xlib/XCB">Xlib/XCB</a> ). 如果原本使用 xlib 的程式沒有照規矩來, 就會發生 assertion. JRE , vmware 這些程式又不是說改就改, 我原本打算等官方做修正, 等了一個月還是沒有, 只好自己動手了.<!--more-->網路上的暫時解法不外兩種, 一個是退回 xlib , 另外一個就是自己編譯, 把 assert 檢查拿掉.</p>
+
+<p>我用後者的方法</p>
+
+<blockquote><p>apt-get source libxcb-xlib0<br/>
+sudo apt-get build-dep libxcb-xlib0<br/>
+cd libxcb-1.0<br/>
+edit src/xcb_xlib.c<br/>
+dpkg-buildpackage -rfakeroot -b -uc<br/>
+sudo dpkg -i ../libxcb-xlib0_1.0-1.1_i386.deb</p></blockquote>
+
+<p>重點是 src/xcb_xlib.c 的第 41 , 50 行的 assert 都註解掉. 我參考 <a href="http://cvs.archlinux.org/cgi-bin/viewcvs.cgi/x11-libs/libxcb/xcb_xlib-no-assert-on-lock.patch?rev=1.1&amp;content-type=text/vnd.viewcvs-markup">archlinux 的 patch</a> , 把 assert 換成 if . 如下:</p>
+
+<blockquote><p>void xcb_xlib_lock(xcb_connection_t *c)<br/>
+{<br/>
+_xcb_lock_io&copy;;<br/>
+// assert(!c->xlib.lock);<br/>
+if (!c->xlib.lock) {<br/>
+c->xlib.lock = 1;<br/>
+c->xlib.thread = pthread_self();<br/>
+}<br/>
+_xcb_unlock_io&copy;;<br/>
+}</p>
+
+<p>void xcb_xlib_unlock(xcb_connection_t *c)<br/>
+{<br/>
+_xcb_lock_io&copy;;<br/>
+// assert(c->xlib.lock);<br/>
+if (c->xlib.lock) {<br/>
+assert(pthread_equal(c->xlib.thread, pthread_self()));<br/>
+c->xlib.lock = 0;<br/>
+pthread_cond_broadcast(&amp;c->xlib.cond);<br/>
+}<br/>
+_xcb_unlock_io&copy;;<br/>
+}</p></blockquote>
+
+<p>安裝之後, java, vmware 都能執行, 雖然不知有啥缺點, 但是 java 能跑最要緊!</p>
+
+<p>參考: <a href="http://ubuntuforums.org/showthread.php?t=368462&amp;page=2">ubuntu forums</a></p>
+
+<p>UPDATE: ubuntu feisty 已預設關掉xcb檢查. 請參閱<a href="http://pctao.org/2007/03/10/179/" title=""[fixed] ubuntu feisty & libxcb 的問題" 的永久鏈接">[fixed] ubuntu feisty &amp; libxcb 的問題</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[L2FProd.com &#8211; Common Components]]></title>
+    <link href="http://blog.pctao.org/2004/11/22/49"/>
+    <updated>2004-11-22T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2004/11/22/l2fprodcom-common-components</id>
+    <content type="html"><![CDATA[<p><a href="http://common.l2fprod.com/index.php">L2FProd.com &#8211; Common Components</a><br/>
+一些 Swing component ，像是 Outlook 左邊的工具列之類的東西。<br/>
+還沒實際試用，不過看起來不錯。 <img src='http://pctao.org/wp-includes/images/smilies/icon_biggrin.gif' alt=':D' class='wp-smiley' /> ~</p>
+]]></content>
+  </entry>
+  
+</feed>

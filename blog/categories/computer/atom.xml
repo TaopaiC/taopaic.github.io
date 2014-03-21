@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Computer | TaopaiC 的異想世界]]></title>
+  <link href="http://blog.pctao.org/blog/categories/computer/atom.xml" rel="self"/>
+  <link href="http://blog.pctao.org/"/>
+  <updated>2014-03-22T02:39:11+08:00</updated>
+  <id>http://blog.pctao.org/</id>
+  <author>
+    <name><![CDATA[TaopaiC]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[[Bbs] 快速更新推文 : qrG]]></title>
+    <link href="http://blog.pctao.org/2008/02/07/218"/>
+    <updated>2008-02-07T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/02/07/bbs-%e5%bf%ab%e9%80%9f%e6%9b%b4%e6%96%b0%e6%8e%a8%e6%96%87-qrg</id>
+    <content type="html"><![CDATA[<p>從來沒想過會在 bbs 單篇文章追新推文, 但是 <a href="telnet://ptt.cc">ptt</a> 卻沒有更新新推文的功能.<br/>
+要頻頻 [←][→][End] 才會看到新推文,</p>
+
+<p>我比較懶, 其實用 <strong>qrG</strong> 比較快,</p>
+
+<blockquote><p>複製 &#8220;qrG" 字串, 進入文章, 貼上, 就會在文章最後.</p></blockquote>
+
+<p>只要一直貼上 qrG , 就和更新推文是一樣的了.</p>
+
+<p>解釋</p>
+
+<ul>
+<li>q : 退出 &#8211; 退出文章</li>
+<li>r : 進入 &#8211; 是讀文章</li>
+<li>G : 到底 &#8211; 跳到文章最後</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[政大也要禁P2P軟體了]]></title>
+    <link href="http://blog.pctao.org/2007/11/19/204"/>
+    <updated>2007-11-19T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2007/11/19/%e6%94%bf%e5%a4%a7%e4%b9%9f%e8%a6%81%e7%a6%81%e6%ad%a2p2p%e8%bb%9f%e9%ab%94%e4%ba%86</id>
+    <content type="html"><![CDATA[<p>經過學弟的提醒,政大計中在<a href="news://news2.nccu.edu.tw/NCCU.CC">news group</a>和全校的email信箱發佈了這個消息,<strike>就是沒在<a href="http://www.cc.nccu.edu.tw">計中官網</a>上看到.</strike> 更新:<a href="http://ann.nccu.edu.tw/ann/ann/bulletin.php?bul_key=1195205013&amp;partid=3">政大首頁有這個消息</a>.<br/>
+以下是該封email內容:<!--more--></p>
+
+<blockquote><p>[公告] 本(96)年11月21日起本校校園網路將停止對外執行P2P類軟體，請 查照。</p>
+
+<p>文號: 政電校字第0960000088號<br/>
+日期: 96/11/16</p>
+
+<p>主旨: 本(96)年11月21日起本校校園網路將停止對外執行P2P類軟體，請 查照。</p>
+
+<p>說明:<br/>
+一、日前接獲教育部函示，本校業遭檢舉多起利用學術網路使用P2P類軟體下載有侵權疑慮檔案之案件。為免本校師生不慎引致牽連或訴訟之累，故自旨揭日起將採取相關網路管理措施如下：<br/>
+（一）停止校園網路對外執行P2P類軟體，例如：Foxy、BitTorrent、eDonkey/eMule、Kazza、WinMX、Gnutella、Club Box、PPStream等本校設備可辨識之P2P軟體。<br/>
+（二）若屬本校設備暫無法辨識出之P2P軟體，一經檢舉仍須援引相關智慧財產權侵權處理程序處理。<br/>
+（三）倘具特殊教學研究需求，有使用P2P類軟體之必要，請利用附件辦理使用申請。</p>
+
+<p>二、請務必轉知所屬師生同仁，避免觸法，並共同維護及尊重智慧財產權。</p>
+
+<p>電算中心</p></blockquote>
+
+<p>以及附上 <a href="http://www.cc.nccu.edu.tw/download/form/P2Papplication.pdf">P2Papplication.pdf</a> (也可以在計中網頁找到)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Google Reader for Wii]]></title>
+    <link href="http://blog.pctao.org/2007/05/09/188"/>
+    <updated>2007-05-09T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2007/05/09/google-reader-for-wii</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/taopaic/490557714/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/212/490557714_7ca7b433d7_t.jpg" alt="顯示訂閱畫面 (按鍵1)" align="right" height="81" width="100" /></a>根據 <a href="http://http://blogs.zdnet.com/Google/?p=557">這篇消息</a> 指出, <a href="http://www.google.com/reader/">Google Reader</a> 悄悄地放上特地為 Wii 設計的介面. 真的是悄悄地, Google 的各部落格還沒放消息出來&#8230; 雖然也有其他 web-based 的 RSS 閱讀器, 但這可是針對 Wiimote 設計控制按鍵的 RSS 閱讀器.</p>
+
+<p>只要用 Opera for Wii 連上 <a href="http://www.google.com/reader/">Google Reader</a> 即可看到新的介面. 如果沒有 Wii 也可以試用, 只要使用 <a href="http://www.google.com/reader/wii">http://www.google.com/reader/wii</a> 即可.</p>
+
+<p>我覺得這個介面字大, 按鍵習慣 (畢竟方向鍵比 j/k 習慣), 省掉左邊訂閱列表的空間, 我在電腦上都想用這個介面.</p>
+
+<!--more-->
+
+
+<p>Wii 的操作方法<br/>
+* 上/下 : 畫面移上/下<br/>
+* 右/左 : 下一個/上一個項目<br/>
+* 按鈕 1 : 列出訂閱<br/>
+* 按鈕 2 : 列出連結</p>
+
+<p>在列出訂閱的畫面 (按鈕1) 時:<br/>
+* 上/下 : 前一個/下一個 訂閱<br/>
+* 右 : 選擇該訂閱<br/>
+* 左 : 關閉<br/>
+* &ndash;/+ : 收合/展開 目錄</p>
+
+<p>為何沒用到 A/B 鍵 ? A/B 鍵是 Opera 的操控鍵啊&#8230; 請參考我之前的<a href="http://pctao.org/2007/04/13/181/">文章</a>.</p>
+
+<ul>
+<li>update: <a href="http://googlereader.blogspot.com/">Google Reader 官方 blog</a> 的<a href="http://googlereader.blogspot.com/2007/05/feed-your-television.html">消息</a>. 以及示範的影片</li>
+</ul>
+
+
+<p>抓圖 (wii 不在身邊, 以下是 firefox 的抓圖, 以後再補 wii 上的抓圖) :</p>
+
+<ul>
+<li><p>首頁
+<a href="http://www.flickr.com/photos/taopaic/490574731/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/225/490574731_a9ace31c25.jpg" alt="首頁" height="407" width="500" /></a></p></li>
+<li><p>顯示訂閱畫面
+<a href="http://www.flickr.com/photos/taopaic/490557714/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/212/490557714_7ca7b433d7.jpg" alt="顯示訂閱畫面 (按鍵1)" height="407" width="500" /></a></p></li>
+<li><p>文章列表
+<a href="http://www.flickr.com/photos/taopaic/490574317/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/206/490574317_3d36567cd0.jpg" alt="文章列表" height="407" width="500" /></a><br/>
+<a href="http://www.flickr.com/photos/taopaic/490574419/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/205/490574419_73de5c650a.jpg" alt="文章列表 (展開一篇文章)" height="407" width="500" /></a></p></li>
+<li><p>展開畫面
+<a href="http://www.flickr.com/photos/taopaic/490574593/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/196/490574593_7cc09f4856.jpg" alt="展開列表" height="407" width="500" /></a><br/>
+(這篇是 <a href="http://blog.richliu.com/2007/05/08/483/">不認真做宅男的下場….</a> )</ul></p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Google月曆顯示天氣預報]]></title>
+    <link href="http://blog.pctao.org/2007/04/29/184"/>
+    <updated>2007-04-29T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2007/04/29/google%e6%9c%88%e6%9b%86%e9%a1%af%e7%a4%ba%e5%a4%a9%e6%b0%a3%e9%a0%90%e5%a0%b1</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/taopaic/476753191/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/171/476753191_1dfc9490a5_m.jpg" alt="Screenshot-Google 日曆 - 氣象放大" align="right" height="98" width="240" /></a><a href="http://www.google.com/support/calendar/bin/answer.py?answer=48494">Google月曆顯示天氣預報</a>不是新功能, <a href="http://googleblog.blogspot.com/2006/09/google-calendar-does-something-about.html">去年美國地區就提供</a>了. 我當時也嘗試設定, 但就沒台灣的資料. 這幾天才注意台灣的氣象預報出現了.</p>
+
+<!--more-->
+
+
+<p>方法如下,</p>
+
+<ol>
+<li><p>首先到<strong>設定</strong>, 將<strong>國家/地區</strong>換成美國, 儲存之後會發現多了幾個選項可以使用.
+台灣的設定<br/>
+<a href="http://www.flickr.com/photos/taopaic/476753179/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/187/476753179_2cf8167cf6.jpg" alt="Screenshot-Google 日曆 - 台灣的設定" height="411" width="500" /></a><br/>
+改成美國的設定, 多出位置,氣象等選?<br/>
+<a href="http://www.flickr.com/photos/taopaic/476753177/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/181/476753177_a016467e96.jpg" alt="Screenshot-Google 日曆 - 美國的設定" height="411" width="500" /></a></p></li>
+<li><p><strong>位置</strong>填入 &#8220;Taipei,Taiwan" 或 &#8220;台北" 皆可, <strong>根據我的位置顯示氣象</strong>選 &#8220;°C", 再把<strong>國家/地區</strong>改回台灣. 儲存.</p></li>
+<li>氣象預報就出現在月曆上了.
+<a href="http://www.flickr.com/photos/taopaic/476753183/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/217/476753183_448492b0d3.jpg" alt="Screenshot-Google 日曆 - 氣象" height="411" width="500" /></a></ol>
+氣象預報對照組: Google個人化首頁的氣象預報. 兩者週一週二的氣象預報是一樣的.<br/>
+<a href="http://www.flickr.com/photos/taopaic/476813975/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/185/476813975_447c512b83_m.jpg" alt="Screenshot-Google - Mozilla Firefox" height="109" width="240" /></a><br/>
+ps. 剛剛測試台中,高雄都不成功.<br/>
+UPDATE: 2007/1/10 imrt@ptt 網友說台中也有資訊了.</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Google Map 有台灣地圖!]]></title>
+    <link href="http://blog.pctao.org/2007/04/26/183"/>
+    <updated>2007-04-26T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2007/04/26/google-map-%e6%9c%89%e5%8f%b0%e7%81%a3%e5%9c%b0%e5%9c%96</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/taopaic/472642198/" title="Screenshot-Imlab - Google Maps - Mozilla Firefox-3 (by TaopaiC)"><img src="http://static.flickr.com/195/472642198_fd9a1e5f78_t.jpg" title="Screenshot-Imlab - Google Maps - Mozilla Firefox-3 (by TaopaiC)" alt="Screenshot-Imlab - Google Maps - Mozilla Firefox-3 (by TaopaiC)" align="right" height="83" width="100" /></a><a href="http://maps.google.com/">Google Map</a> 也有台灣的地圖了!</p>
+
+<p>據<a href="http://www.ptt.cc/bbs/Google/M.1177473155.A.50B.html">ptt的網友討論</a>說圖資是來自<a href="http://www.metamap.com.tw/">勤崴科技</a>. 可搜尋的地標還不多, 現在的搜尋結果以網友貢獻的為主.</p>
+
+<p>ps. 搜尋會搜尋現在顯示的區域內, 所以在台灣和在美國的搜尋結果就會不一樣.</p>
+
+<!--more-->
+
+
+<p>抓圖:</p>
+
+<p>台北東區的街道圖 (Map)<br/>
+<a href="http://www.flickr.com/photos/taopaic/472642198/" title="Screenshot-Imlab - Google Maps - Mozilla Firefox-3 (by TaopaiC)"><img src="http://static.flickr.com/195/472642198_fd9a1e5f78_m.jpg" title="Screenshot-Imlab - Google Maps - Mozilla Firefox-3 (by TaopaiC)" alt="Screenshot-Imlab - Google Maps - Mozilla Firefox-3 (by TaopaiC)" height="200" width="240" /></a></p>
+
+<p>台北東區的街道與衛星圖 (Hybrid)<br/>
+<a href="http://www.flickr.com/photos/taopaic/472642194/" title="Screenshot-Imlab - Google Maps - Mozilla Firefox-1 (by TaopaiC)"><img src="http://static.flickr.com/167/472642194_30aecba692_m.jpg" title="Screenshot-Imlab - Google Maps - Mozilla Firefox-1 (by TaopaiC)" alt="Screenshot-Imlab - Google Maps - Mozilla Firefox-1 (by TaopaiC)" height="200" width="240" /></a></p>
+
+<p>台北東區的街道圖 (放到最大)<br/>
+<a href="http://www.flickr.com/photo.gne?id=472642196" title="Screenshot-Imlab - Google Maps - Mozilla Firefox-2"><img src="http://static.flickr.com/177/472642196_df7dbd21a6_m.jpg" title="Screenshot-Imlab - Google Maps - Mozilla Firefox-2" alt="Screenshot-Imlab - Google Maps - Mozilla Firefox-2" height="200" width="240" /></a></p>
+
+<p>搜尋 IMLAB 的結果<br/>
+<a href="http://www.flickr.com/photos/taopaic/472642188/" title="Screenshot-Imlab - Google Maps - Mozilla Firefox (by TaopaiC)"><img src="http://static.flickr.com/220/472642188_d7c7dbcba9_m.jpg" title="Screenshot-Imlab - Google Maps - Mozilla Firefox (by TaopaiC)" alt="Screenshot-Imlab - Google Maps - Mozilla Firefox (by TaopaiC)" height="200" width="240" /></a></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>[GPS] HOLUX M-241 在 Ubuntu Linux 上使用 - TaopaiC 的異想世界</title>
+  <meta name="author" content="TaopaiC">
+
+  
+  <meta name="description" content="家人要出國玩, 我想他們帶 gps logger 出去紀錄路程, 回來做點不一樣的紀錄.
+我原本有個 Wintec WBT-100 , 但有些缺點不太適合初學者帶出去, 尤其充電電池需帶充電器, 電池續航只有一天實在麻煩.
+我就再買一個 HOLUX M-241 , 使用 AA 電池, 一顆可用一天 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.pctao.org/2008/02/07/222">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="TaopaiC 的異想世界" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55755-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TaopaiC 的異想世界</a></h1>
+  
+    <h2>TaopaiC's blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.pctao.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">[GPS] HOLUX M-241 在 Ubuntu Linux 上使用</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-02-07T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="http://www.flickr.com/photos/69004123@N00/2237185357/" title="HOLUX M-241 GPS Logger"><img src="http://static.flickr.com/2096/2237185357_0a1e121521_m.jpg" align="right" border="0" /></a>家人要出國玩, 我想他們帶 gps logger 出去紀錄路程, 回來做點不一樣的紀錄.<br/>
+我原本有個 <a href="http://www.wintec.com.tw/GPS/bluetoothgps/WBT100.htm">Wintec WBT-100</a> , 但有些缺點不太適合初學者帶出去, 尤其充電電池需帶充電器, 電池續航只有一天實在麻煩.<br/>
+我就再買一個 <a href="http://www.holux.com/JCoreTW/en/products/products_content.jsp?pno=340">HOLUX M-241</a> , 使用 AA 電池, 一顆可用一天, 有小螢幕, 中文選單. 其實相似產品還有 <a href="http://www.wintec.com.tw/b5/product_detail.php?pro_id=76%20style=">Wintec WPL-1000</a>可以選, 但離出國時間緊迫, 以能馬上入手為優先, 最後就是買到這台 HOLUX M-241 .</p>
+
+<p>還沒多少時間測試, 這篇主要介紹如何在 linux 上取出 gps logger 紀錄的資料.<!--more--></p>
+
+<p>用 USB 線連接電腦後, 開終端機 (terminal) 打 dmesg 看連到哪個埠</p>
+
+<blockquote><p>[52244.118222] usb 5-5.4: new full speed USB device using ehci_hcd and address 10<br/>
+[52244.216512] usb 5-5.4: configuration #1 chosen from 1 choice<br/>
+[52244.216998] cp2101 5-5.4:1.0: cp2101 converter detected<br/>
+[52244.297647] usb 5-5.4: reset full speed USB device using ehci_hcd and address 10<br/>
+[52244.402412] usb 5-5.4: cp2101 converter now attached to <strong>ttyUSB0</strong></p></blockquote>
+
+<p>以上的例子是連到 <strong>/dev/ttyUSB0</strong> .</p>
+
+<h3>用 wine 執行原廠的程式</h3>
+
+<p><a href="http://www.flickr.com/photos/69004123@N00/2246852365/" title="Screenshot-長天軌跡記錄器工具程式.png"><img src="http://static.flickr.com/2143/2246852365_4124b6969a_m.jpg" align="right" border="0" /></a>首先製造 wine 的 com1 , 以剛剛連上 ttyUSB0 為例</p>
+
+<blockquote><p>ln -s /dev/ttyUSB0 ~/.wine/dosdevices/com1</p></blockquote>
+
+<p>再執行 HoluxUtility 即可</p>
+
+<blockquote><p>wine HoluxUtility.exe</p></blockquote>
+
+<p>使用會有點慢, 而且有時候程式會沒反應.</p>
+
+<h3>BT747</h3>
+
+<p>或者用 <a href="http://bt747.wiki.sourceforge.net/">BT747</a> , 這軟體適用在 MTK GPS晶片的GPS裝置上, 當然 M-241 這台也行.<br/>
+先安裝 librxtx-java , 再執行 <a href="http://bt747.sourceforge.net/BT747.jnlp">http://bt747.sourceforge.net/BT747.jnlp</a> (Java Web Start) , 連線速度記得選 38440 , 再按 Connect Port 即可.</p>
+
+<p>資料拿出來之後, 可以玩的就多了.. 例如<a href="http://pctao.org/2008/01/10/206/">照片結合GPS資料</a>.</p>
+
+<p>(以下測試興奇購物網的廣告)<br/>
+<a href="http://partner.monday.com.tw/pub/gotobuy.ashx?gdid=774004&amp;mcode=MV9jWkhDUnNmbGxVa2NyU2tpMDlGa3ZnZWVKU0psU1VXNEV5d092ZVNEa0IwPQ=="><img alt="HOLUX M-241無線GPS紀錄器 " src="http://partner.monday.com.tw/pub/gd.ashx?s=1&gdid=774004&mcode=MV9jWkhDUnNmbGxVa2NyU2tpMDlGa3ZnZWVKU0psU1VXNEV5d092ZVNEa0IwPQ==" border="0" height="240" width="210" /></a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">TaopaiC</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-02-07T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>Linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2008/02/07/224" title="Previous Post: [Google Docs] 新功能 &#8211; 表格">&laquo; [Google Docs] 新功能 &#8211; 表格</a>
+      
+      
+        <a class="basic-alignment right" href="/2008/02/22/225" title="Next Post: [GMap] 新功能 &#8211; 靜態地圖 &#8211; 不需 javascript 顯示地圖 (Google Static Maps)">[GMap] 新功能 &#8211; 靜態地圖 &#8211; 不需 javascript 顯示地圖 (Google Static Maps) &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/06/12/358">HTTP Redirect 和 URL Fragments</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/06/345">jQuery XSS With $(location.hash)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/08/329">安裝 Redmine 1.1.1 遇到 Version_requirements 的暫時解法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/305">2010年底近況更新</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/310">對你家美術好一點 @ Ruby Tuesday #15 的經驗分享</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - TaopaiC -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'taopaicsblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

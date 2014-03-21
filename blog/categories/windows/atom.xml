@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Windows | TaopaiC 的異想世界]]></title>
+  <link href="http://blog.pctao.org/blog/categories/windows/atom.xml" rel="self"/>
+  <link href="http://blog.pctao.org/"/>
+  <updated>2014-03-22T02:39:11+08:00</updated>
+  <id>http://blog.pctao.org/</id>
+  <author>
+    <name><![CDATA[TaopaiC]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[不再只是平面的Google地圖 &#8211; Google Earth 遊覽器外掛]]></title>
+    <link href="http://blog.pctao.org/2008/05/29/234"/>
+    <updated>2008-05-29T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/05/29/%e4%b8%8d%e5%86%8d%e5%8f%aa%e6%98%af%e5%b9%b3%e9%9d%a2%e7%9a%84google%e5%9c%b0%e5%9c%96-google-earth-%e9%81%8a%e8%a6%bd%e5%99%a8%e5%a4%96%e6%8e%9b</id>
+    <content type="html"><![CDATA[<p><a class="flickr-image" title="Google Earth Browser plugin" href="http://www.flickr.com/photos/69004123@N00/2531898442/"><img class="alignright" style="float: right;" src="http://farm4.static.flickr.com/3240/2531898442_57277354c1_m.jpg" alt="Google Earth Browser plugin" /></a>網頁的地圖還是平面的嗎? 早在 2006 年<a href="http://maps.live.com/">微軟的 Virtual Earth</a> 就提供遊覽器內的 3D map , 可惜 VE 台灣的資料少少, 只有英文地圖, 無建物 blahblah&#8230; 在台灣大家還是喜歡用 google map 和 urmap , 有較多在地資料.</p>
+
+<p>就在不久前, <a href="http://google-latlong.blogspot.com/2008/05/google-earth-meet-browser.html">Google 發表 Google Earth Browser plugin</a> , 如同 Virtual Earth 一樣, 可以在網頁上顯示 Google Earth , 有衛星圖, 路線圖 (註) , 也有建築物的圖層, 完全就是網頁版本的 Google Earth .</p>
+
+<p>先到<a href="http://code.google.com/apis/earth/">官網下載 plugin 安裝</a>, 現在只支援 IE6 / IE7 / firefox 2.x on windows , 就可以在網頁上觀看 3D 地圖了. 雖然要等網站主更新 API , 但我想沒多久大家都會更新吧 :p</p>
+
+<p>官網有提供<a href="http://code.google.com/apis/earth/documentation/examples.html">遊玩範例</a>.<!--more--></p>
+
+<ul>
+<li>官網範例+開啟建築物圖層<br/>
+<a class="flickr-image" title="Google Earth Browser plugin" rel="flickr-mgr" href="http://www.flickr.com/photos/69004123@N00/2531898442/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3240/2531898442_72bfb4e96a_o.png" src="http://farm4.static.flickr.com/3240/2531898442_57277354c1.jpg" alt="Google Earth Browser plugin" /></a></li>
+<li><a href="http://groups.google.com/group/Google-Maps-API/browse_thread/thread/223e3ed496057c2c#">討論區</a>看到的抓圖, 3D配上找路線, 很漂亮的應用.<br/>
+<a class="flickr-image" title="GE/GM API and GDirections" rel="flickr-mgr" href="http://groups.google.com/group/Google-Maps-API/browse_thread/thread/223e3ed496057c2c#"><img class="flickr-original" longdesc="http://google-maps-api.googlegroups.com/web/geplugin3.jpg?gda=5M23zj4AAAAcEF55Jue4NhRYHJN_0F6kBkmlemqajBReB56uac55SGG1qiJ7UbTIup-M2XPURDSxZeaDhCWTak2_3FqM8_Nj" src="http://google-maps-api.googlegroups.com/web/geplugin3.jpg?gda=5M23zj4AAAAcEF55Jue4NhRYHJN_0F6kBkmlemqajBReB56uac55SGG1qiJ7UbTIup-M2XPURDSxZeaDhCWTak2_3FqM8_Nj" alt="GE/GM API and GDirections" /></a></li>
+<li>剛剛在 Youtube 看到的介紹影片</li>
+<li>微軟的 Virtual Earth 3D (平衡報導)<br/>
+<a class="flickr-image" title="Microsoft Virtual Earth" rel="flickr-mgr" href="http://www.flickr.com/photos/69004123@N00/2531093045/"><img class="flickr-original" longdesc="http://farm3.static.flickr.com/2002/2531093045_6b304904ed_o.png" src="http://farm3.static.flickr.com/2002/2531093045_fb09ca5df7.jpg" alt="Microsoft Virtual Earth" /></a></li>
+</ul>
+
+
+<p>註: api 裡有代表道路圖的 LAYER_ROADS, 但我現在呼叫不出來</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[TVControl &#8211; 即時電視節目表與選台器 v2.3.0]]></title>
+    <link href="http://blog.pctao.org/2007/07/28/193"/>
+    <updated>2007-07-28T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2007/07/28/tvcontrol-%e5%8d%b3%e6%99%82%e9%9b%bb%e8%a6%96%e7%af%80%e7%9b%ae%e8%a1%a8%e8%88%87%e9%81%b8%e5%8f%b0%e5%99%a8-v230</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/taopaic/924596567/" title="Photo Sharing"><img src="http://farm2.static.flickr.com/1174/924596567_ecfc5cd359_m.jpg" alt="TVControl" align="right" height="181" width="240" /></a> <a href="http://sean.o4u.com/ap/TVControl/">TVControl</a> 這個軟體自動更新下載電視節目表, 如果使用電視卡看電視的話, 還能透過這個程式控制電視軟體換台. 另外, 還可以輸出 XMLTV 格式, 這個能玩的就多了 <img src='http://pctao.org/wp-includes/images/smilies/icon_razz.gif' alt=':P' class='wp-smiley' /></p>
+
+<!--more-->
+
+
+<p>這個軟體我之前就有在使用, 但去年就無法更新節目表, 這幾天看到他出新版, 真是高興! 除了 <a href="http://www.microsoft.com/taiwan/windowsxp/mediacenter/">Windows MCE</a> 和 <a href="http://www.tgc-taiwan.com.tw/">TiVO</a> 以外 (<a href="http://www.orb.com.tw/">Orb</a>好像也有, 沒用過), 有 EPG ( 電子節目表 ) 就只有這個軟體, 而且 TVControl 還可以輸出 XMLTV 格式的節目表, 許多軟體都有支援 XMLTV , 例如看電視的 <a href="http://www.dscaler.org/">DSCaler</a> , <a href="http://tvtime.sourceforge.net/">TVTime</a> , 節目表 <a href="http://freeguide-tv.sourceforge.net/">FreeGuide</a> 等等.</p>
+
+<p>2.3.0 的版本更新</p>
+
+<blockquote><p>v2.3.0 (2007/7/26)<br/>
+&ndash; 重新整理節目頻道。(含 Server 端)<br/>
+&ndash; 可以展開或隱藏節目分類的頻道。<br/>
+&ndash; 修正啟動時視窗大小復原錯誤問題。<br/>
+&ndash; 可禁用編輯設定檔提示框。<br/>
+&ndash; 更新電視節目表網站網址。</p></blockquote>
+
+<p><strong>使用時, 防毒軟體會叫, 請自行評斷是否繼續使用</strong>.<br/>
+官方網頁也有註明:</p>
+
+<blockquote><p>某知名防毒程式會誤判本程式。敬請放心安裝，原始碼完全透明化可受公評。至於誤判問題請向該防毒軟體公司反應。</p></blockquote>
+
+<p>而使用諾頓系的防毒軟體, 會無法更新節目表, 也無錯誤訊息, 可以自行去 C:\Program Files\TVControl\ 下, 執行 download.wsf (點擊兩下應該就會執行) , 這時諾頓才會問是否要新任此 script .</p>
+]]></content>
+  </entry>
+  
+</feed>

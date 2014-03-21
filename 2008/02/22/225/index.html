@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>[GMap] 新功能 &#8211; 靜態地圖 &#8211; 不需 Javascript 顯示地圖 (Google Static Maps) - TaopaiC 的異想世界</title>
+  <meta name="author" content="TaopaiC">
+
+  
+  <meta name="description" content="Google 新增 static maps (中文該怎麼翻? 靜態地圖?) 的功能, 可以直接取得以圖片形式呈現的地圖, 相對於 Google Map 的 javascript api 或讓人直接貼在網頁上顯示的方式(Embeddable Maps), 省去了 script loading , &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.pctao.org/2008/02/22/225">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="TaopaiC 的異想世界" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55755-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TaopaiC 的異想世界</a></h1>
+  
+    <h2>TaopaiC's blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.pctao.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">[GMap] 新功能 &#8211; 靜態地圖 &#8211; 不需 Javascript 顯示地圖 (Google Static Maps)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-02-22T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Google 新增 static maps (中文該怎麼翻? 靜態地圖?) 的功能, 可以直接取得以圖片形式呈現的地圖, 相對於 Google Map 的 <a href="http://code.google.com/apis/maps/">javascript api</a> 或讓人<a href="http://googlemapsapi.blogspot.com/2007/08/dont-feel-like-coding-embed-map.html">直接貼在網頁上顯示的方式(Embeddable Maps)</a>, 省去了 script loading , 較輕且較快.<br/>
+例如: (<a href="http://maps.google.com/staticmap?center=24.987108287597472,121.57406330108643&amp;markers=24.987186084753883,121.57354831695557,red&amp;zoom=15&amp;size=300x200&amp;key=ABQIAAAABPwouWYj3VnD5GFB6ruqxxRQKVdcuJ1PIKoX_YH_iOiTmZiR8BR__D2FH9CJzfKzbgyDU3EOrVPL8w">連結</a>)<br/>
+<code>http://maps.google.com/staticmap?&lt;br /&gt;
+center=24.987108287597472,121.57406330108643&amp;&lt;br /&gt;
+markers=24.987186084753883,121.57354831695557,red&amp;&lt;br /&gt;
+zoom=15&amp;size=300x200&amp;&lt;br /&gt;
+key=ABQIAAAABPwouWYj3VnD5GFB6ruqxxRQKVdcuJ1PIKoX_YH_iOiTm&lt;br /&gt;
+ZiR8BR__D2FH9CJzfKzbgyDU3EOrVPL8w</code><br/>
+即可產生<br/>
+<a href="http://www.flickr.com/photos/69004123@N00/2282368693/" title="NCCU (google static maps)"><img border="0" src="http://static.flickr.com/2020/2282368693_89bb37575a_m.jpg" /></a><br/>
+(此圖為另存於flickr的圖)</p>
+
+<p>有什麼用呢?<!--more--></p>
+
+<p>可直接另存圖片再寄給朋友, 或者製作混撘 (mashup) 程式時, 不必產生多個 js 地圖. (<a href="http://www.google.com/uds/samples/apidocs/static-tiles.html">類似應用的範例</a>)</p>
+
+<p>Google 也製作一個簡易的 <strong><a href="http://gmaps-samples.googlecode.com/svn/trunk/simplewizard/makestaticmap.html">精靈</a></strong> 幫助產生 static map . 如果要直接貼於網頁上的話, 需跟google其他服務一樣申請 API KEY, 精靈最下方的 Site URL 欄位填上要貼上網站的網址, 例如: <code>http://pctao.org/</code> , 再按 <strong>Generate Key</strong> 產生該站專屬的 API KEY . 注意: 此 API KEY 貼在其他網頁就看不到該圖.</p>
+
+<p>詳細的用法請參閱 <a href="http://code.google.com/apis/maps/documentation/staticmaps/index.html">文件</a> , 精靈未提供 <a href="http://code.google.com/apis/maps/documentation/staticmaps/index.html#MapTypes">maptype</a> (roadmap 與 mobile ) 或 <a href="http://code.google.com/apis/maps/documentation/staticmaps/index.html#Markers">多個marker</a> 的功能, 就請參閱文件了.</p>
+
+<p>後記: 其實前幾天查 <a href="http://code.google.com/apis/ajaxsearch/">google ajax search</a> 時, 就有發現類似的功能, local search 的結果都有包含 staticMapUrl 的屬性, 也是一張靜態地圖, <a href="http://www.google.com/uds/samples/apidocs/static-tiles.html">官方範例</a>.<br/>
+<a href="http://www.flickr.com/photos/69004123@N00/2283201592/" title="Screenshot-Static Map Tiles - Google AJAX Search API demo.png"><img border="0" src="http://static.flickr.com/2249/2283201592_a665c2415f_m.jpg" /></a></p>
+
+<p>相關連結</p>
+
+<ul>
+<li><a href="http://gmaps-samples.googlecode.com/svn/trunk/simplewizard/makestaticmap.html">Google Static Maps 產生精靈</a></li>
+<li><a href="http://code.google.com/apis/maps/documentation/staticmaps/index.html">Google Static Maps API 文件</a></li>
+<li><a href="http://googlemapsapi.blogspot.com/2008/02/google-maps-without-scripting.html">Google Maps Without the Scripting</a> (Google Map API 官方 blog)</li>
+<li><a href="http://www.google.com/uds/samples/apidocs/static-tiles.html">ajax search example: Static Map Images</a></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">TaopaiC</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-02-22T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/google/'>Google</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2008/02/07/222" title="Previous Post: [GPS] HOLUX M-241 在 ubuntu linux 上使用">&laquo; [GPS] HOLUX M-241 在 ubuntu linux 上使用</a>
+      
+      
+        <a class="basic-alignment right" href="/2008/04/26/227" title="Next Post: [ubuntu] 安裝uvc webcam">[ubuntu] 安裝uvc webcam &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/06/12/358">HTTP Redirect 和 URL Fragments</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/06/345">jQuery XSS With $(location.hash)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/08/329">安裝 Redmine 1.1.1 遇到 Version_requirements 的暫時解法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/305">2010年底近況更新</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/310">對你家美術好一點 @ Ruby Tuesday #15 的經驗分享</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - TaopaiC -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'taopaicsblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

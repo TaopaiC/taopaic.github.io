@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | TaopaiC 的異想世界]]></title>
+  <link href="http://blog.pctao.org/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://blog.pctao.org/"/>
+  <updated>2014-03-22T02:39:11+08:00</updated>
+  <id>http://blog.pctao.org/</id>
+  <author>
+    <name><![CDATA[TaopaiC]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[安裝 Redmine 1.1.1 遇到 Version_requirements 的暫時解法]]></title>
+    <link href="http://blog.pctao.org/2011/03/08/329"/>
+    <updated>2011-03-08T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2011/03/08/%e5%ae%89%e8%a3%9d-redmine-1-1-1-%e9%81%87%e5%88%b0-version_requirements-%e7%9a%84%e6%9a%ab%e6%99%82%e8%a7%a3%e6%b3%95</id>
+    <content type="html"><![CDATA[<p>裝 redmine 1.1.1 會遇到</p>
+
+<pre class="brush: plain; title: ; notranslate" title="">undefined local variable or method `version_requirements' for #&lt;Rails::GemDependency:0x9031db8&gt;
+</pre>
+
+
+<p>幾種解法:</p>
+
+<ol>
+<li><p>將 gem 換回 1.4.2 <pre class="brush: bash; title: ; notranslate" title="">$ gem install rubygems-update -v=&lsquo;1.4.2&rsquo;
+$ gem uninstall rubygems-update -v=&lsquo;1.5.0&rsquo;
+$ update_rubygems
+</pre></p></li>
+<li><p>使用更新的 redmine , 例如 trunk 版本</p></li>
+<li>在 config/environment.rb 中, engines 之後, Initializer 之前加入 <pre class="brush: ruby; title: ; notranslate" title="">begin
+require File.join(File.dirname(<strong>FILE</strong>), &lsquo;../vendor/plugins/engines/boot&rsquo;)
+rescue LoadError
+
+<h1>Not available</h1>
+
+<p>end</p></li>
+</ol>
+
+
+<h1>加入這段</h1>
+
+<p>if Gem::VERSION &gt;= &ldquo;1.3.6&rdquo;</p>
+
+<pre><code>module Rails
+    class GemDependency
+        def requirement
+            r = super
+            (r == Gem::Requirement.default) ? nil : r
+        end
+    end
+end
+</code></pre>
+
+<p>end</p>
+
+<p>Rails::Initializer.run do |config|
+</pre></p>
+
+<ol>
+<li>在 rails 2.3 引入 Bundler , <a href="http://gembundler.com/rails23.html">教學</a></li>
+</ol>
+
+
+<p>我個人兩個站各是用 2,3 的方法.</p>
+
+<p>參考資料:</p>
+
+<ul>
+<li><a href="http://www.redmine.org/issues/7516#note-3">#7516 Redmine does not work with RubyGems 1.5.0</a></li>
+<li><a href="http://excid3.com/blog/2011/02/undefined-local-variable-or-method-version_requirements-for-nameerror/">undefined local variable or method `version_requirements’ for # (NameError) | Chris Oliver</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

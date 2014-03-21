@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: IDEA~ | TaopaiC 的異想世界]]></title>
+  <link href="http://blog.pctao.org/blog/categories/idea~/atom.xml" rel="self"/>
+  <link href="http://blog.pctao.org/"/>
+  <updated>2014-03-22T02:39:11+08:00</updated>
+  <id>http://blog.pctao.org/</id>
+  <author>
+    <name><![CDATA[TaopaiC]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[也是書籤解縮址 &#8211; 三隻小豬解縮址 http://3pig.cc]]></title>
+    <link href="http://blog.pctao.org/2008/05/15/231"/>
+    <updated>2008-05-15T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/05/15/%e4%b9%9f%e6%98%af%e6%9b%b8%e7%b1%a4%e8%a7%a3%e7%b8%ae%e5%9d%80-%e4%b8%89%e9%9a%bb%e5%b0%8f%e8%b1%ac%e8%a7%a3%e7%b8%ae%e5%9d%80-http3pigcc</id>
+    <content type="html"><![CDATA[<p><a href="http://3pig.cc"><strong>三隻小豬低調解縮址</strong> http://3pig.cc</a><br/>
+補充: 因為方法也沒多聰明, 拿到網址就猜猜猜, 那 &#8220;三隻小豬" 就蠻符合這個情境, 更何況三個小豬勝過一個諸葛亮(誤)&#8230; 就取三隻小豬這個名字, 網域名也是 3 PIG .CC .</p>
+
+<p><a class="flickr-image" title="3PIG.CC - 三隻小豬低調解縮址" rel="flickr-mgr[pig]" href="http://www.flickr.com/photos/69004123@N00/2492017845/"><img class="alignleft flickr-original" style="float: left;" longdesc="http://farm4.static.flickr.com/3091/2492017845_ed66732509_o.png" src="http://farm4.static.flickr.com/3091/2492017845_3d9643e934_t.jpg" alt="3PIG.CC - 三隻小豬低調解縮址" /></a>二月某C事件時, 我才開始較常用到解縮址, 但那時要自己猜該縮址是哪家的, 還要自己打網址. 就想弄個簡單程式來用. 上個月看到<a href="http://www.ptt.cc/man/EZsoft/index.html">ptt的EzSoft</a>板, 有人做<a href="http://pttcode.googlepages.com/">書籤解縮址</a> (<a href="http://www.ptt.cc/bbs/EZsoft/M.1208278375.A.11D.html">原討論文</a>), 討論很熱烈, 就興起把這個計畫做完的念頭. 上個禮拜六開工, 功能加一加,測試,到今天可以推薦給各位使用了.</p>
+
+<p>解縮址主要的問題在判斷, 雖然解縮址最簡單可以靠字串長度判斷, 但是像 <a href="http://tinyurl.com/">tinyurl</a> 的縮址是會增長的, 前陣子是五碼, 最近是六碼, 而 <a href="http://0rz.tw">0rz</a> 的縮址現在是五碼, 平平都是五碼要怎麼區分是 tinyurl 或是 0rz 呢?</p>
+
+<p><a class="flickr-image" title="解5碼 - 3PIG.CC - 三隻小豬低調解縮址" rel="flickr-mgr[pig]" href="http://www.flickr.com/photos/69004123@N00/2492017941/"><img class="alignright flickr-original" style="float: right;" longdesc="http://farm4.static.flickr.com/3170/2492017941_4f366bfc29_o.png" src="http://farm4.static.flickr.com/3170/2492017941_7faca1e3b8_t.jpg" alt="解5碼 - 3PIG.CC - 三隻小豬低調解縮址" /></a>我現在的解法是告訴使用者可能性高低, 再讓使用者自己去判斷. 例如上個例子, 五碼可能是去年之前的 tinyurl 縮址, 或是這一兩年的 0rz 縮址, 我會告訴使用者 0rz 的可能較高.</p>
+
+<p>考量網頁速度與各網址使用頻繁度, 現在支援 <a href="http://0rz.tw">0rz</a> , <a href="http://tinyurl.com">TinyUrl</a> , <a href="http://ppt.cc/">ppt.tw</a>, <a href="http://kuso.cc/">kuso.tw</a> , <a href="http://myurl.com.tw/">MyURL</a> , 其他非縮址網站支援 <a href="http://www.badongo.com/">badongo</a> (檔案,影片,圖片) , <a href="http://www.nicovideo.jp/">NicoNico Video</a> , <a href="http://tw.youtube.com/">YouTube</a> , 如果有漏掉使用率高的網站請告知 <img src='http://pctao.org/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /></p>
+
+<p>使用方面, 在 Open PCMan , firefox , IE 可以圈選文字後呼叫三隻小豬解縮碼, 這些應該就夠方便了吧.<!--more--></p>
+
+<p><a class="flickr-image" title="找blog - 3PIG.CC - 三隻小豬低調解縮址" rel="flickr-mgr[pig]" href="http://www.flickr.com/photos/69004123@N00/2492017893/"><img class="alignright flickr-original" style="float: right;" longdesc="http://farm4.static.flickr.com/3070/2492017893_7d4e559a2e_o.png" src="http://farm4.static.flickr.com/3070/2492017893_f7ec636166_t.jpg" alt="找blog - 3PIG.CC - 三隻小豬低調解縮址" /></a><a class="flickr-image" title="找blog + 確認 - 3PIG.CC - 三隻小豬低調解縮址" rel="flickr-mgr[pig]" href="http://www.flickr.com/photos/69004123@N00/2492052543/"><img class="alignright flickr-original" style="float: right;" longdesc="http://farm3.static.flickr.com/2338/2492052543_21b7cdc25e_o.png" src="http://farm3.static.flickr.com/2338/2492052543_f82d9b8e3e_t.jpg" alt="找blog + 確認 - 3PIG.CC - 三隻小豬低調解縮址" /></a>額外功能, 也可以查詢台灣各 部落格/相簿 業者是否有這個 id 的部落格或相簿. 常常在推文看到 &#8220;推: 原po是正妹" 或是 &#8220;推: 原po是帥哥" 吧, 還要無名/痞客幫到處找嗎? 三隻小豬產生該 id 的網址, 然後去查看該網頁是否存在. 或者可以丟去 Google Custom Search 搜尋喔.</p>
+
+<p>歡迎試用看看, 強烈建議使用 Open PCMan 的一定要裝 <img src='http://pctao.org/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /></p>
+
+<p>幾個例子:</p>
+
+<ul>
+<li><a href="http://3pig.cc/4n8kf">http://3pig.cc/6jda8o</a> &ndash;> 6碼短縮址</li>
+<li><a href="http://3pig.cc/RXO4FjLwByo">http://3pig.cc/RXO4FjLwByo</a> &ndash;> 網址同上, 不過是youtube</li>
+<li><a href="http://3pig.cc/shepjeng">http://3pig.cc/shepjeng</a> &ndash;> 非縮址, 查部落格</li>
+<li><a href="http://3pig.cc/shepjeng">http://3pig.cc/4n8kf</a> &ndash;> 五碼的 tinyurl 和 0rz . 此例是 tinyurl 為正確</li>
+</ul>
+
+
+<p>其他說明:</p>
+
+<ul>
+<li>支援 書籤解縮址 , 將底下的 &#8220;書籤解縮址(開新視窗)&ldquo; 或 &#8220;書籤解縮址&rdquo; 加入書籤後, 即可在 IE 或 firefox 用滑鼠圈選縮址再按書籤, 就送給三隻小豬解縮址. 前者是在新視窗開啟三隻小豬, 後者則否.</li>
+<li>支援 Open PCMan 的搜尋框, 可以在上bbs時, 以滑鼠圈選文字, 再點滑鼠右鍵, 搜尋網頁->三隻小豬解縮址 呼叫三隻小豬解縮址. 只要將 &#8220;搜尋引擎for OpenPCMan" 下載置放於 C:/Program Files/Open PCMan Combo/searchplugins/ 就有這方便的功能.</li>
+<li>支援 IE / firefox 的搜尋框, 可以將三隻小豬加入 IE 或 firefox 右上角的搜尋框.</li>
+</ul>
+
+
+<p>安全性/隱私 說明:</p>
+
+<ul>
+<li>如果不喜歡網址被server知道, 可以開啟<a href="http://3pig.cc">三隻小豬</a>之後, 直接在網頁上查詢, 計算是在本機用javascript運算, 並非透過server運算.</li>
+<li>查詢相簿或部落格的部份, 使用 <a href="http://pipes.yahoo.com/pipes/">Yahoo! Pipes</a> 提供的功能, 而他抓取資料時會遵循網站的 /robots.txt , 符合一般抓取禮儀.</li>
+<li>搜尋部落格內容的部份, 使用 <a href="http://www.google.com/coop/">Google Custom Search</a> 提供的功能, 查到的結果也是原本就在網路上查的到的資訊.</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[3D紙模型]]></title>
+    <link href="http://blog.pctao.org/2004/12/20/63"/>
+    <updated>2004-12-20T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2004/12/20/3d</id>
+    <content type="html"><![CDATA[<p>前一陣子，才想用<a href="http://www.shusaku.co.jp/www/">六角大王</a>幫我的3D VR作模型。現在這個<a href="http://www.tamasoft.co.jp/pepakura/">Pepakura Designer</a>更好玩了，可以輸入3D模型，做成紙模型。</p>
+
+<p><em>read via <a href="http://boingboing.net/">Boing Boing</a> &#8211; <a href="http://www.boingboing.net/2004/12/19/print_3d_models_to_c.html">Print 3D models to cut-and-glue paper models </a></em></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[網格運算]]></title>
+    <link href="http://blog.pctao.org/2004/12/20/62"/>
+    <updated>2004-12-20T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2004/12/20/%e7%b6%b2%e6%a0%bc%e9%81%8b%e7%ae%97</id>
+    <content type="html"><![CDATA[<p>每年這時候，系上的大三生要選專題。老師們也要釋出他們近期的研究方向。<br/>
+今年有幾個老師都有 &#8220;Grid Computing"(網格計算) 與 &#8220;數位家庭"，事實上，這是系上幾個老師合作的計畫。</p>
+
+<p>在我的想像裡，當數位家庭和網格計算何在一起時，會是&#8230;</p>
+
+<blockquote><p>/<em><br/>
+* 場景: @家. 所有電器類產品都被 grid computing 化<br/>
+* 大雄正在打電動，大雄的媽在廚房煮飯<br/>
+</em>/</p>
+
+<p>大雄：媽！你把微波爐關掉啦！我的電動又LAG了！</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[分散式運算]]></title>
+    <link href="http://blog.pctao.org/2004/12/20/61"/>
+    <updated>2004-12-20T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2004/12/20/%e5%88%86%e6%95%a3%e5%bc%8f%e9%81%8b%e7%ae%97</id>
+    <content type="html"><![CDATA[<p>上個禮拜看北極特快車，劇裡提到聖誕老人需要多快多快在一個晚上發送完禮物。</p>
+
+<p>我的想法是：聖誕節不過就是個成功的分散式處理計畫嘛。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[電力座標]]></title>
+    <link href="http://blog.pctao.org/2004/12/08/59"/>
+    <updated>2004-12-08T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2004/12/08/%e9%9b%bb%e5%8a%9b%e5%ba%a7%e6%a8%99</id>
+    <content type="html"><![CDATA[<p><a href="http://jidanni.org/geo/taipower/howto.html">電力座標與２度ＴＭ座標的關係</a><br/>
+大意是說可以讀電線杆上的標記，得知現在的座標。真是太神奇了。回家也要看看家附近的電線杆號碼，確定一下座標。</p>
+
+<p><em>read via <a href="http://www.xxc.idv.tw/mt/archives/xxc/001117.html">XXC@blog</a></em></p>
+]]></content>
+  </entry>
+  
+</feed>

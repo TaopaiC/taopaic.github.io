@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Javascript | TaopaiC 的異想世界]]></title>
+  <link href="http://blog.pctao.org/blog/categories/javascript/atom.xml" rel="self"/>
+  <link href="http://blog.pctao.org/"/>
+  <updated>2014-03-22T02:39:11+08:00</updated>
+  <id>http://blog.pctao.org/</id>
+  <author>
+    <name><![CDATA[TaopaiC]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[jQuery XSS With $(location.hash)]]></title>
+    <link href="http://blog.pctao.org/2011/06/06/345"/>
+    <updated>2011-06-06T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2011/06/06/jquery-xss-with-location-hash</id>
+    <content type="html"><![CDATA[<p>從 twitter 上看到 <a href="http://ma.la/jquery_xss/">new XSS pattern with jQuery</a> ,</p>
+
+<pre class="brush: jscript; title: ; notranslate" title="">http://ma.la/jquery_xss/#&lt;img src=/ onerror=alert(1)&gt;
+</pre>
+
+
+<p>原因是 jQuery 對以下三種狀況的處理:</p>
+
+<ol>
+<li><code>$("#id")</code> 是個 css selector</li>
+<li><code>$("&lt;img /&gt;")</code> 是 createElement</li>
+<li><code>$("#&lt;img /&gt;")</code> 也是 createElement</li>
+</ol>
+
+
+<p>所以如果直接使用 <code>$(location.hash)</code> , 而 <code>location.hash</code> 是 <code>"#&lt;img  onerror=.....&gt;"</code> 的話, 就出意外啦.</p>
+
+<p><code>$(location.hash)</code> 哪裡會用呢? 像是用 ajax 做多頁啦, tab 啦&#8230; 像是 <a href="http://jquerymobile.com/">jQuery mobile</a> 就中獎了 XDXD</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[無名小站的圖片展開程式 書籤版本 (Bookmarklet)]]></title>
+    <link href="http://blog.pctao.org/2008/07/28/258"/>
+    <updated>2008-07-28T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/07/28/%e7%84%a1%e5%90%8d%e5%b0%8f%e7%ab%99%e7%9a%84%e5%9c%96%e7%89%87%e5%b1%95%e9%96%8b%e7%a8%8b%e5%bc%8f-%e6%9b%b8%e7%b1%a4%e7%89%88%e6%9c%ac-bookmarklet</id>
+    <content type="html"><![CDATA[<p>剛剛把 gslin 長輩的<a href="http://blog.gslin.org/archives/2007/09/15/1313/">無名小站的圖片展開程式</a>改寫成 bookmarklet , 所以也不再是 Firefox only , IE或Opera也能使用, 只要將下面這個連結加進書籤, 在看無名的相簿頁面時, 就可使用了.</p>
+
+<blockquote><p><a href="javascript:(function(){var">展開無名圖片</a></p></blockquote>
+
+<p>在 Firefox 3, IE7, Opera 9.5 上測試過, 都可使用.</p>
+
+<h3>更新紀錄</h3>
+
+<p>080728 將<a href="http://blog.gslin.org/archives/2007/09/15/1313/">gslin的gm script</a>改成bookmarklet,部份程式碼參考 <a href="http://www.learningjquery.com/2008/06/updated-jquery-bookmarklet">jQuery Bookmarklet</a>. 並保留照片註解.</p>
+
+<h3>使用示範</h3>
+
+<p>以下用 Firefox 3 作為示範, 其他遊覽器 IE, Opera 使用方法大同小異. 例子是彎彎的相簿.</p>
+
+<ol>
+<li>將 <strong>書籤</strong> 拉到<strong>書籤工具列</strong>, 或是加入<strong>我的最愛</strong>都行<a href="http://www.flickr.com/photos/69004123@N00/2708984684/" class="flickr-image"  title="Screenshot-無名小站的圖片展開程式 bookmarklet 版本 | TaopaiC的異想世界 - Mozilla Firefox (Build 2008071816)-1" rel="flickr-mgr[wretch]" ><img src="http://farm4.static.flickr.com/3027/2708984684_98d268f7b7.jpg" alt="Screenshot-無名小站的圖片展開程式 bookmarklet 版本 | TaopaiC的異想世界 - Mozilla Firefox (Build 2008071816)-1" class="flickr-original" longdesc="http://farm4.static.flickr.com/3027/2708984684_7efc582fd7_o.png" /></a></li>
+<li>在無名<strong>相簿內頁</strong>, 點剛剛紀錄的書籤. 並不支援相簿列表和相片頁<a href="http://www.flickr.com/photos/69004123@N00/2708984694/" class="flickr-image"  title="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)" rel="flickr-mgr[wretch]" ><img src="http://farm4.static.flickr.com/3221/2708984694_2a6e1275ba.jpg" alt="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)" class="flickr-original" longdesc="http://farm4.static.flickr.com/3221/2708984694_efd63699b2_o.png" /></a></li>
+<li>照片縮圖都放大了<a href="http://www.flickr.com/photos/69004123@N00/2708984706/" class="flickr-image"  title="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)-1" rel="flickr-mgr[wretch]" ><img src="http://farm4.static.flickr.com/3117/2708984706_65c92924ce.jpg" alt="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)-1" class="flickr-original" longdesc="http://farm4.static.flickr.com/3117/2708984706_dfe9755e0b_o.png" /></a></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[Wordpress] Google AJAX Libraries API Plugin]]></title>
+    <link href="http://blog.pctao.org/2008/05/30/236"/>
+    <updated>2008-05-30T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/05/30/wordpress-google-ajax-libraries-api-plugin</id>
+    <content type="html"><![CDATA[<p>前幾天 <a href="http://pctao.org/2008/05/28/232/">Google 提供幾個知名 javascript 函式庫的hosting</a>, 就想到 wordpress blog 能不能也利用該服務, 好歹可以省掉 jquery (30K) 和 prototype (124K) 的流量, 尤其是放在(暴)慢的主機 ( 如 dreamhoXt &#8230; ) 效果非常明顯&#8230;<br/>
+用 google 找到 <a href="http://blog.clearskys.net/2008/05/28/google-ajax-libraries-api-plugin/">Google AJAX Libraries API Plugin</a> , <del datetime="2008-06-03T23:55:51+00:00">可惜有些問題, 寄修改檔給作者, 希望下一個版本能修正.</del><ins datetime="2008-06-03T23:55:51+00:00">作者已於0.6版本修正, 請至<a href="http://blog.clearskys.net/2008/05/28/google-ajax-libraries-api-plugin/">該作者網頁下載</a>.</ins></p>
+
+<p>==== GEEK 分隔線 ====<br/>
+<ins datetime="2008-06-03T23:55:51+00:00"><strong>UPDATE: v0.6已修正</strong></ins><br/>
+該 plugin 沒寫授權方法, 所以我不好意思直接修改放出&#8230;<br/>
+wordpress 用的是加上 jQuery.noConflict() 的 jquery , 而 google 提供的沒有, 以至於直接使用 google 的 jquery 會<a href="http://docs.jquery.com/Using_jQuery_with_Other_Libraries">導致和 prototype 衝突</a>. 我的修改方式是在 jquery script 之後, 再加入一個內容為 jQuery.noConflict() 的 script .<!--more--></p>
+
+<p>在 usegooglelibrary.php (0.5版本) 加入<br/>
+<code>function gs_add_jquery_noconflict( $js_array ) {&lt;br /&gt;
+if ( FALSE !== $jquery = array_search( 'jquery', $js_array ) ) {&lt;br /&gt;
+wp_register_script('jquery_noconflict', '/wp-content/plugins/j.js', array('jquery'), null);&lt;br /&gt;
+array_splice( $js_array, $jquery+1, 0, 'jquery_noconflict' );&lt;br /&gt;
+}&lt;br /&gt;
+return $js_array;&lt;br /&gt;
+}&lt;br /&gt;
+add_filter('print_scripts_array', 'gs_add_jquery_noconflict');</code><br/>
+以及在 wp-content/plugins 裡新增一個名為 j.js 的檔案, 內容為<br/>
+<code>jQuery.noConflict();</code><br/>
+就會在載入 jquery 之後, 載入 j.js . 且不會和 prototype 衝突. 效果請看<a href="http://pctao.org">筆者 blog</a> 的原始碼. 有錯誤/建議歡迎指教.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[除了 Google AJAX Libraries API 以外的選擇]]></title>
+    <link href="http://blog.pctao.org/2008/05/29/235"/>
+    <updated>2008-05-29T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/05/29/%e9%99%a4%e4%ba%86-google-ajax-libraries-api-%e4%bb%a5%e5%a4%96%e7%9a%84%e9%81%b8%e6%93%87</id>
+    <content type="html"><![CDATA[<p><a href="http://pctao.org/2008/05/28/232/">Google AJAX Libraries API</a> 提供幾個知名的 javascript 函式庫的 hosting, 但是 google 就沒有提供肥滋滋的 <a href="http://extjs.com/">ExtJS</a>, 除此之外還有啥選擇呢?</p>
+
+<p>如果你是使用&#8230;<!--more--></p>
+
+<h3><a href="http://developer.yahoo.com/yui/">YUI &#8211; The Yahoo! User Interface Library</a></h3>
+
+<p><a href="http://developer.yahoo.com/yui/articles/hosting/">官方就提供 CDN</a> 了..例如:<br/>
+<code>&lt;script type="text/javascript" src="http://yui.yahooapis.com/2.5.1/build/yahoo/yahoo-min.js" &gt;&lt;/script&gt;</code></p>
+
+<h3><a href="http://dojotoolkit.org/">DOJO</a></h3>
+
+<p>AOL 有提供 <a href="http://dev.aol.com/dojo">dojo 的 CDN</a> , 例如<br/>
+<code>&lt;script type="text/javascript" src="http://o.aolcdn.com/dojo/1.1.1/dojo/dojo.xd.js"&gt;&lt;/script&gt;</code></p>
+
+<h3><a href="http://jquery.com/">JQuery</a></h3>
+
+<p>官方有<br/>
+<code>&lt;script type="text/javascript" src="http://code.jquery.com/jquery-latest.pack.js"&gt;&lt;/script&gt;</code><br/>
+或者是放於 <a href="http://code.google.com/p/jqueryjs/downloads/list">google code</a> 的<br/>
+<code>&lt;script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.js"&gt;&lt;/script&gt;</code><br/>
+( <del datetime="2008-05-29T22:11:40+00:00">誰可以告訴我, 直接使用以上這兩個連結合法嗎?</del> )<br/>
+<ins datetime="2008-05-29T22:11:40+00:00">update: 有興趣可以看 <a href="http://blog.gslin.org/">gslin長輩</a> 提供的<a href="http://dean.edwards.name/weblog/2007/03/google-it/#comment84791">討論連結</a></ins><br/>
+老實說, 這兩個比不上 Google AJAX lib API 提供的, 前者用 AmazonS3 只有 ETAG , 後者的過期時間才一個禮拜. 反正<a href="http://www.google.com.tw/search?q=%22http%3A%2F%2Fjqueryjs.googlecode.com%2Ffiles%2F%22">很多人</a>使用放於 google code 的 jquery , 所以 google 乾脆把他變成官方服務吧..</p>
+
+<h3><a href="http://cachefile.net">cachefile.net</a></h3>
+
+<p>這是本篇的主角, 在 google 之前就有好心人提供差不多的服務, cachefile 不只有<a href="http://cachefile.net/scripts/">很多 js lib</a> , 還有<a href="http://cachefile.net/graphics/">圖示</a>等等, 例如知名的 <a href="http://www.famfamfam.com/lab/icons/">famfamfam icon</a> 也有 (<a href="http://cachefile.net/graphics/ui/famfamfam/">在此</a>) . 使用方法就自行找該檔案連結, 例如:<br/>
+<code>&lt;script type="text/javascript" src="http://cachefile.net/scripts/dojo/1.0.0/dojo/dojo.js"&gt;&lt;/script&gt;</code><br/>
+除此之外, 還可以自行控制過期時間<br/>
+<code>&lt;script type="text/javascript" src="http://cachefile.net/scripts/dojo/1.0.0/dojo/dojo.js&lt;br /&gt;
+?expires=Thu,+01+Jan+2009+00:00:00+GMT"&gt;&lt;/script&gt;</code><br/>
+注意: 控制過期時間因為有 query string 所以<strong>是不同的 URI , 無法享受到快取的優點</strong>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Google 幫忙 Host 幾個知名 JavaScript 函式庫]]></title>
+    <link href="http://blog.pctao.org/2008/05/28/232"/>
+    <updated>2008-05-28T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/05/28/google-%e5%b9%ab%e5%bf%99-host-%e5%b9%be%e5%80%8b%e7%9f%a5%e5%90%8d-javascript-%e5%87%bd%e5%bc%8f%e5%ba%ab</id>
+    <content type="html"><![CDATA[<p>剛看到 <a href="http://googleajaxsearchapi.blogspot.com/2008/05/speed-up-access-to-your-favorite.html">google 推出 AJAX Libraries API</a> , 實際上就是 google host 幾個知名的 JavaScript 函式庫, 包含:</p>
+
+<ul>
+<li>JQuery</li>
+<li>prototype</li>
+<li>script.aculo.us</li>
+<li>MooTools</li>
+<li>dojo</li>
+</ul>
+
+
+<p>通常網站會將不常更動的函式庫做 gzip (壓縮) 和 cache (快取) , 以節省訪客再次造訪的流量 (這裡和之後指的流量為該函式庫的流量), 但首次訪客還是要下載一次. 如果使用這個服務的話, 該訪客在其他也使用的網站下載過該函式庫, 就不需要下載第二次, 節省流量和增快開啟網頁的速度. 對網站主而言, 省了首次訪客的流量, 對使用者來說, 省了 n 個網站的流量. 聽起來真不錯.<!--more--></p>
+
+<p>使用方法也很簡單, 第一種直接使用<br/>
+<code>&lt;script src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.2/prototype.js"&gt;&lt;/script&gt;</code><br/>
+其他版本或函式庫的位置請查<a href="http://code.google.com/apis/ajaxlibs/documentation/index.html">官網說明</a></p>
+
+<p>第二種使用 google.load() 的方式,<br/>
+<code>&lt;script src="http://www.google.com/jsapi"&gt;&lt;/script&gt; &lt;script type="text/javascript"&gt;&lt;!--&lt;br /&gt;
+google.load("jquery", "1.2.3");&lt;br /&gt;
+google.setOnLoadCallback(function() {&lt;br /&gt;
+// init function...&lt;br /&gt;
+});&lt;br /&gt;
+// --&gt;&lt;br /&gt;
+&lt;/script&gt;&lt;br /&gt;
+</code><br/>
+如果要未壓縮過的版本,<br/>
+<code>google.load("jquery", "1.2.3", {uncompressed:true});</code><br/>
+google.load() 有自動版本的功能, 例如 1.2 則自動幫你找 1.2.X 的最高版本. 請見<a href="http://code.google.com/apis/ajax/documentation/#Versioning">官網說明</a></p>
+
+<h3>相關連結</h3>
+
+<ul>
+<li><a href="http://code.google.com/apis/ajaxlibs/">AJAX Libraries API</a> &#8211; 本次主角的說明文件</li>
+<li><a href="http://code.google.com/apis/ajax/documentation/">Google&#8217;s AJAX APIs Document</a> &#8211; google.load 的說明文件</li>
+<li><a href="http://ajaxian.com/archives/announcing-ajax-libraries-api-speed-up-your-ajax-apps-with-googles-infrastructure">Ajaxian » Announcing AJAX Libraries API: Speed up your Ajax apps with Google’s infrastructure</a> &#8211; <a href="http://ajaxian.com/about-us/#DionAlmaer">Dion Almaer</a> (AJAX Libraries API作者) 對於 AJAX lib API 的介紹</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>無名小站的圖片展開程式 書籤版本 (Bookmarklet) - TaopaiC 的異想世界</title>
+  <meta name="author" content="TaopaiC">
+
+  
+  <meta name="description" content="剛剛把 gslin 長輩的無名小站的圖片展開程式改寫成 bookmarklet , 所以也不再是 Firefox only , IE或Opera也能使用, 只要將下面這個連結加進書籤, 在看無名的相簿頁面時, 就可使用了. 展開無名圖片 在 Firefox 3, IE7, Opera 9.5 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.pctao.org/2008/07/28/258">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="TaopaiC 的異想世界" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55755-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TaopaiC 的異想世界</a></h1>
+  
+    <h2>TaopaiC's blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.pctao.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">無名小站的圖片展開程式 書籤版本 (Bookmarklet)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>剛剛把 gslin 長輩的<a href="http://blog.gslin.org/archives/2007/09/15/1313/">無名小站的圖片展開程式</a>改寫成 bookmarklet , 所以也不再是 Firefox only , IE或Opera也能使用, 只要將下面這個連結加進書籤, 在看無名的相簿頁面時, 就可使用了.</p>
+
+<blockquote><p><a href="javascript:(function(){var">展開無名圖片</a></p></blockquote>
+
+<p>在 Firefox 3, IE7, Opera 9.5 上測試過, 都可使用.</p>
+
+<h3>更新紀錄</h3>
+
+<p>080728 將<a href="http://blog.gslin.org/archives/2007/09/15/1313/">gslin的gm script</a>改成bookmarklet,部份程式碼參考 <a href="http://www.learningjquery.com/2008/06/updated-jquery-bookmarklet">jQuery Bookmarklet</a>. 並保留照片註解.</p>
+
+<h3>使用示範</h3>
+
+<p>以下用 Firefox 3 作為示範, 其他遊覽器 IE, Opera 使用方法大同小異. 例子是彎彎的相簿.</p>
+
+<ol>
+<li>將 <strong>書籤</strong> 拉到<strong>書籤工具列</strong>, 或是加入<strong>我的最愛</strong>都行<a href="http://www.flickr.com/photos/69004123@N00/2708984684/" class="flickr-image"  title="Screenshot-無名小站的圖片展開程式 bookmarklet 版本 | TaopaiC的異想世界 - Mozilla Firefox (Build 2008071816)-1" rel="flickr-mgr[wretch]" ><img src="http://farm4.static.flickr.com/3027/2708984684_98d268f7b7.jpg" alt="Screenshot-無名小站的圖片展開程式 bookmarklet 版本 | TaopaiC的異想世界 - Mozilla Firefox (Build 2008071816)-1" class="flickr-original" longdesc="http://farm4.static.flickr.com/3027/2708984684_7efc582fd7_o.png" /></a></li>
+<li>在無名<strong>相簿內頁</strong>, 點剛剛紀錄的書籤. 並不支援相簿列表和相片頁<a href="http://www.flickr.com/photos/69004123@N00/2708984694/" class="flickr-image"  title="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)" rel="flickr-mgr[wretch]" ><img src="http://farm4.static.flickr.com/3221/2708984694_2a6e1275ba.jpg" alt="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)" class="flickr-original" longdesc="http://farm4.static.flickr.com/3221/2708984694_efd63699b2_o.png" /></a></li>
+<li>照片縮圖都放大了<a href="http://www.flickr.com/photos/69004123@N00/2708984706/" class="flickr-image"  title="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)-1" rel="flickr-mgr[wretch]" ><img src="http://farm4.static.flickr.com/3117/2708984706_65c92924ce.jpg" alt="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)-1" class="flickr-original" longdesc="http://farm4.static.flickr.com/3117/2708984706_dfe9755e0b_o.png" /></a></li>
+</ol>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">TaopaiC</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-28T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/firefox/'>Firefox</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2008/06/28/246" title="Previous Post: [FX] 改善遊覽 &#8220;台北市大眾運輸公車路線查詢系統" 的問題">&laquo; [FX] 改善遊覽 &#8220;台北市大眾運輸公車路線查詢系統" 的問題</a>
+      
+      
+        <a class="basic-alignment right" href="/2008/07/30/256" title="Next Post: [tip] 在 wine 內自動安裝套件或函式庫 &#8211; winetricks">[tip] 在 wine 內自動安裝套件或函式庫 &#8211; winetricks &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/06/12/358">HTTP Redirect 和 URL Fragments</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/06/345">jQuery XSS With $(location.hash)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/08/329">安裝 Redmine 1.1.1 遇到 Version_requirements 的暫時解法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/305">2010年底近況更新</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/310">對你家美術好一點 @ Ruby Tuesday #15 的經驗分享</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - TaopaiC -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'taopaicsblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

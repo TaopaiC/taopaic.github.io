@@ -1,0 +1,672 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>TaopaiC 的異想世界</title>
+  <meta name="author" content="TaopaiC">
+
+  
+  <meta name="description" content="最近發現用firefox看有flash的網頁總是怪怪的, 剛剛連去中國信託的網頁, 才發現flash裡面的文字無法顯示, 所以網頁看起來怪怪的&#8230; 選單看不到文字, 根本無法使用網路銀行&#8230; /_\
+找了許多網頁, 都不外乎說要安裝 msttcorefonts 和 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.pctao.org/blog/page/10">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="TaopaiC 的異想世界" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55755-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TaopaiC 的異想世界</a></h1>
+  
+    <h2>TaopaiC's blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.pctao.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2006/10/03/148">解決 Flash 文字無法顯示的問題 (on Ubuntu Edgy)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-03T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2006/10/03/148#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2006/10/03/148">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.flickr.com/photos/taopaic/258880286/" title="Photo Sharing"><img src="http://static.flickr.com/111/258880286_7b76176b1b_t.jpg" title="flashWithoutWords" alt="flashWithoutWords" align="right" height="100" width="95" /></a>最近發現用firefox看有flash的網頁總是怪怪的, 剛剛連去<a href="http://www.chinatrust.com.tw/" target="_blank">中國信託</a>的網頁, 才發現flash裡面的文字無法顯示, 所以網頁看起來怪怪的&#8230; 選單看不到文字, 根本無法使用網路銀行&#8230; /_\<br/>
+找了許多網頁, 都不外乎說要安裝 msttcorefonts 和 gsfonts-x11 , 前者是我必裝的字型套件, 後者是 flashplayer-nonfree 的依賴套件, 所以這兩個套件我都有安裝, 這個解法對我無效. 奇怪的是, 我的notebook使用同一版本的<a href="http://www.ubuntu.com/" target="_blank">ubuntu linux</a>, 差不多一樣的環境, 卻沒這個問題.</p>
+
+<p>最後在 <a href="http://www.flickr.com/forums/bugs/2589" target="_blank">FlickrBugs</a> 那邊找到解法, 提到另一種方法,</p>
+
+<blockquote><p>% cd /var/lib/defoma/x-ttcidfont-conf.d/dirs/TrueType/<br/>
+% sudo ttmkfdir ./<br/>
+% sudo mkfontdir ./</p></blockquote>
+
+<p>( 如果沒有 ttmkfdir 這個指令的話, 請安裝 ttmkfdir 套件 )<br/>
+<a href="http://www.flickr.com/photos/taopaic/258881375/" title="Photo Sharing"><img src="http://static.flickr.com/112/258881375_00d58e6e05_t.jpg" title="flashWithWords" alt="flashWithWords" align="left" height="80" width="100" /></a></p>
+
+<p>我就檢查桌機和notebook的該目錄, 確實就是桌機缺少 fonts.dir 這個檔案. 執行 mkfontdir 之後, flash 就可以顯示文字了~</p>
+
+<p>參考資料:</p>
+
+<ul>
+<li><a href="http://www.flickr.com/forums/bugs/2589" target="_blank">Flickr: Forums: FlickrBugs: Firefox, Linux, Flash problem</a></li>
+<li><a href="http://linux.inet.hr/flash_plugin_on_x11r7.html" target="_blank">The flash plugin and X.Org 7.0 (X11R7) font problems</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2006/09/24/147">在 nVIDIA 上執行 AIGLX/compiz !!!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-09-24T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2006/09/24/147#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2006/09/24/147">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.flickr.com/photos/taopaic/251369627/" title="Photo Sharing"><img src="http://static.flickr.com/110/251369627_057301f955_m.jpg" alt="Screenshot.png" align="left" height="98" width="240" /></a>前幾天, nVIDIA 釋出 beta 版的 linux driver (新聞: <a href="http://www.nzone.com/object/nzone_downloads_linux_display_x86_1.0-9625.html">nZ</a><a href="http://www.nzone.com/object/nzone_downloads_linux_display_x86_1.0-9625.html">one</a>), 支援 GLX_EXT_texture_from_pixmap , 也就是說, AIGLX 也可以在nVIDIA 的顯示卡上使用了!</p>
+
+<p align="left">
+  &nbsp;
+</p>
+
+
+
+
+<p align="left">
+  前幾天自行安裝 driver 一直失敗 <img src='http://pctao.org/wp-includes/images/smilies/icon_sad.gif' alt=':(' class='wp-smiley' /> 今天看到 <a href="http://www.compiz.net/">www.compiz.net</a> 的 repo 裡有提供 beta 版 driver 的套件, 順便和 beryl (以前稱為 <strike>compiz</strike> <ins datetime="2006-10-15T12:46:58+00:00">compiz-quinn , 由 quinn 維護的分支</ins> ) 一起裝起來, 就可以用 beryl 了!!
+</p>
+
+
+
+
+<p align="left">
+  &nbsp;
+</p>
+
+
+
+
+<p align="left">
+  抓圖:
+</p>
+
+
+<p><a href="http://www.flickr.com/photos/taopaic/251370512/" title="Photo Sharing"><img src="http://static.flickr.com/81/251370512_1ba2456e5f.jpg" alt="nvidiaAIGLX.png" height="200" width="500" /></a></p>
+
+<p><ins datetime="2006-10-15T12:46:58+00:00">UPDATE: 有興趣的人, 可以參考 <a href="http://www.ubuntuforums.org/showthread.php?t=263851&highlight=blank">HOWTO: Beryl with latest nvidia drivers and Edgy&#8217;s built in AIGLX (no XGL) &#8211; Ubuntu Forums</a> , 我個人是使用 Option 1 的方法, 使用 Aramanth 維護的 nvidia driver包&#8230;</ins></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2006/09/07/145">有必要這麼克難嘛? 用電氣膠布綁的人行路燈按鈕</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-09-07T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2006/09/07/145#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2006/09/07/145">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>晚上看到上禮拜在維修的人行路燈按鈕居然是用電器膠布綁在柱子上, 太克難了吧&#8230;</p>
+
+<p><a href="http://www.flickr.com/photos/taopaic/236069531/" class="tt-flickr"><img src="http://static.flickr.com/87/236069531_08e6a91b8d_m.jpg" alt="??¨????°??? ????????????????" border="0" height="240" width="180" /></a> 在台北市市民大道四段附近</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2006/09/07/146">政大書城換成巨流政大書城</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-09-07T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2006/09/07/146#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2006/09/07/146">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>舊的政大書城合約到期, 換人標下經營權, 應該是<a href="http://www.liwen.com.tw/">麗文書局</a>, 或是說巨流圖書, 因為他出版的書不是我的領域, 不知道那個較為人知&#8230;<br/>
+現在的店名叫做 &#8220;巨流政大書城&#8221; &#8230;</p>
+
+<p>有圖有真相</p>
+
+<p><a href="http://www.flickr.com/photos/taopaic/236047705/" class="tt-flickr"><img src="http://static.flickr.com/93/236047705_a84a4e6c5d_t.jpg" alt="?·¨????????§??????" border="0" height="100" width="75" /></a> <a href="http://www.flickr.com/photos/taopaic/236047706/" class="tt-flickr"><img src="http://static.flickr.com/90/236047706_442bb85a57_t.jpg" alt="?·¨????????§??????" border="0" height="100" width="75" /></a></p>
+
+<p>&lt;湊巧><br/>
+與 拒留政大書城 同音 XDXDXD<br/>
+&lt;/湊巧><br/>
+今天 (9/6) 去看, 大概 85% 的書櫃有書, 開學時應該就能正常運作了.<br/>
+原本擺放電腦書的地方換成英文與日文書籍,<br/>
+電腦書移到更後方 (離門口最遠的角落), 只剩五個書櫃了&#8230;<br/>
+當然, 沒有以前一整櫃的歐萊禮.</p>
+
+<p>學弟說店員還是以前的人 .</p>
+
+<p>以前的政大書城只能回憶了.</p>
+
+<p>相關文章:</p>
+
+<ul>
+<li><a href="http://blog.chinatimes.com/prayer/archive/2005/12/17/30321.html">中時部落格-跳舞有時-朋友系列一：輝哥</a></li>
+<li><a href="http://blog.sina.com.tw/4385/article.php?pbgid=4385&amp;entryid=16186">政大書城不在政大-江源慎的筆記本-新浪部落</a></li>
+<li><a href="http://enews.ccu.edu.tw/modules/news/article.php?storyid=1972">友校新聞 : 政大書城　成不成？ (中正ｅ報 &#8211; 新聞區)</a> (更早的事)</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2006/08/30/144">試用 Blogger Beta</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-30T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2006/08/30/144#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2006/08/30/144">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>之前聽說 blogger 新開 bogger beta, 並且增加一些功能, 例如:分類等等. 就跑去試用看看&#8230;</p>
+
+<p>現在試用已經十天了, 還是有一些問題.</p>
+
+<ul>
+<li><p>ADSense
+beta並沒有提供ADSense的功能, 需要自己貼java script上去, 並且要把 &lt;!&#8211; &ndash;> 去掉.</p></li>
+<li><p>登入問題
+如果使用firefox, 會有登入的問題, 要先登出Gmail, 才有可能正常登入&#8230; <a href="http://www.flickr.com/photos/taopaic/226894884/" class="tt-flickr"><img src="http://static.flickr.com/61/226894884_0e9cc4cb17_t.jpg" title="bloggerProblem" alt="bloggerProblem" align="top" border="0" height="86" width="100" /></a></p></li>
+<li><p>Flickr
+Flickr的post to blog功能還不支援blogger beta&#8230;<a href="http://www.flickr.com/photos/taopaic/228406237/" class="tt-flickr"><img src="http://static.flickr.com/75/228406237_cb8a13573c_t.jpg" title="flickrblogger" alt="flickrblogger" align="top" border="0" height="79" width="100" /></a></ul>
+繼續試用吧&#8230;</p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2006/08/27/143">東森娛樂是鎖碼頻道!?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-27T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2006/08/27/143#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2006/08/27/143">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.flickr.com/photos/taopaic/225335180/" class="tt-flickr"><img src="http://static.flickr.com/78/225335180_c6e11fbd90_t.jpg" title="??????? ?????????±????¨??¨???°?" alt="??????? ?????????±????¨??¨???°?" align="left" border="0" height="78" width="100" /></a><a href="http://www.flickr.com/photos/taopaic/225335178/" class="tt-flickr"><img src="http://static.flickr.com/93/225335178_3cbcb4ffb1_t.jpg" title="??????? ?????????±????¨??¨???°?" alt="??????? ?????????±????¨??¨???°?" align="left" border="0" height="78" width="100" /></a></p>
+
+<p>剛剛我們家第四台的東森娛樂台被打上 &#8220;本節目為鎖碼頻道&#8221; &#8230; 哈哈, 不知道要播出甚麼好康..</p>
+
+<!-- ckey="4DF0E619" -->
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2006/08/21/140">del.icio.us 增加預覽縮圖</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-21T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2006/08/21/140#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2006/08/21/140">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.flickr.com/photos/taopaic/219991014/" class="tt-flickr"><img src="http://static.flickr.com/94/219991014_fc99502868_t.jpg" title="deliciousThumbnail" alt="deliciousThumbnail" align="left" border="0" height="77" width="100" /></a> <a href="http://del.icio.us">del.icio.us</a> 在首頁增加預覽縮圖的功能. 首頁也修的比較美觀了 <img src='http://pctao.org/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /></p>
+
+<p><em>[ from <a href="http://blog.del.icio.us/blog/2006/08/now_with_more_s.html">del.icio.us blog</a>]</em></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2006/08/21/141">代糖的甜點?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-21T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2006/08/21/141#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2006/08/21/141">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.flickr.com/photos/taopaic/220130803/" class="tt-flickr"><img src="http://static.flickr.com/68/220130803_696e2ff152_t.jpg" title="??????????????? ???????????? ??? ????????????" alt="??????????????? ???????????? ??? ????????????" align="left" border="0" height="75" width="100" /></a> 上週末, 經過台北地下街 (台北新世界), 想順路去找之前看到好評的泡芙, 沒想到沒有賣泡芙的店. 看到<a href="http://www.2merry.com/">一家</a>賣像是布丁的東西, 就去看看. 他們賣的是代糖的甜點, 標榜糖尿病患者也能吃的甜點, 店員一直強調熱量不高. 不便宜, 所以只買兩個嘗嘗看.</p>
+
+<p><a href="http://www.flickr.com/photos/taopaic/220130811/" class="tt-flickr"><img src="http://static.flickr.com/96/220130811_6630b2477f_t.jpg" title="??????????????? ???????????? (??????)" alt="??????????????? ???????????? (??????)" align="right" border="0" height="75" width="100" /></a> 剛剛吃了半個, 不錯吃, 但可惜不是我喜歡的那種口味. 不過我相信對不能吃糖的人, 這個一定很好吃.</p>
+
+<p>ps. 回家後, 細讀他的傳單, 才發現他們的另一種目標對象是減重者. 我是因為好奇才買的, 不是因為減肥喔喔喔喔&#8230;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2006/08/19/139">蔡依林的部落格?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-19T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2006/08/19/139#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2006/08/19/139">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>看到 <a href="http://blog.ijliao.info" title="國生三年才開始">ijliao</a> 的 <a href="http://blog.ijliao.info/archives/2006/05/17/2292/" title="國生三年才開始 ? 蔡依林的部落格">國生三年才開始 ? 蔡依林的部落格</a> 的留言, 有不少 fans 進去留言, 但這不是蔡依林的官方部落格啊.. XD</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2006/08/19/139">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2006/08/19/138">白色巨塔的非官方網站</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-08-19T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2006/08/19/138#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2006/08/19/138">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.flickr.com/photos/taopaic/218554338/" class="tt-flickr"><img src="http://static.flickr.com/89/218554338_50f97bd936_m.jpg" title="白色巨塔非官方網站" alt="白色巨塔非官方網站" align="right" border="0" height="181" width="240" /></a>我忘記是否已經開始撥了, 所以這不是篇 感想/捏 之類的文章&#8230;</p>
+
+<p>因為不確定啥時開始撥, 剛剛到 google 找白色巨塔, 結果蠻好玩的, 有個非官方網站, 而且排名比官方網站高的<a href="http://action4jerry.com/">白色巨塔非官方網站</a> , google紀錄的標題還是 <a href="http://action4jerry.com/" onmousedown="return rwt(this,'','','res','6','&sig2=aknjQJEHT-5mjoljwRVpig')" class="l"><font color="#cc0033">白色巨塔</font>預告片下載 The Hospital Trailer 我不是官方網站 囧rz&#8230;</a> 真是蠻好笑的&#8230;</p>
+
+<p>至於官方網站則在<a href="http://www.the-hospital.com/" title="白色巨塔官方網站">這裡</a>&#8230;</p>
+
+<p>回到正題, 白色巨塔已經開始撥了 XD</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/11/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/9/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/06/12/358">HTTP Redirect 和 URL Fragments</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/06/345">jQuery XSS With $(location.hash)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/08/329">安裝 Redmine 1.1.1 遇到 Version_requirements 的暫時解法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/305">2010年底近況更新</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/310">對你家美術好一點 @ Ruby Tuesday #15 的經驗分享</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - TaopaiC -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'taopaicsblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: DesktopBeautifier | TaopaiC 的異想世界]]></title>
+  <link href="http://blog.pctao.org/blog/categories/desktopbeautifier/atom.xml" rel="self"/>
+  <link href="http://blog.pctao.org/"/>
+  <updated>2014-03-22T02:39:11+08:00</updated>
+  <id>http://blog.pctao.org/</id>
+  <author>
+    <name><![CDATA[TaopaiC]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[TaskSwitchXP]]></title>
+    <link href="http://blog.pctao.org/2004/10/25/32"/>
+    <updated>2004-10-25T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2004/10/25/taskswitchxp</id>
+    <content type="html"><![CDATA[<p>TaskSwitchXP &#8211; <a href="http://taskswitchxp.sourceforge.net/">http://taskswitchxp.sourceforge.net/</a></p>
+
+<p>將 windows xp 的alt-tab的功能增強，增加縮圖，以及點選的功能。<br/>
+記得MS的<a href="http://www.microsoft.com/windowsxp/downloads/powertoys/xppowertoys.mspx">PowerToys for XP</a> &#8211; Alt-Tab Replacement也有這功能，但當時(兩年前吧)記得效能不好，慢到抱牆壁哭，或許是電腦變快了，現在這個用起來效果不錯。<br/>
+<a href="http://www.flickr.com/photos/taopaic/267767433/" title="Photo Sharing"><img src="http://static.flickr.com/109/267767433_1fb3628280_m.jpg" alt="taskswitchXp" height="165" width="240" /></a></p>
+
+<!--more-->
+
+
+<p>(description from offical site)<br/>
+TaskSwitchXP provides the same functionality as the existing application switching mechanism in Windows XP/2003 today. When the hotkey combination Alt + Tab (or Alt + Shift + Tab) is pressed, TaskSwitchXP generates the list of open windows in which the end user is working. This list of open windows is presented as a group of icons, with one outlined by a selection rectangle. As the end user continues to hold the Alt key and presses the Tab key, the selection rectangle moves to the next (previous) icon. The selected icon represents the application that Windows will bring to the foreground once the Alt key is released. In addition to displaying an icon list, however, TaskSwitchXP show also a thumbnail preview of the window that will be switched to.</p>
+]]></content>
+  </entry>
+  
+</feed>

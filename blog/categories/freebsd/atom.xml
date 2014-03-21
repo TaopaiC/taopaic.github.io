@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: FreeBSD | TaopaiC 的異想世界]]></title>
+  <link href="http://blog.pctao.org/blog/categories/freebsd/atom.xml" rel="self"/>
+  <link href="http://blog.pctao.org/"/>
+  <updated>2014-03-22T02:39:11+08:00</updated>
+  <id>http://blog.pctao.org/</id>
+  <author>
+    <name><![CDATA[TaopaiC]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[看到睡長輩吞布丁&#8230;]]></title>
+    <link href="http://blog.pctao.org/2006/10/28/172"/>
+    <updated>2006-10-28T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2006/10/28/%e7%9c%8b%e5%88%b0%e7%9d%a1%e9%95%b7%e8%bc%a9%e5%90%9e%e5%b8%83%e4%b8%81</id>
+    <content type="html"><![CDATA[<p>今天去聽 <a href="http://coscup.tossug.org/">COSCUP 2006</a> ( aka. <a href="http://coscup.tossug.org/">真 ICOS 2006</a>) , 下午有一場<a href="http://slzzp.blogspot.com/">睡長輩</a>當 speaker . <a href="http://slzzp.blogspot.com/">睡長輩</a>當場表演講一張投影片就吞一顆布丁&#8230;<br/>
+如果想看布丁塔的震撼, 請看 <a href="http://www.flickr.com/photos/cclien/281114730/">cclien 拍的</a>.</p>
+
+<p>UPDATE: <a href="http://blog.richliu.com/2006/10/28/380/">richliu那邊</a>有影片!!</p>
+
+<p><a href="http://www.flickr.com/photos/taopaic/281124556/" title="Photo Sharing"><img src="http://static.flickr.com/83/281124556_85a43bc2ac_m.jpg" alt="睡長輩與布丁塔" height="240" width="180" /><!--more--></a></p>
+
+<p><a href="http://www.flickr.com/photos/taopaic/281124538/" title="Photo Sharing"><img src="http://static.flickr.com/81/281124538_b9d69dd0db_m.jpg" alt="睡長輩吞布丁" height="180" width="240" /></a><br/>
+<a href="http://www.flickr.com/photos/taopaic/281124516/" title="Photo Sharing"><img src="http://static.flickr.com/90/281124516_cd07887f98_m.jpg" alt="睡長輩吞布丁" height="180" width="240" /></a><br/>
+<a href="http://www.flickr.com/photos/taopaic/281124498/" title="Photo Sharing"><img src="http://static.flickr.com/104/281124498_9a107a0d69_m.jpg" alt="睡長輩與投影片" height="180" width="240" /></a></p>
+
+<p>ps. 不過吞了幾顆布丁之後, 大家被投影片的內容吸引住了&#8230;</p>
+
+<p>UPDATE: <a href="http://slzzp.blogspot.com/">睡長輩</a>講完之後, 開始表演連續吞 <strong>22 顆布丁</strong>!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[網路流量統計 &#8211; Cacti]]></title>
+    <link href="http://blog.pctao.org/2004/11/09/41"/>
+    <updated>2004-11-09T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2004/11/09/cacti</id>
+    <content type="html"><![CDATA[<p>找 <a href="http://people.ee.ethz.ch/~oetiker/webtools/mrtg">MRTG</a>的參數的時候，突然想換成 <a href="http://people.ee.ethz.ch/~oetiker/webtools/rrdtool">RRDTOOL</a>，但是看不懂說明檔。找來找去找到<a href="http://www.cacti.net/">Cacti</a>可以用。<br/>
+<a href="http://www.flickr.com/photos/taopaic/267769714/" title="Photo Sharing"><img src="http://static.flickr.com/105/267769714_4631c8ea32_m.jpg" width="240" height="194" alt="cacti" /></a></p>
+
+<!--more-->
+
+
+<p>Cacti：</p>
+
+<ul>
+<li>網頁設定</li>
+<li>主機、圖可以套template</li>
+</ul>
+
+
+<p>主要就 net/cacti 、net-mgmt/net-snmp 和 mysql 裝好，就可以上線了。</p>
+
+<p>我家的 Hinet ATU-R 有 snmp，也拿來畫圖。<br/>
+<a href="http://www.flickr.com/photos/taopaic/267769715/" title="Photo Sharing"><img src="http://static.flickr.com/86/267769715_a9d2485ce3_m.jpg" width="240" height="89" alt="atur" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Plone 的安裝 &#8211; on FreeBSD]]></title>
+    <link href="http://blog.pctao.org/2004/10/19/28"/>
+    <updated>2004-10-19T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2004/10/19/plone</id>
+    <content type="html"><![CDATA[<p>大致上就使用 ports 安裝plone，不過模組的部分還是要去<a href="http://sourceforge.net/projects/collective">官網</a>找，ports不夠新，有些相容的問題。</p>
+
+<!--more-->
+
+
+<ul>
+<li>更新ports tree之後。</li>
+</ul>
+
+
+<blockquote><p><code>&lt;br /&gt;
+cd /usr/ports/www/plone&lt;br /&gt;
+make install clean&lt;br /&gt;
+</code></p></blockquote>
+
+<p>或者使用portupgrade工具</p>
+
+<blockquote><p><code>&lt;br /&gt;
+portinstall -v plone&lt;br /&gt;
+</code></p></blockquote>
+
+<p>設定</p>
+
+<blockquote><p><code>&lt;br /&gt;
+cd /usr/ports/www/plone&lt;br /&gt;
+make instance&lt;br /&gt;
+</code></p></blockquote>
+
+<p>照指示加到/etc/rc.conf，如：</p>
+
+<blockquote><p><code>&lt;br /&gt;
+zope_enable="YES"&lt;br /&gt;
+zope_instances="/usr/local/www/Zope/"&lt;br /&gt;
+</code></p></blockquote>
+
+<p>編輯設定檔：/usr/local/www/Zope/etc/zope.conf<br/>
+大致不用修改，需要注意的是會不會和其他程式衝到port，如：8080。<br/>
+啟動</p>
+
+<blockquote><p><code>&lt;br /&gt;
+/usr/local/etc/rc.d/zope.sh start&lt;br /&gt;
+</code></p></blockquote>
+
+<p>使用網頁遊覽器到 <a href="http://localhost:8080/">http://localhost:8080/</a> (port 8080是預設)</p>
+
+<p>待處理問題：如何和apache共同運作。</p>
+
+<p><strong>遇見問題</strong></p>
+
+<ol>
+<li><strong>from interface import Interface<br/>
+ImportError: No module named interface</strong></p>
+
+<ul>
+<li><a href="http://www.cmfboard.org/forums/portaltransport/general/930411114587?b_start:int=0#931360817792">http://www.cmfboard.org/forums/portaltransport/general/930411114587?b_start:int=0#931360817792</a><br/>
+改成 from Interface import Interface</li>
+</ul>
+</li>
+<li>GroupMail &#8211;<br/>
+<strong>from Products import stripogram<br/>
+ImportError: cannot import name stripogram</strong></p>
+
+<ul>
+<li>安裝<a href="http://sourceforge.net/projects/squishdot/">Strip-o-gram</a></li>
+</ul>
+</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Make Buildkernel -DALWAYS_CHECK_MAKE]]></title>
+    <link href="http://blog.pctao.org/2004/10/13/19"/>
+    <updated>2004-10-13T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2004/10/13/make-buildkernel-dalways_check_make</id>
+    <content type="html"><![CDATA[<p>從 5.2.1-RELEASE 要弄到 5-current 的時候, 發生 make error, +for 不認識.<br/>
+記一下 -DALWAYS_CHECK_MAKE</p>
+
+<!--more-->
+
+
+
+
+<blockquote title="To build a kernel" cite="/usr/src/UPDATING">
+  <p>
+    /usr/src/UPDATING 這麼說的
+  </p>
+  
+  <p>
+    To build a kernel<br /> &#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br /> If you are updating from a prior version of FreeBSD (even one just<br /> a few days old), you should follow this procedure. With a<br /> /usr/obj tree with a fresh buildworld,<br /> make -DALWAYS_CHECK_MAKE buildkernel KERNCONF=YOUR_KERNEL_HERE<br /> make -DALWAYS_CHECK_MAKE installkernel KERNCONF=YOUR_KERNEL_HERE
+  </p>
+</blockquote>
+
+
+<p>References:</p>
+
+<ul>
+<li><p><a href="http://lists.freebsd.org/pipermail/freebsd-current/2004-August/035255.html">Upgrade to 5.3-BETA1: make installkernel &#8211; Stop in /usr/src/sys/modules</a>
+<a href="http://lists.freebsd.org/pipermail/freebsd-current/2004-August/035255.html">http://lists.freebsd.org/pipermail/freebsd-current/2004-August/035255.html</a></p>
+
+<p>Christian Hiris 4711 at chello.at<br/>
+Tue Aug 24 07:41:23 PDT 2004</li> </ul></p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[PACKAGESITE]]></title>
+    <link href="http://blog.pctao.org/2004/10/12/12"/>
+    <updated>2004-10-12T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2004/10/12/packagesite</id>
+    <content type="html"><![CDATA[<p>安裝 package 的懶人方法<br/>
+(但還是不保險?)<br/>
+記下來在說</p>
+
+<!--more-->
+
+
+<blockquote><p>setenv PACKAGESITE <a href="http://example.net/exampledir/">http://example.net/exampledir/</a></p></blockquote>
+
+<p>然後</p>
+
+<blockquote><p><del>pkg_add -rRv blahblah</del><br/>
+<ins title="we should record the installation of a package" datetime="2004-9-12T20:56:36--8:00" cite="http://gslin.org/?p=62">pkg_add -rv blahblah</ins></p></blockquote>
+
+<p>Note:</p>
+
+<blockquote><p><a href="http://pointyhat.freebsd.org/errorlogs/i386-packages-5-latest/All/">http://pointyhat.freebsd.org/errorlogs/i386-packages-5-latest/All/</a></p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>

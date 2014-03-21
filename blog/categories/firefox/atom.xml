@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Firefox | TaopaiC 的異想世界]]></title>
+  <link href="http://blog.pctao.org/blog/categories/firefox/atom.xml" rel="self"/>
+  <link href="http://blog.pctao.org/"/>
+  <updated>2014-03-22T02:39:11+08:00</updated>
+  <id>http://blog.pctao.org/</id>
+  <author>
+    <name><![CDATA[TaopaiC]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[無名小站的圖片展開程式 書籤版本 (Bookmarklet)]]></title>
+    <link href="http://blog.pctao.org/2008/07/28/258"/>
+    <updated>2008-07-28T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/07/28/%e7%84%a1%e5%90%8d%e5%b0%8f%e7%ab%99%e7%9a%84%e5%9c%96%e7%89%87%e5%b1%95%e9%96%8b%e7%a8%8b%e5%bc%8f-%e6%9b%b8%e7%b1%a4%e7%89%88%e6%9c%ac-bookmarklet</id>
+    <content type="html"><![CDATA[<p>剛剛把 gslin 長輩的<a href="http://blog.gslin.org/archives/2007/09/15/1313/">無名小站的圖片展開程式</a>改寫成 bookmarklet , 所以也不再是 Firefox only , IE或Opera也能使用, 只要將下面這個連結加進書籤, 在看無名的相簿頁面時, 就可使用了.</p>
+
+<blockquote><p><a href="javascript:(function(){var">展開無名圖片</a></p></blockquote>
+
+<p>在 Firefox 3, IE7, Opera 9.5 上測試過, 都可使用.</p>
+
+<h3>更新紀錄</h3>
+
+<p>080728 將<a href="http://blog.gslin.org/archives/2007/09/15/1313/">gslin的gm script</a>改成bookmarklet,部份程式碼參考 <a href="http://www.learningjquery.com/2008/06/updated-jquery-bookmarklet">jQuery Bookmarklet</a>. 並保留照片註解.</p>
+
+<h3>使用示範</h3>
+
+<p>以下用 Firefox 3 作為示範, 其他遊覽器 IE, Opera 使用方法大同小異. 例子是彎彎的相簿.</p>
+
+<ol>
+<li>將 <strong>書籤</strong> 拉到<strong>書籤工具列</strong>, 或是加入<strong>我的最愛</strong>都行<a href="http://www.flickr.com/photos/69004123@N00/2708984684/" class="flickr-image"  title="Screenshot-無名小站的圖片展開程式 bookmarklet 版本 | TaopaiC的異想世界 - Mozilla Firefox (Build 2008071816)-1" rel="flickr-mgr[wretch]" ><img src="http://farm4.static.flickr.com/3027/2708984684_98d268f7b7.jpg" alt="Screenshot-無名小站的圖片展開程式 bookmarklet 版本 | TaopaiC的異想世界 - Mozilla Firefox (Build 2008071816)-1" class="flickr-original" longdesc="http://farm4.static.flickr.com/3027/2708984684_7efc582fd7_o.png" /></a></li>
+<li>在無名<strong>相簿內頁</strong>, 點剛剛紀錄的書籤. 並不支援相簿列表和相片頁<a href="http://www.flickr.com/photos/69004123@N00/2708984694/" class="flickr-image"  title="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)" rel="flickr-mgr[wretch]" ><img src="http://farm4.static.flickr.com/3221/2708984694_2a6e1275ba.jpg" alt="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)" class="flickr-original" longdesc="http://farm4.static.flickr.com/3221/2708984694_efd63699b2_o.png" /></a></li>
+<li>照片縮圖都放大了<a href="http://www.flickr.com/photos/69004123@N00/2708984706/" class="flickr-image"  title="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)-1" rel="flickr-mgr[wretch]" ><img src="http://farm4.static.flickr.com/3117/2708984706_65c92924ce.jpg" alt="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)-1" class="flickr-original" longdesc="http://farm4.static.flickr.com/3117/2708984706_dfe9755e0b_o.png" /></a></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[FX] 改善遊覽 &#8220;台北市大眾運輸公車路線查詢系統" 的問題]]></title>
+    <link href="http://blog.pctao.org/2008/06/28/246"/>
+    <updated>2008-06-28T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/06/28/fx-%e6%94%b9%e5%96%84%e9%81%8a%e8%a6%bd-%e5%8f%b0%e5%8c%97%e5%b8%82%e5%a4%a7%e7%9c%be%e9%81%8b%e8%bc%b8%e5%85%ac%e8%bb%8a%e8%b7%af%e7%b7%9a%e6%9f%a5%e8%a9%a2%e7%b3%bb%e7%b5%b1-%e7%9a%84%e5%95%8f</id>
+    <content type="html"><![CDATA[<p>早上查台北市公車路線時, 上 <a href="http://www.taipeibus.taipei.gov.tw/">台北市大眾運輸公車路線查詢系統</a> 查詢, 受一堆鳥氣.. 有用過該系統的都知道, 在路線和站牌的頁面, 無法以 &#8220;在新視窗開啟" 的方式開啟連結. 所以只能在該頁面上一頁下一頁的找. 乾脆花一點時間寫東西改善這個問題.</p>
+
+<p>這個 script 讓路線連結可以<strong>在新分頁開啟</strong>, 以及<strong>增加預覽功能</strong>.<!--more--></p>
+
+<h3>安裝</h3>
+
+<p>這是個 Firefox 的延伸套件: Greasemonkey 的 script , 所以需要 <a href="http://www.moztw.org/" target="_blank">Firefox</a> 以及安裝 <a href="https://addons.mozilla.org/zh-TW/firefox/addon/748" target="_blank">Greasemonkey</a> , 再到<a href="http://userscripts.org/scripts/show/29274" target="_blank">這網頁</a>安裝 script .</p>
+
+<h3>功能</h3>
+
+<ul>
+<li>將站牌與路線的連結從 javascript: 改成 直接連結 , 就可以在新分頁/視窗開啟, 找路線比較方便.<br/>
+<code>javascript:showBus('236')</code><br/>
+改成<br/>
+<code>http://www.taipeibus.taipei.gov.tw/emap/program/html/bus_cnt.asp?s=236</code></li>
+<li>增加 <a href="http://snap.com/" target="_blank">Snap.Shots</a> 的預覽功能.
+
+<ul>
+<li>公車站牌預覽<br/>
+<a class="flickr-image" title="Screenshot-公車停靠站位" rel="flickr-mgr[bus]" href="http://www.flickr.com/photos/69004123@N00/2617423395/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3241/2617423395_88086975a7_o.png" src="http://farm4.static.flickr.com/3241/2617423395_6b0f23b864_m.jpg" alt="Screenshot-公車停靠站位" /></a></li>
+<li>公車路線預覽<br/>
+<a class="flickr-image" title="Screenshot-公車路線" rel="flickr-mgr[bus]" href="http://www.flickr.com/photos/69004123@N00/2618246414/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3205/2618246414_3d3f992ec0_o.png" src="http://farm4.static.flickr.com/3205/2618246414_3e500b02fb_m.jpg" alt="Screenshot-公車路線" /></a></li>
+<li>公車路線PDF預覽<br/>
+<a class="flickr-image" title="Screenshot-公車路線 - pdf 預覽" rel="flickr-mgr[bus]" href="http://www.flickr.com/photos/69004123@N00/2617423157/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3004/2617423157_8a686c45ef_o.png" src="http://farm4.static.flickr.com/3004/2617423157_e59d9bf857_m.jpg" alt="Screenshot-公車路線 - pdf 預覽" /></a></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>測試</h3>
+
+<ul>
+<li><a href="http://www.taipeibus.taipei.gov.tw/emap/program/html/bus_cnt.asp?s=236" target="_blank">236公車</a></li>
+<li><a href="http://www.taipeibus.taipei.gov.tw/emap/program/html/bus_stationcnt.asp?s=1530" target="_blank">政大公車站</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

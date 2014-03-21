@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Wii | TaopaiC 的異想世界]]></title>
+  <link href="http://blog.pctao.org/blog/categories/wii/atom.xml" rel="self"/>
+  <link href="http://blog.pctao.org/"/>
+  <updated>2014-03-22T02:39:11+08:00</updated>
+  <id>http://blog.pctao.org/</id>
+  <author>
+    <name><![CDATA[TaopaiC]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Google Reader for Wii]]></title>
+    <link href="http://blog.pctao.org/2007/05/09/188"/>
+    <updated>2007-05-09T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2007/05/09/google-reader-for-wii</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/taopaic/490557714/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/212/490557714_7ca7b433d7_t.jpg" alt="顯示訂閱畫面 (按鍵1)" align="right" height="81" width="100" /></a>根據 <a href="http://http://blogs.zdnet.com/Google/?p=557">這篇消息</a> 指出, <a href="http://www.google.com/reader/">Google Reader</a> 悄悄地放上特地為 Wii 設計的介面. 真的是悄悄地, Google 的各部落格還沒放消息出來&#8230; 雖然也有其他 web-based 的 RSS 閱讀器, 但這可是針對 Wiimote 設計控制按鍵的 RSS 閱讀器.</p>
+
+<p>只要用 Opera for Wii 連上 <a href="http://www.google.com/reader/">Google Reader</a> 即可看到新的介面. 如果沒有 Wii 也可以試用, 只要使用 <a href="http://www.google.com/reader/wii">http://www.google.com/reader/wii</a> 即可.</p>
+
+<p>我覺得這個介面字大, 按鍵習慣 (畢竟方向鍵比 j/k 習慣), 省掉左邊訂閱列表的空間, 我在電腦上都想用這個介面.</p>
+
+<!--more-->
+
+
+<p>Wii 的操作方法<br/>
+* 上/下 : 畫面移上/下<br/>
+* 右/左 : 下一個/上一個項目<br/>
+* 按鈕 1 : 列出訂閱<br/>
+* 按鈕 2 : 列出連結</p>
+
+<p>在列出訂閱的畫面 (按鈕1) 時:<br/>
+* 上/下 : 前一個/下一個 訂閱<br/>
+* 右 : 選擇該訂閱<br/>
+* 左 : 關閉<br/>
+* &ndash;/+ : 收合/展開 目錄</p>
+
+<p>為何沒用到 A/B 鍵 ? A/B 鍵是 Opera 的操控鍵啊&#8230; 請參考我之前的<a href="http://pctao.org/2007/04/13/181/">文章</a>.</p>
+
+<ul>
+<li>update: <a href="http://googlereader.blogspot.com/">Google Reader 官方 blog</a> 的<a href="http://googlereader.blogspot.com/2007/05/feed-your-television.html">消息</a>. 以及示範的影片</li>
+</ul>
+
+
+<p>抓圖 (wii 不在身邊, 以下是 firefox 的抓圖, 以後再補 wii 上的抓圖) :</p>
+
+<ul>
+<li><p>首頁
+<a href="http://www.flickr.com/photos/taopaic/490574731/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/225/490574731_a9ace31c25.jpg" alt="首頁" height="407" width="500" /></a></p></li>
+<li><p>顯示訂閱畫面
+<a href="http://www.flickr.com/photos/taopaic/490557714/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/212/490557714_7ca7b433d7.jpg" alt="顯示訂閱畫面 (按鍵1)" height="407" width="500" /></a></p></li>
+<li><p>文章列表
+<a href="http://www.flickr.com/photos/taopaic/490574317/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/206/490574317_3d36567cd0.jpg" alt="文章列表" height="407" width="500" /></a><br/>
+<a href="http://www.flickr.com/photos/taopaic/490574419/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/205/490574419_73de5c650a.jpg" alt="文章列表 (展開一篇文章)" height="407" width="500" /></a></p></li>
+<li><p>展開畫面
+<a href="http://www.flickr.com/photos/taopaic/490574593/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/196/490574593_7cc09f4856.jpg" alt="展開列表" height="407" width="500" /></a><br/>
+(這篇是 <a href="http://blog.richliu.com/2007/05/08/483/">不認真做宅男的下場….</a> )</ul></p></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Opera for Wii 正式版]]></title>
+    <link href="http://blog.pctao.org/2007/04/13/181"/>
+    <updated>2007-04-13T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2007/04/13/opera-for-wii-%e6%ad%a3%e5%bc%8f%e7%89%88</id>
+    <content type="html"><![CDATA[<p><a href="http://flickr.com/photos/taopaic/sets/72157600069582703/detail/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/173/456706540_ce3373d57e_t.jpg" alt="書籤" align="right" height="67" width="100" /></a>昨天收到任社的信, 說 Opera for Wii 正式版出了. 剛剛下載回來, 挺不錯用的.<br/>
+跟之前的beta版比較, 改進不少東西.<!--more--></p>
+
+<ul>
+<li>啟動速度加快</li>
+<li>縮放的層級更多, 不只有 2 層了.</li>
+<li>新增一個搜尋按鈕, 可以選擇 Google 或 Yahoo! 作為搜尋引擎.</li>
+<li>捲動畫面時有個圖示顯示.</li>
+<li>多指標.每隻手把都會顯示指標, 但只有主要的手把可以控制.</li>
+<li>隱藏工具列.可以讓工具列 永遠顯示/自動隱藏/手動隱藏</li>
+</ul>
+
+
+<p>B鈕除了移動, 還有組合鍵的功能</p>
+
+<ul>
+<li>B 鈕 + 左方向鍵 = 搜尋</li>
+<li>B 鈕 + 右方向鍵= 輸入網址</li>
+<li>B 鈕 + 上方向鍵= 重新整理</li>
+<li>B 鈕 + 下方向鍵= 書籤/我的最愛</li>
+<li>B 鈕 + (+) key = 下一頁</li>
+<li>B 鈕 + (&ndash;) key = 回到上一頁</li>
+</ul>
+
+
+<p>用起來很不錯, 但可惜還是會缺字, 也沒有中文輸入法, 雖然可以用日文輸入漢字, 但是會用的人不多吧 <img src='http://pctao.org/wp-includes/images/smilies/icon_sad.gif' alt=':(' class='wp-smiley' /> .<br/>
+Wii的代理商<a href="http://www.hakuyu.com.tw/">博優</a>會把這東西在地化嗎? 會嗎!!? XD</p>
+
+<p>點上面的縮圖可以看<a href="http://flickr.com/photos/taopaic/sets/72157600069582703/detail/">我抓的一些圖</a>.</p>
+
+<p>ps. <a href="http://www.hakuyu.com.tw/">博優</a>網站"抱歉暫時關閉"中.</p>
+
+<p>Links:</p>
+
+<p><a href="http://blog.wiiholic.com/archives/626">Wii推廣部落格 ? 最終正式版 Wii Opera 實測介紹</a><br/>
+<a href="http://www.opera.com/pressreleases/en/2007/04/12/">Get to Know the Web on Wii: Full Version of Wii Internet Channel Powered by Opera Available for Free Download</a>(Opera官網新聞)</p>
+]]></content>
+  </entry>
+  
+</feed>

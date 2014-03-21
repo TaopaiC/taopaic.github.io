@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Linux | TaopaiC 的異想世界]]></title>
+  <link href="http://blog.pctao.org/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://blog.pctao.org/"/>
+  <updated>2014-03-22T02:39:11+08:00</updated>
+  <id>http://blog.pctao.org/</id>
+  <author>
+    <name><![CDATA[TaopaiC]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[[Ubuntu] 掛載 Cue/bin 光碟映像檔]]></title>
+    <link href="http://blog.pctao.org/2008/09/01/282"/>
+    <updated>2008-09-01T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/09/01/ubuntu-%e6%8e%9b%e8%bc%89-cuebin-%e5%85%89%e7%a2%9f%e6%98%a0%e5%83%8f%e6%aa%94</id>
+    <content type="html"><![CDATA[<p><a href="http://cdemu.sourceforge.net/">cdemu</a> 可以在 linux 裡建立虛擬的光碟裝置, 再將映像檔掛上. 支援的映像檔包括 .B6T, .CCD, .CDI, .CUE, .ISO, .MDS, .NRG, .TOC , CIF, C2D, DAA .<!--more--></p>
+
+<h3>掛載 ISO 檔</h3>
+
+<p>如果只是 .iso 映像檔, linux 可以直接掛載<br/>
+<code>sudo mount -t iso9660 -o loop CDIMG.iso /tmp/example</code></p>
+
+<h3>掛載 cue/bin 檔方法一 &#8211; 轉成ISO檔</h3>
+
+<p>用 <a href="http://he.fi/bchunk/">bchunk</a> 將 cue/bin 轉成 iso 檔<br/>
+<code>sudo apt-get install bchunk</code><br/>
+<code>bchunk CDIMG.bin CDIMG.cue CDIMG</code></p>
+
+<h3>掛載 cue/bin 檔方法二 &#8211; 用 cdemu 掛載 cue/bin</h3>
+
+<p>在 /etc/apt/sources.list 或 /etc/apt/sources.list.d/cdemu.list 中加入<br/>
+<code>deb http://ppa.launchpad.net/cdemu/ubuntu hardy main&lt;br /&gt;
+deb-src http://ppa.launchpad.net/cdemu/ubuntu hardy main</code><br/>
+再更新並安裝<br/>
+<code>sudo apt-get update&lt;br /&gt;
+sudo apt-get install cdemu</code></p>
+
+<p>載入映像檔的方式<br/>
+<code>cdemu load 0 IMG.cue</code><br/>
+卸載時, 直接用 nautils 選 Eject 或是先卸載該光碟 (如從 nautils 卸載), 再從 cdemu 卸載映像檔<br/>
+<code>cdemu unload 0</code></p>
+
+<h4>備註</h4>
+
+<ol>
+<li>cdemu 預設是登入時啟動, 如果想改成開機啟動, 則去 /etc/default/cdemu-daemon 改設定.</li>
+<li>我使用時遇到 audio driver error 的錯誤, 我將 /etc/default/cdemu-daemon 的 AUDIO_DRIVER 改成 oss<br/>
+<code>AUDIO_DRIVER="oss"</code></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[Tip] 在 Wine 內自動安裝套件或函式庫 &#8211; Winetricks]]></title>
+    <link href="http://blog.pctao.org/2008/07/30/256"/>
+    <updated>2008-07-30T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/07/30/tip-%e5%9c%a8-wine-%e5%85%a7%e8%87%aa%e5%8b%95%e5%ae%89%e8%a3%9d%e5%a5%97%e4%bb%b6%e6%88%96%e5%87%bd%e5%bc%8f%e5%ba%ab-winetricks</id>
+    <content type="html"><![CDATA[<p>每次在 <a href="http://www.winehq.org/">wine</a> 裡安裝程式, 需要另外安裝 dll 時, 都要上 google 找或是從另外一台 windows 機器複製過來嗎? vb6 runtime, msxml3 這些東西又在哪下載呢?</p>
+
+<p>等等等, 救星來了! <a href="http://wiki.winehq.org/winetricks" target="_blank">winetricks</a> 這個小程式就可以自動安裝某些 dll 或函式庫.</p>
+
+<h3>安裝 winetricks</h3>
+
+<ol>
+<li><p>首先下載 winetricks</p>
+
+<blockquote><p>wget <a href="http://www.kegel.com/wine/winetricks">http://www.kegel.com/wine/winetricks</a></p></blockquote></li>
+<li><p>改成可執行</p>
+
+<blockquote><p>chmod +x winetricks</p></blockquote></li>
+<li><p>看客官希望把程式放哪, 例如 ~/bin</p>
+
+<blockquote><p>mv winetricks ~/bin/</p></blockquote></li>
+</ol>
+
+
+<h3>使用 winetricks</h3>
+
+<ul>
+<li><p>列出 winetricks 使用方法及支援的套件</p>
+
+<blockquote><p>winetricks &#8211;help</p></blockquote></li>
+<li><p>安裝套件</p>
+
+<blockquote><p>winetricks &lt; 套件名稱></p></blockquote>
+
+<p>例如安裝 VB6 runtime</p>
+
+<blockquote><p>winetricks vb6run</p></blockquote></li>
+<li><p>winetrick 有一個很*簡陋*的GUI (我寧可使用 cli 也不要用他的 gui )</p>
+
+<blockquote><p>winetricks</p></blockquote></li>
+</ul>
+
+
+<p>也可以指定安裝的 wine 目錄, 例如</p>
+
+<blockquote><p>env WINEPREFIX=~/.winetest winetricks mfc40</p></blockquote>
+
+<p>詳細說明請看 <a href="http://wiki.winehq.org/winetricks">winetricks 的說明頁</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[Ubuntu] 安裝uvc Webcam]]></title>
+    <link href="http://blog.pctao.org/2008/04/26/227"/>
+    <updated>2008-04-26T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/04/26/ubuntu-%e5%ae%89%e8%a3%9duvc-webcam</id>
+    <content type="html"><![CDATA[<p>前幾天買了一個新的webcam, 不幸的是 ubuntu 8.04 內附的 <a href="http://linux-uvc.berlios.de/">uvcvideo</a> 並不支援, 需要更新的 uvcvideo 才能使用.<br/>
+自己編譯其實不麻煩, 用svn下載新的程式碼,make,make install就可以收工了</p>
+
+<p>壞消息是 uvcvideo 只支援新的 Linux 的 Video API: V4L2 (Video For Linux 2), 並不向下支援 V4L1 , 也就是說 <a href="http://camorama.fixedgear.org/">camorama</a> 等軟體都不能使用. 可以安裝 luvcview 測試有沒有安裝成功.</p>
+
+<p>我買的是 <a href="http://www.microsoft.com/taiwan/hardware/digitalcommunication/productdetails.aspx?pid=011">Microsoft LifeCam VX-7000</a> , usb id 是 045e:0723 .<!--more--></p>
+
+<div>
+  <a href="http://partner.monday.com.tw/pub/gotobuy.ashx?gdid=675261&mcode=MV9jWkhDUnNmbGxVa2NyU2tpMDlGa3ZnZWVKU0psU1VXNEV5d092ZVNEa0IwPQ=="><img src="http://partner.monday.com.tw/pub/gd.ashx?s=2&gdid=675261&mcode=MV9jWkhDUnNmbGxVa2NyU2tpMDlGa3ZnZWVKU0psU1VXNEV5d092ZVNEa0IwPQ==" border="0" alt="微軟網路攝影機 VX-7000 (銀) " width="135" height="135" align="right" /></a>(含廣告推薦連結) <a href="http://shopping.pchome.com.tw/ally.html?ally=A00003365&url=http://shopping.pchome.com.tw/?mod=item&func=exhibit&IT_NO=DCAD37-A16925144 ">PCHOME</a>或是<a href="http://partner.monday.com.tw/pub/gotobuy.ashx?gdid=675261&mcode=MV9jWkhDUnNmbGxVa2NyU2tpMDlGa3ZnZWVKU0psU1VXNEV5d092ZVNEa0IwPQ==">興奇購物</a>都有賣, 評價請看<a href="http://www.everythingusb.com/microsoft-lifecam-vx-7000-14105.html">國外這篇評論</a>, 我是買了才看到評論 <img src='http://pctao.org/wp-includes/images/smilies/icon_sad.gif' alt=':(' class='wp-smiley' /> 價錢跟L社便宜不少, 但是效果&#8230; 也還好啦 /_\</p> <h3>
+    uvcvideo 安裝過程
+  </h3>
+  
+  <h4>
+    下載程式碼
+  </h4>
+  
+  <p>
+    如果沒有安裝svn的話, 請先<br /> <code>sudo apt-get install subversion</code><br /> 用 svn 下載新版程式碼<br /> <code>svn checkout svn://svn.berlios.de/linux-uvc/linux-uvc/trunk</code>
+  </p>
+  
+  <h4>
+    安裝kernel header
+  </h4>
+  
+  <p>
+    <code>sudo apt-get install linux-headers-`uname -r`</code>
+  </p>
+  
+  <h4>
+    改makefile
+  </h4>
+  
+  <p>
+    因為ubuntu放uvcvideo.so的位置和預設的不太一樣,需要修改一下安裝位置<br /> <code>INSTALL_MOD_DIR := usb/media&lt;br />
+to&lt;br />
+INSTALL_MOD_DIR := ubuntu/media/usbvideo&lt;br />
+</code>
+  </p>
+  
+  <h4>
+    安裝
+  </h4>
+  
+  <p>
+    <code>make install</code>
+  </p>
+  
+  <h4>
+    重載 uvcvideo
+  </h4>
+  
+  <p>
+    <code>sudo modprobe -r uvcvideo&lt;br />
+sudo modprobe uvcvideo</code><br /> 應就可在dmesg看到
+  </p>
+  
+  <blockquote>
+    <p>
+      [46167.743036] uvcvideo: Found UVC 1.00 device Microsoft� LifeCam VX-7000 (045e:0723)<br /> [46167.744808] uvcvideo: Failed to query (135) UVC control 1 (unit 0) : -32 (exp. 26).<br /> [46167.754655] input: Microsoft� LifeCam VX-7000 as /devices/pci0000:00/0000:00:1d.7/usb5/5-2/5-2:1.0/input/input15<br /> [46167.779862] usbcore: registered new interface driver uvcvideo<br /> [46167.779873] USB Video Class driver (SVN r205)
+    </p>
+  </blockquote>
+  
+  <p>
+    每次更新 kernel 時都要重新編譯安裝.. 直到內建的 uvcvideo 支援為止.
+  </p>
+  
+  <h3>
+    luvcview &#8211; uvc webcam 的觀看程式
+  </h3>
+  
+  <p>
+    <code>sudo apt-get install luvcview</code>
+  </p>
+  
+  <h4>
+    簡易使用
+  </h4>
+  
+  <p>
+    <code>luvcview -d device&lt;br />
+例如&lt;br />
+luvcview -d /dev/video0</code>
+  </p>
+  
+  <h4>
+    常用參數
+  </h4>
+  
+  <p>
+    <code>-L 列出支援的格式&lt;br />
+-l  列出支援的控制或設定&lt;br />
+-s 影像大小 (寬x高)&lt;br />
+-f 影像格式 (jpg, yuv)</code><br /> 其他就請看 luvcview -h
+  </p>
+  
+  <h3>
+    參考連結
+  </h3>
+  
+  <ul>
+    <li>
+      <a href="http://linux-uvc.berlios.de/">Linux UVC driver & tools</a> &#8211; uvcvideo 首頁, 有支援硬體列表
+    </li>
+    <li>
+      <a href="https://help.ubuntu.com/community/UVC">UVC &#8211; Community Ubuntu Documentation</a>
+    </li>
+  </ul>
+</div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[GPS] HOLUX M-241 在 Ubuntu Linux 上使用]]></title>
+    <link href="http://blog.pctao.org/2008/02/07/222"/>
+    <updated>2008-02-07T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/02/07/gps-holux-m-241-%e5%9c%a8-ubuntu-linux-%e4%b8%8a%e4%bd%bf%e7%94%a8</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/69004123@N00/2237185357/" title="HOLUX M-241 GPS Logger"><img src="http://static.flickr.com/2096/2237185357_0a1e121521_m.jpg" align="right" border="0" /></a>家人要出國玩, 我想他們帶 gps logger 出去紀錄路程, 回來做點不一樣的紀錄.<br/>
+我原本有個 <a href="http://www.wintec.com.tw/GPS/bluetoothgps/WBT100.htm">Wintec WBT-100</a> , 但有些缺點不太適合初學者帶出去, 尤其充電電池需帶充電器, 電池續航只有一天實在麻煩.<br/>
+我就再買一個 <a href="http://www.holux.com/JCoreTW/en/products/products_content.jsp?pno=340">HOLUX M-241</a> , 使用 AA 電池, 一顆可用一天, 有小螢幕, 中文選單. 其實相似產品還有 <a href="http://www.wintec.com.tw/b5/product_detail.php?pro_id=76%20style=">Wintec WPL-1000</a>可以選, 但離出國時間緊迫, 以能馬上入手為優先, 最後就是買到這台 HOLUX M-241 .</p>
+
+<p>還沒多少時間測試, 這篇主要介紹如何在 linux 上取出 gps logger 紀錄的資料.<!--more--></p>
+
+<p>用 USB 線連接電腦後, 開終端機 (terminal) 打 dmesg 看連到哪個埠</p>
+
+<blockquote><p>[52244.118222] usb 5-5.4: new full speed USB device using ehci_hcd and address 10<br/>
+[52244.216512] usb 5-5.4: configuration #1 chosen from 1 choice<br/>
+[52244.216998] cp2101 5-5.4:1.0: cp2101 converter detected<br/>
+[52244.297647] usb 5-5.4: reset full speed USB device using ehci_hcd and address 10<br/>
+[52244.402412] usb 5-5.4: cp2101 converter now attached to <strong>ttyUSB0</strong></p></blockquote>
+
+<p>以上的例子是連到 <strong>/dev/ttyUSB0</strong> .</p>
+
+<h3>用 wine 執行原廠的程式</h3>
+
+<p><a href="http://www.flickr.com/photos/69004123@N00/2246852365/" title="Screenshot-長天軌跡記錄器工具程式.png"><img src="http://static.flickr.com/2143/2246852365_4124b6969a_m.jpg" align="right" border="0" /></a>首先製造 wine 的 com1 , 以剛剛連上 ttyUSB0 為例</p>
+
+<blockquote><p>ln -s /dev/ttyUSB0 ~/.wine/dosdevices/com1</p></blockquote>
+
+<p>再執行 HoluxUtility 即可</p>
+
+<blockquote><p>wine HoluxUtility.exe</p></blockquote>
+
+<p>使用會有點慢, 而且有時候程式會沒反應.</p>
+
+<h3>BT747</h3>
+
+<p>或者用 <a href="http://bt747.wiki.sourceforge.net/">BT747</a> , 這軟體適用在 MTK GPS晶片的GPS裝置上, 當然 M-241 這台也行.<br/>
+先安裝 librxtx-java , 再執行 <a href="http://bt747.sourceforge.net/BT747.jnlp">http://bt747.sourceforge.net/BT747.jnlp</a> (Java Web Start) , 連線速度記得選 38440 , 再按 Connect Port 即可.</p>
+
+<p>資料拿出來之後, 可以玩的就多了.. 例如<a href="http://pctao.org/2008/01/10/206/">照片結合GPS資料</a>.</p>
+
+<p>(以下測試興奇購物網的廣告)<br/>
+<a href="http://partner.monday.com.tw/pub/gotobuy.ashx?gdid=774004&amp;mcode=MV9jWkhDUnNmbGxVa2NyU2tpMDlGa3ZnZWVKU0psU1VXNEV5d092ZVNEa0IwPQ=="><img alt="HOLUX M-241無線GPS紀錄器 " src="http://partner.monday.com.tw/pub/gd.ashx?s=1&gdid=774004&mcode=MV9jWkhDUnNmbGxVa2NyU2tpMDlGa3ZnZWVKU0psU1VXNEV5d092ZVNEa0IwPQ==" border="0" height="240" width="210" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Time Applet 結合 Intlclock]]></title>
+    <link href="http://blog.pctao.org/2008/01/21/211"/>
+    <updated>2008-01-21T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/01/21/time-applet-%e7%b5%90%e5%90%88-intlclock</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/69004123@N00/2205432457/" title="gnome-applets-2.2.1.4-timeapplet"><img src="http://static.flickr.com/2253/2205432457_03eb6de00b_m.jpg" align="right" border="0" /></a>從 Ubuntu Hardy alpha 3 開始, 我就跳入每天都有更新的坑 :p<br/>
+今天看到 gnome-panel (1:2.21.5-0ubuntu1) 的更新,</p>
+
+<blockquote><p>Clock Applet<br/>
+&ndash; Merge intlclock with the clock applet</p></blockquote>
+
+<p>Clock Applet 結合 <a href="https://launchpad.net/intlclock">intlclock 這個 project</a> , 看抓圖吧.<br/>
+時間加上漂亮的世界時鐘, 天氣, 地圖. 真是賞心悅目.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,703 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>TaopaiC 的異想世界</title>
+  <meta name="author" content="TaopaiC">
+
+  
+  <meta name="description" content="剛剛把 gslin 長輩的無名小站的圖片展開程式改寫成 bookmarklet , 所以也不再是 Firefox only , IE或Opera也能使用, 只要將下面這個連結加進書籤, 在看無名的相簿頁面時, 就可使用了. 展開無名圖片 在 Firefox 3, IE7, Opera 9.5 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.pctao.org/blog/page/2">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="TaopaiC 的異想世界" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55755-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TaopaiC 的異想世界</a></h1>
+  
+    <h2>TaopaiC's blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.pctao.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/07/28/258">無名小站的圖片展開程式 書籤版本 (Bookmarklet)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/07/28/258#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/07/28/258">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>剛剛把 gslin 長輩的<a href="http://blog.gslin.org/archives/2007/09/15/1313/">無名小站的圖片展開程式</a>改寫成 bookmarklet , 所以也不再是 Firefox only , IE或Opera也能使用, 只要將下面這個連結加進書籤, 在看無名的相簿頁面時, 就可使用了.</p>
+
+<blockquote><p><a href="javascript:(function(){var">展開無名圖片</a></p></blockquote>
+
+<p>在 Firefox 3, IE7, Opera 9.5 上測試過, 都可使用.</p>
+
+<h3>更新紀錄</h3>
+
+<p>080728 將<a href="http://blog.gslin.org/archives/2007/09/15/1313/">gslin的gm script</a>改成bookmarklet,部份程式碼參考 <a href="http://www.learningjquery.com/2008/06/updated-jquery-bookmarklet">jQuery Bookmarklet</a>. 並保留照片註解.</p>
+
+<h3>使用示範</h3>
+
+<p>以下用 Firefox 3 作為示範, 其他遊覽器 IE, Opera 使用方法大同小異. 例子是彎彎的相簿.</p>
+
+<ol>
+<li>將 <strong>書籤</strong> 拉到<strong>書籤工具列</strong>, 或是加入<strong>我的最愛</strong>都行<a href="http://www.flickr.com/photos/69004123@N00/2708984684/" class="flickr-image"  title="Screenshot-無名小站的圖片展開程式 bookmarklet 版本 | TaopaiC的異想世界 - Mozilla Firefox (Build 2008071816)-1" rel="flickr-mgr[wretch]" ><img src="http://farm4.static.flickr.com/3027/2708984684_98d268f7b7.jpg" alt="Screenshot-無名小站的圖片展開程式 bookmarklet 版本 | TaopaiC的異想世界 - Mozilla Firefox (Build 2008071816)-1" class="flickr-original" longdesc="http://farm4.static.flickr.com/3027/2708984684_7efc582fd7_o.png" /></a></li>
+<li>在無名<strong>相簿內頁</strong>, 點剛剛紀錄的書籤. 並不支援相簿列表和相片頁<a href="http://www.flickr.com/photos/69004123@N00/2708984694/" class="flickr-image"  title="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)" rel="flickr-mgr[wretch]" ><img src="http://farm4.static.flickr.com/3221/2708984694_2a6e1275ba.jpg" alt="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)" class="flickr-original" longdesc="http://farm4.static.flickr.com/3221/2708984694_efd63699b2_o.png" /></a></li>
+<li>照片縮圖都放大了<a href="http://www.flickr.com/photos/69004123@N00/2708984706/" class="flickr-image"  title="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)-1" rel="flickr-mgr[wretch]" ><img src="http://farm4.static.flickr.com/3117/2708984706_65c92924ce.jpg" alt="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)-1" class="flickr-original" longdesc="http://farm4.static.flickr.com/3117/2708984706_dfe9755e0b_o.png" /></a></li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/06/28/246">[FX] 改善遊覽 &#8220;台北市大眾運輸公車路線查詢系統&#8221; 的問題</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/06/28/246#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/06/28/246">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>早上查台北市公車路線時, 上 <a href="http://www.taipeibus.taipei.gov.tw/">台北市大眾運輸公車路線查詢系統</a> 查詢, 受一堆鳥氣.. 有用過該系統的都知道, 在路線和站牌的頁面, 無法以 &#8220;在新視窗開啟&#8221; 的方式開啟連結. 所以只能在該頁面上一頁下一頁的找. 乾脆花一點時間寫東西改善這個問題.</p>
+
+<p>這個 script 讓路線連結可以<strong>在新分頁開啟</strong>, 以及<strong>增加預覽功能</strong>.</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2008/06/28/246">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/06/22/245">[問] 有沒有無名小站換favicon的八卦?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-22T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/06/22/245#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/06/22/245">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><ins datetime="2008-06-22T20:05:42+00:00">update: 又換回綠色的&#8221;無&#8221;了&#8230;</ins></p>
+
+<p><a class="flickr-image" title="yahoo and wretch icon" rel="flickr-mgr" href="http://www.flickr.com/photos/69004123@N00/2597435821/"><img class="alignright flickr-original" style="float: right;" longdesc="http://farm4.static.flickr.com/3239/2597435821_be33f468bd_o.jpg" src="http://farm4.static.flickr.com/3239/2597435821_86e992a87b_m.jpg" alt="yahoo and wretch icon" /></a>剛剛發現無名的綠色圖案換成紅色的Y!圖案.<br/>
+舊圖案 <a href="http://www.wretch.cc/favicon.ico">http://www.wretch.cc/favicon.ico</a></p>
+
+<p>新圖案 <a href="http://l.yimg.com/wretch.yimg.com/favicon.ico">http://l.yimg.com/wretch.yimg.com/favicon.ico</a></p>
+
+<p><a class="flickr-image" title="Screenshot-原始碼:http:--www.wretch.cc- - Mozilla Firefox" rel="flickr-mgr" href="http://www.flickr.com/photos/69004123@N00/2597543831/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3161/2597543831_3bb04958e7_o.png" src="http://farm4.static.flickr.com/3161/2597543831_7db3927c4d.jpg" alt="Screenshot-原始碼:http:--www.wretch.cc- - Mozilla Firefox" /></a></p>
+
+<p>國外許多<strong>被收購且獨立運行</strong>的網站, 鮮有更改favicon成為母公司的圖案, 例如: <a href="http://del.icio.us/" target="_blank">del.icio.us</a> 和 <a href="http://flickr.com/" target="_blank">flickr</a> (被yahoo併) , <a href="http://www.youtube.com/" target="_blank">youtube</a>, <a href="http://jaiku.com/" target="_blank">jaiku</a> 和 <a href="http://www.panoramio.com/" target="_blank">panoramio</a> (被google併). 這次無名換圖案的原因是無名<span style="text-decoration: line-through;">信任感</span>名氣沒Y!大? 還是無名任務已達成可功能身退? 或者只是無原因換icon而已? <a href="http://blog.xdite.net/?page_id=109" target="_blank">誰知道無名在想什麼</a>啊&#8230;</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2008/06/22/245">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/06/16/244">[FX] Google Toolbar 開始支援 Firefox 3</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-16T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/06/16/244#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/06/16/244">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.flickr.com/photos/taopaic/321503168/" title="Screenshot-Google by TaopaiC, on Flickr"><img src="http://farm1.static.flickr.com/123/321503168_aee61c7dd4_o.png" alt="Screenshot-Google" width="273" height="83" /></a><br/>
+從 <a href="http://vsy.jaiku.com/presence/37655290" target="_blank">jaiku 上聽到</a>的, 久未更新的 <a href="http://toolbar.google.com/" target="_blank">Google Toolbar for Firefox</a> 終於更新並且支援 firefox 3 了.</p>
+
+<p>沒有看到新功能. 看來只是更新相容性. ( 版本號: 3.1.20080605L 及 3.1.30080605W )</p>
+
+<p><ins datetime="2008-06-17T04:07:16+00:00">update: 從<a href="http://groups.google.com/group/FFToolbar-suggestions/msg/448c3e052a8c82b6">討論區</a>看到, 還修正 上傳至 Google Docs 的bug</ins></p>
+
+<p>過了那麼久沒有GT的時間, 需要的功能也拿其他 addon 補齊了, 我找不到裝 GT 的動力了..</p>
+
+<p>不見官方部落格貼任何更新資訊, 難道要和 6/18 1:00 (台灣時間) 開始的 <a href="http://moztw.org/events/record2008/">Firefox Download Day</a> 活動一起寫一格?</p>
+
+<p><a href="http://moztw.org/firefox/" target="_blank"><img src="http://moztw.org/firefox/buttons/type06-3.png" border="0" alt="Firefox 3 火熱上映" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/06/11/243">[FX] 離3.0正式版還差一步! 專為mac出 Firefox 3.0RC3</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-11T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/06/11/243#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/06/11/243">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>早上看到 ubuntu 的 hardy-proposed firefox <a href="https://bugs.launchpad.net/bugs/237690" target="_blank">更新</a>把 RC2 字樣拿掉, 我嚇一跳, 查了一下資料, 這個消息不太對.</p>
+
+<p>根據 <a href="http://wiki.mozilla.org/Firefox3/StatusMeetings/2008-06-10" target="_blank">Firefox 團隊的開會紀錄</a>, 6/11 還要為 Mac 出 RC3 版本, 修正一個<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=436575" target="_blank">關不掉的bug</a>. 而 Windows 和 Linux 則不會發行 RC3 版本. 這麼說的話, RC2 很接近正式版囉?</p>
+
+<p>下載: <a href="http://download.mozilla.org/?product=firefox-3.0rc2&amp;os=osx&amp;lang=zh-TW">中文正體Mac版本Firefox</a> (<a href="http://www.mozilla.com/en-US/firefox/all-rc.html" target="_blank">其他平台與語言</a>)</p>
+
+<p><ins datetime="2008-06-16T08:10:43+00:00">* UPDATE: Firefox 3 正式版將於 6/17 日發行 [<a href="http://developer.mozilla.org/devnews/index.php/2008/06/11/coming-tuesday-june-17th-firefox-3/" target="_blank">研發團隊blog</a>].</ins></p>
+
+<p>大家要記得參加 &#8220;超炫瀏覽器，手滑創紀錄&#8221;, 一起創紀錄!<br/>
+<a href="http://moztw.org/events/record2008/"><img src="http://forum.moztw.org/files/record2008_3_349.png" border="0" alt="火狐鬥陣拼紀錄，有你一份！" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/06/11/242">你的訊息可以傳多遠? &#8211; Twitter/jaiku/plurk比較</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-11T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/06/11/242#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/06/11/242">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a class="flickr-image" title="jaiku 的訊息漣漪" rel="flickr-mgr" href="http://www.flickr.com/photos/69004123@N00/2568346524/"><img class="flickr-original alignleft" style="float: left;" longdesc="http://farm4.static.flickr.com/3160/2568346524_597167297a_o.png" src="http://farm4.static.flickr.com/3160/2568346524_a4f8bca08d_t.jpg" alt="jaiku 的訊息漣漪" /></a>前陣子 <a href="http://twitter.com/" target="_blank">twitter</a> 頻頻出現不穩定或停機, 許多人逃到 <a href="http://jaiku.com/" target="_blank">jaiku</a> 或是 <a href="http://plurk.com/" target="_blank">plurk</a> . 我也從 twitter 轉到 jaiku 了.<br/>
+使用過三者的服務之後, 我最喜歡 jaiku 的聊天方式, 發的訊息可以擴散較遠, 而且也可以加入別人的討論串, 使用一段時間之後, 我覺得 &#8220;水的漣漪&#8221; 最能代表 Jaiku 的訊息傳遞方式.</p>
+
+<h3>個案討論</h3>
+
+<p>先以範例講訊息圈的差異.</p>
+
+<h4>twitter 的情況</h4>
+
+<p>Amuro 發表:<em>今天看到一個外國正妹</em><br/>
+Amuro 的友人布萊特: <em>@Amuro 多正? 圖呢?</em><br/>
+Amuro 的友人 拉拉 看到,回應: <em>@Amuro 是我嗎? ^///^</em><br/>
+拉拉 的好友 Char <span style="color: #ff0000;"><strong>無意間</strong></span>看到看到 拉拉 的回應訊息, 則回應說: <em>@Amuro 連搬汽車的力都沒有,還敢說嘴..</em> (Amuro 看不到)<br/>
+Char: <em>@Amuro 死小鬼!!</em> (Amuro 還是看不到)<br/>
+Char: <em>@Amuro 死小鬼!!</em> (Amuro 還是看不到)<br/>
+Char: <em>@Amuro 死小鬼!!</em> (Amuro 還是看不到)<br/>
+Char: <em>@Amuro 死小鬼!!</em> (Amuro 還是看不到)<br/>
+Amuro: <em>@拉拉 明天來吃天鵝吧~</em><br/>
+隔天 Amuro 才在 replies 頁面看到 Char 的回應.</p>
+
+<h4>Plurk 的情況</h4>
+
+<p>Amuro 發表:<em>今天看到一個外國正妹</em><br/>
+Amuro 的友人布萊特: <em>多正? 圖呢?</em><br/>
+Amuro 的友人 拉拉 看到,在討論串回應: <em>是我嗎? ^///^</em><br/>
+拉拉 的好友 Char <strong><span style="color: #ff0000;">無意間</span></strong>看到看到 拉拉 的回應訊息, 則回應說: <em>@Amuro 連搬汽車的力都沒有,還敢說嘴..</em><br/>
+吉翁士兵A回應: <em>紅色有角三倍速!</em> ( 被Char叫來的 )<br/>
+吉翁士兵B回應: <em>上校最高!</em> ( 被Char叫來的 )<br/>
+吉翁士兵C回應: <em>紅色有角三倍速!</em> ( 被Char叫來的 )</p>
+
+<h4>Jaiku 的情況</h4>
+
+<p>Amuro 發表: <em>今天看到一個外國正妹</em><br/>
+Amuro 的友人布萊特: <em>多正? 圖呢?</em><br/>
+Amuro 的友人 拉拉 看到,在討論串回應: <em>是我嗎? ^///^</em><br/>
+拉拉 的好友 Char 看到 拉拉 的回應訊息, 則回應說: <em>連搬汽車的力都沒有,還敢說嘴..</em><br/>
+吉翁士兵A插嘴: <em>紅色有角三倍速!</em><br/>
+士兵A的上司雞西利雅: <em>戴面具的你還記得我嗎?~</em></div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2008/06/11/242">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/06/08/241">公開賣PTT帳號個資?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-08T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/06/08/241#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/06/08/241">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>從 <a href="http://www.ptt.cc/bbs/Gossiping/index.html">ptt 八卦板</a>看到的<a href="http://www.ptt.cc/bbs/Gossiping/M.1212857572.A.C20.html">消息</a>, 有人在網路上公開賣 ptt 帳號的個資&#8230; 是去年<a href="http://taopaic.blogspot.com/2007/08/ptt.html">ptt大當機</a>和幾個大網站被盜個資那件事的後續嗎? <a class="flickr-image" title="PTT 帳號?" rel="flickr-mgr" href="http://www.flickr.com/photos/69004123@N00/2558147333/"><img class="alignright flickr-original" style="float: right;" longdesc="http://farm4.static.flickr.com/3003/2558147333_10bcf841e6_o.jpg" src="http://farm4.static.flickr.com/3003/2558147333_32ef1cdaae_m.jpg" alt="PTT 帳號?" /></a></p>
+
+<h3>延伸閱讀</h3>
+
+<ul>
+<li><a href="http://www.cib.gov.tw/news/news01_2.aspx?no=1788">去年 內政部警政署刑事警察局的新聞</a></li>
+<li><a href="http://www.libertytimes.com.tw/2008/new/may/16/today-t1.htm">洩個人資料 朝野共識最高賠10億 &#8211; 自由時報</a></li>
+<li><a href="http://www.dgbas.gov.tw/ct.asp?xItem=10116&amp;ctNode=2286">電腦處理個人資料保護法 &#8211; 行政院主計處</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/06/06/240">照片逛台灣景點 &#8211; Panoramio Look Around 也有台灣景點</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-06T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/06/06/240#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/06/06/240">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a class="flickr-image" title="大中至正" rel="flickr-mgr" href="http://www.flickr.com/photos/69004123@N00/2554610980/"><img class="alignleft flickr-original" style="float: left;" longdesc="http://farm3.static.flickr.com/2255/2554610980_1966ec0f1b_o.png" src="http://farm3.static.flickr.com/2255/2554610980_8452472b78_t.jpg" alt="大中至正" /></a><a href="http://pctao.org/2008/06/04/238/">上一篇介紹 Panoramio look around</a> 時, 我說台灣沒有 look around 的照片, 剛剛用 Google Earth 逛台北時, 我才發現我錯了. 找到台北有幾個景點也有 &#8220;look around&#8221; 的照片.</p>
+
+<ul>
+<li><a href="http://www.panoramio.com/photo/296154" target="_blank">中華民國總統府</a></li>
+<li><a href="http://www.panoramio.com/photo/7302381" target="_blank">自由廣場</a> (舊稱: 中正紀念堂)</li>
+<li><a href="http://www.panoramio.com/photo/1852166" target="_blank">國父紀念館</a></li>
+</ul>
+
+
+<p>(點進去之後, 點照片下方的 &#8220;look around&#8221;)<br/>
+如果網友還有發現台灣其他地方有 &#8220;look around&#8221; , 歡迎回應給我更新列表 <img src='http://pctao.org/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/06/06/239">宅在家裡不出門, 也能逛美國迪士尼樂園 &#8211; Google Earth 新增迪士尼樂園導覽圖層與更詳細的3D模型</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-06T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/06/06/239#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/06/06/239">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a class="flickr-image" title="灰姑娘的城堡" rel="flickr-mgr[disney]" href="http://www.flickr.com/photos/69004123@N00/2554266312/"><img class="alignright flickr-original" style="float: right;" longdesc="http://farm4.static.flickr.com/3279/2554266312_0fc334e6b9_o.png" src="http://farm4.static.flickr.com/3279/2554266312_da5daeaf5f_m.jpg" alt="灰姑娘的城堡" /></a>還宅在家裏不出門嗎? 來 Google Earth 神遊美國迪士尼樂園吧.</p>
+
+<p><a href="http://earth.google.com/intl/zh-TW/">Google Earth</a> 最近新增迪士尼樂園導覽的圖層以及更為詳細的3D模型, 以下步驟要先<a href="http://flickr.com/photos/taopaic/2554266602/">切換成英文版</a>才有</p>
+
+<ol>
+<li>在 Google Earth 裡搜尋 Disney World</li>
+<li>會看到一個金米老鼠圖案, 點他會開啟一個視窗</li>
+<li>點 &#8220;Show this layer&#8221; 以及 &#8220;Show Disney World in 3D&#8221;</li>
+</ol>
+
+
+<p>(點小圖放大)</p>
+
+<p style="text-align: center;">
+  <a class="flickr-image" title="金米老鼠圖案" rel="flickr-mgr[disney]" href="http://www.flickr.com/photos/69004123@N00/2553442803/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3189/2553442803_0ed8c0b81e_o.png" src="http://farm4.static.flickr.com/3189/2553442803_c4a52c88c2_m.jpg" alt="金米老鼠圖案" /></a><a class="flickr-image" title="2008-06-06_013618" rel="flickr-mgr[disney]" href="http://www.flickr.com/photos/69004123@N00/2554267448/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3041/2554267448_b08f086c40_o.png" src="http://farm4.static.flickr.com/3041/2554267448_4256f2f557_m.jpg" alt="2008-06-06_013618" /></a>
+</p>
+
+
+<p>開啟導覽圖層會看到許多米老鼠圖, 以及顏色區塊, 都是該區域的介紹連結.</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2008/06/06/239">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/06/04/238">超炫的遊覽景點照片方式 &#8211; Panoramio Look Around</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-04T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/06/04/238#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/06/04/238">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a class="flickr-image" title="panoramio look around" rel="flickr-mgr[photo]" href="http://www.flickr.com/photos/69004123@N00/2549600362/"><img class="alignleft flickr-original" style="float: left;" longdesc="http://farm4.static.flickr.com/3138/2549600362_d13780fdd8_o.png" src="http://farm4.static.flickr.com/3138/2549600362_3c57f36047_m.jpg" alt="panoramio look around" /></a></p>
+
+<p>Google 旗下的 <a href="http://www.panoramio.com/">Panoramio</a> 相簿社群網站, 新增 &#8220;look around&#8221; 的功能, 可以讓你在虛擬的3D環境中逛照片. 可以看更近的照片等等功能, 如果你知道微軟的 PhotoSynth , 那這個就是網頁社群的版本了.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2008/06/04/238">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/3/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/06/12/358">HTTP Redirect 和 URL Fragments</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/06/345">jQuery XSS With $(location.hash)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/08/329">安裝 Redmine 1.1.1 遇到 Version_requirements 的暫時解法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/305">2010年底近況更新</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/310">對你家美術好一點 @ Ruby Tuesday #15 的經驗分享</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - TaopaiC -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'taopaicsblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

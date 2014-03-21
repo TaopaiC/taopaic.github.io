@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>關掉無用的 Apt-get 的 Translation List - TaopaiC 的異想世界</title>
+  <meta name="author" content="TaopaiC">
+
+  
+  <meta name="description" content="UPDATE: 現在已有 Translation 的訊息, 不需關閉了. 每次用 apt-get 更新時, 都會有一堆找不到 Translation 的訊息吧. 我覺得這個挺礙眼的, 就先關掉他吧&#8230; 這個訊息是這樣的, apt-get update 時, 會去找每個 source 的 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.pctao.org/2007/07/27/190">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="TaopaiC 的異想世界" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55755-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TaopaiC 的異想世界</a></h1>
+  
+    <h2>TaopaiC's blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.pctao.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">關掉無用的 Apt-get 的 Translation List</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-07-27T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><ins datetime="2008-09-01T08:44:31+00:00">UPDATE: 現在已有 Translation 的訊息, 不需關閉了.</ins></p>
+
+<p>每次用 apt-get 更新時, 都會有一堆找不到 Translation 的訊息吧. 我覺得這個挺礙眼的, 就先關掉他吧&#8230;</p>
+
+<!--more-->
+
+
+<p>這個訊息是這樣的, apt-get update 時, 會去找每個 source 的 Translation-&ldquo;environment&rdquo; ,<br/>
+我的環境是 zh_TW, 訊息就如下</p>
+
+<blockquote><p>pctao@pctao-desktop:/etc/apt$ sudo apt-get update<br/>
+下載:1 <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> gutsy Release.gpg [191B]<br/>
+略過 <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> gutsy/main Translation-zh_TW<br/>
+略過 <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> gutsy/restricted Translation-zh_TW<br/>
+略過 <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> gutsy/universe Translation-zh_TW<br/>
+略過 <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> gutsy/multiverse Translation-zh_TW<br/>
+下載:2 <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> gutsy-updates Release.gpg [191B]<br/>
+略過 <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> gutsy-updates/main Translation-zh_TW<br/>
+略過 <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> gutsy-updates/restricted Translation-zh_TW<br/>
+略過 <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> gutsy-updates/universe Translation-zh_TW<br/>
+略過 <a href="http://archive.ubuntu.com">http://archive.ubuntu.com</a> gutsy-updates/multiverse Translation-zh_TW</p></blockquote>
+
+<p>現在都還沒看到有 Translation-zh_TW , 打開只是看到一堆&#8221;略過&#8221;訊息, 看了礙眼, 乾脆關掉吧. 以後有這功能再打開使用.</p>
+
+<p>改用這個指令更新, 就不會看到 &#8220;略過 <a href="http://&amp;#8230;">http://&amp;#8230;</a> Translation-zh_TW&#8221; 的訊息 (這邊有個BUG,請容我之後說明)</p>
+
+<blockquote><p>sudo apt-get update -o APT::Acquire::Translation=none</p></blockquote>
+
+<p>如果你是 Synaptic 的愛好者, 請執行</p>
+
+<blockquote><p>gksu &#8220;synaptic -o APT::Acquire::Translation=none&#8221;</p></blockquote>
+
+<p>或者在 Synaptic 的 &#8220;設定&#8221; &ndash;> &#8220;設定內部選項&#8221; , 變數填入 &#8220;APT::Acquire::Translation&#8221; , 值填入 &#8220;none&#8221; . 但在下次使用 Synaptic , 還要在做一次.</p>
+
+<p>各位有沒有發現為何不是寫在設定檔, 而是使用參數的方式?<br/>
+寫在設定檔的方法:<br/>
+在 /etc/apt/apt.conf (如果沒有請自建一個) 中寫入</p>
+
+<blockquote><p>APT::Acquire::Translation &#8220;none&#8221;;</p></blockquote>
+
+<p>或者在 /etc/apt/apt.conf.d/ 建立一個檔案, 如 /etc/apt/apt.conf.d/80noTranslation , 內容一樣填入</p>
+
+<blockquote><p>APT::Acquire::Translation &#8220;none&#8221;;</p></blockquote>
+
+<p>應該會成功才對.</p>
+
+<p>但是, 我怎麼測試都不行, 看了一下 apt 的原始碼 (版本 0.7.4ubuntu1), 他讀完設定檔之後, 再用 Translation-&ldquo;environment&rdquo; 複寫, 除非用 -c 或是 -o 再去覆蓋, 不然結果都一樣. (apt-pkg/init.cc 110行)</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">TaopaiC</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-07-27T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>Linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2007/07/27/191" title="Previous Post: 利用 apt-listchanges  觀看每次的更新內容">&laquo; 利用 apt-listchanges  觀看每次的更新內容</a>
+      
+      
+        <a class="basic-alignment right" href="/2007/07/28/193" title="Next Post: TVControl &#8211; 即時電視節目表與選台器 v2.3.0">TVControl &#8211; 即時電視節目表與選台器 v2.3.0 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/06/12/358">HTTP Redirect 和 URL Fragments</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/06/345">jQuery XSS With $(location.hash)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/08/329">安裝 Redmine 1.1.1 遇到 Version_requirements 的暫時解法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/305">2010年底近況更新</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/310">對你家美術好一點 @ Ruby Tuesday #15 的經驗分享</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - TaopaiC -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'taopaicsblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

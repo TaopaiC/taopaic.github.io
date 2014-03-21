@@ -1,0 +1,671 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>TaopaiC 的異想世界</title>
+  <meta name="author" content="TaopaiC">
+
+  
+  <meta name="description" content="上禮拜提到 Facebook 將放出原始碼, 就在不久前釋出了, 有興趣請到這下載. Facebook 宣稱此舉是回饋給發展社群, TechCrunch 則認為主要是對抗 Google/MySpace/Yahoo/AOL 主導的 OpenSearch . 這次釋出的部份是 REST API, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.pctao.org/blog/page/3">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="TaopaiC 的異想世界" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55755-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TaopaiC 的異想世界</a></h1>
+  
+    <h2>TaopaiC's blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.pctao.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/06/03/237">Facebook 平台釋出部份原始碼</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-03T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/06/03/237#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/06/03/237">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>上禮拜提到 <a href="http://pctao.org/2008/05/28/233/">Facebook 將放出原始碼</a>, 就在不久前釋出了, 有興趣<a href="http://developers.facebook.com/fbopen/">請到這下載</a>.</p>
+
+<p><a href="http://developers.facebook.com/news.php?blog=1&amp;story=117">Facebook 宣稱此舉是回饋給發展社群</a>, <a href="http://www.techcrunch.com/2008/06/02/facebook-turns-platfrom-open-source-via-fbopen/">TechCrunch</a> 則認為主要是對抗 Google/MySpace/Yahoo/AOL 主導的 <a href="http://en.wikipedia.org/wiki/OpenSocial">OpenSearch</a> .</p>
+
+<p>這次釋出的部份是 REST API, FBML parser, FQL parser, 和 FBJS sanitizer and proxy .</p>
+
+<p>授權方面, Facebook Open Platform 除了 FBML parser 的部份, 皆以 <a href="http://developers.facebook.com/fbopen/cpal.html">Common Public Attribution License</a> (CPAL) , 而 FBML parser 則因為含有部份 <a href="http://developers.facebook.com/fbopen/mpl.html">mozilla Public License</a> (MPL) 授權的 Mozilla 的原始碼, 所以以 MPL 釋出.</p>
+
+<h3>相關文章</h3>
+
+<ul>
+<li><a href="http://developers.facebook.com/news.php?blog=1&amp;story=117">Happy Anniversary (and Facebook Open Platform) @ Facebook Developers | Facebook Developers News</a> &#8211; 官方新聞</li>
+<li><a href="http://developers.facebook.com/opensource.php/">Facebook Open Source Projects</a> &#8211; 官方下載網站</li>
+<li><a href="http://www.techcrunch.com/2008/06/02/facebook-turns-platfrom-open-source-via-fbopen/">Facebook Platform Now Open Source: fbOpen Released @ TechCrunch</a> &#8211; 知名科技部落格TechCrunch 的文章</li>
+<li><a href="http://www.pcworld.com/businesscenter/article/146578/facebook_open_sources_parts_of_its_app_development_platform.html">Facebook Open Sources Parts of Its App Development Platform @ PC World</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/05/30/236">[Wordpress] Google AJAX Libraries API Plugin</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-30T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/05/30/236#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/05/30/236">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>前幾天 <a href="http://pctao.org/2008/05/28/232/">Google 提供幾個知名 javascript 函式庫的hosting</a>, 就想到 wordpress blog 能不能也利用該服務, 好歹可以省掉 jquery (30K) 和 prototype (124K) 的流量, 尤其是放在(暴)慢的主機 ( 如 dreamhoXt &#8230; ) 效果非常明顯&#8230;<br/>
+用 google 找到 <a href="http://blog.clearskys.net/2008/05/28/google-ajax-libraries-api-plugin/">Google AJAX Libraries API Plugin</a> , <del datetime="2008-06-03T23:55:51+00:00">可惜有些問題, 寄修改檔給作者, 希望下一個版本能修正.</del><ins datetime="2008-06-03T23:55:51+00:00">作者已於0.6版本修正, 請至<a href="http://blog.clearskys.net/2008/05/28/google-ajax-libraries-api-plugin/">該作者網頁下載</a>.</ins></p>
+
+<p>==== GEEK 分隔線 ====<br/>
+<ins datetime="2008-06-03T23:55:51+00:00"><strong>UPDATE: v0.6已修正</strong></ins><br/>
+該 plugin 沒寫授權方法, 所以我不好意思直接修改放出&#8230;<br/>
+wordpress 用的是加上 jQuery.noConflict() 的 jquery , 而 google 提供的沒有, 以至於直接使用 google 的 jquery 會<a href="http://docs.jquery.com/Using_jQuery_with_Other_Libraries">導致和 prototype 衝突</a>. 我的修改方式是在 jquery script 之後, 再加入一個內容為 jQuery.noConflict() 的 script .</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2008/05/30/236">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/05/29/235">除了 Google AJAX Libraries API 以外的選擇</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-29T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/05/29/235#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/05/29/235">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://pctao.org/2008/05/28/232/">Google AJAX Libraries API</a> 提供幾個知名的 javascript 函式庫的 hosting, 但是 google 就沒有提供肥滋滋的 <a href="http://extjs.com/">ExtJS</a>, 除此之外還有啥選擇呢?</p>
+
+<p>如果你是使用&#8230;</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2008/05/29/235">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/05/29/234">不再只是平面的Google地圖 &#8211; Google Earth 遊覽器外掛</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-29T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/05/29/234#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/05/29/234">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a class="flickr-image" title="Google Earth Browser plugin" href="http://www.flickr.com/photos/69004123@N00/2531898442/"><img class="alignright" style="float: right;" src="http://farm4.static.flickr.com/3240/2531898442_57277354c1_m.jpg" alt="Google Earth Browser plugin" /></a>網頁的地圖還是平面的嗎? 早在 2006 年<a href="http://maps.live.com/">微軟的 Virtual Earth</a> 就提供遊覽器內的 3D map , 可惜 VE 台灣的資料少少, 只有英文地圖, 無建物 blahblah&#8230; 在台灣大家還是喜歡用 google map 和 urmap , 有較多在地資料.</p>
+
+<p>就在不久前, <a href="http://google-latlong.blogspot.com/2008/05/google-earth-meet-browser.html">Google 發表 Google Earth Browser plugin</a> , 如同 Virtual Earth 一樣, 可以在網頁上顯示 Google Earth , 有衛星圖, 路線圖 (註) , 也有建築物的圖層, 完全就是網頁版本的 Google Earth .</p>
+
+<p>先到<a href="http://code.google.com/apis/earth/">官網下載 plugin 安裝</a>, 現在只支援 IE6 / IE7 / firefox 2.x on windows , 就可以在網頁上觀看 3D 地圖了. 雖然要等網站主更新 API , 但我想沒多久大家都會更新吧 :p</p>
+
+<p>官網有提供<a href="http://code.google.com/apis/earth/documentation/examples.html">遊玩範例</a>.</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2008/05/29/234">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/05/28/232">Google 幫忙 Host 幾個知名 JavaScript 函式庫</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/05/28/232#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/05/28/232">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>剛看到 <a href="http://googleajaxsearchapi.blogspot.com/2008/05/speed-up-access-to-your-favorite.html">google 推出 AJAX Libraries API</a> , 實際上就是 google host 幾個知名的 JavaScript 函式庫, 包含:</p>
+
+<ul>
+<li>JQuery</li>
+<li>prototype</li>
+<li>script.aculo.us</li>
+<li>MooTools</li>
+<li>dojo</li>
+</ul>
+
+
+<p>通常網站會將不常更動的函式庫做 gzip (壓縮) 和 cache (快取) , 以節省訪客再次造訪的流量 (這裡和之後指的流量為該函式庫的流量), 但首次訪客還是要下載一次. 如果使用這個服務的話, 該訪客在其他也使用的網站下載過該函式庫, 就不需要下載第二次, 節省流量和增快開啟網頁的速度. 對網站主而言, 省了首次訪客的流量, 對使用者來說, 省了 n 個網站的流量. 聽起來真不錯.</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2008/05/28/232">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/05/28/233">Facebook 計畫將平台以開放原始碼釋出</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/05/28/233#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/05/28/233">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.techcrunch.com/2008/05/27/facebook-confirms-plans-to-open-source-its-platform/">TechCrunch 的消息</a> 指出 <a href="http://www.facebook.com/">facebook</a> 計畫將以 open-source 釋出他們的平台, 包括 FMBL (markup language), FQL (query language), FJS (Javascript library) 以及 Facebook API , 對 facebook 的立即好處是其他社群網站馬上就和 facebook 相容&#8230;</p>
+
+<p>轉頭看看<a href="http://blog.xdite.net/?p=517">去年被抓包的 meeya</a> &#8230; XD</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/05/15/231">也是書籤解縮址 &#8211; 三隻小豬解縮址 http://3pig.cc</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-15T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/05/15/231#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/05/15/231">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://3pig.cc"><strong>三隻小豬低調解縮址</strong> http://3pig.cc</a><br/>
+補充: 因為方法也沒多聰明, 拿到網址就猜猜猜, 那 &#8220;三隻小豬&#8221; 就蠻符合這個情境, 更何況三個小豬勝過一個諸葛亮(誤)&#8230; 就取三隻小豬這個名字, 網域名也是 3 PIG .CC .</p>
+
+<p><a class="flickr-image" title="3PIG.CC - 三隻小豬低調解縮址" rel="flickr-mgr[pig]" href="http://www.flickr.com/photos/69004123@N00/2492017845/"><img class="alignleft flickr-original" style="float: left;" longdesc="http://farm4.static.flickr.com/3091/2492017845_ed66732509_o.png" src="http://farm4.static.flickr.com/3091/2492017845_3d9643e934_t.jpg" alt="3PIG.CC - 三隻小豬低調解縮址" /></a>二月某C事件時, 我才開始較常用到解縮址, 但那時要自己猜該縮址是哪家的, 還要自己打網址. 就想弄個簡單程式來用. 上個月看到<a href="http://www.ptt.cc/man/EZsoft/index.html">ptt的EzSoft</a>板, 有人做<a href="http://pttcode.googlepages.com/">書籤解縮址</a> (<a href="http://www.ptt.cc/bbs/EZsoft/M.1208278375.A.11D.html">原討論文</a>), 討論很熱烈, 就興起把這個計畫做完的念頭. 上個禮拜六開工, 功能加一加,測試,到今天可以推薦給各位使用了.</p>
+
+<p>解縮址主要的問題在判斷, 雖然解縮址最簡單可以靠字串長度判斷, 但是像 <a href="http://tinyurl.com/">tinyurl</a> 的縮址是會增長的, 前陣子是五碼, 最近是六碼, 而 <a href="http://0rz.tw">0rz</a> 的縮址現在是五碼, 平平都是五碼要怎麼區分是 tinyurl 或是 0rz 呢?</p>
+
+<p><a class="flickr-image" title="解5碼 - 3PIG.CC - 三隻小豬低調解縮址" rel="flickr-mgr[pig]" href="http://www.flickr.com/photos/69004123@N00/2492017941/"><img class="alignright flickr-original" style="float: right;" longdesc="http://farm4.static.flickr.com/3170/2492017941_4f366bfc29_o.png" src="http://farm4.static.flickr.com/3170/2492017941_7faca1e3b8_t.jpg" alt="解5碼 - 3PIG.CC - 三隻小豬低調解縮址" /></a>我現在的解法是告訴使用者可能性高低, 再讓使用者自己去判斷. 例如上個例子, 五碼可能是去年之前的 tinyurl 縮址, 或是這一兩年的 0rz 縮址, 我會告訴使用者 0rz 的可能較高.</p>
+
+<p>考量網頁速度與各網址使用頻繁度, 現在支援 <a href="http://0rz.tw">0rz</a> , <a href="http://tinyurl.com">TinyUrl</a> , <a href="http://ppt.cc/">ppt.tw</a>, <a href="http://kuso.cc/">kuso.tw</a> , <a href="http://myurl.com.tw/">MyURL</a> , 其他非縮址網站支援 <a href="http://www.badongo.com/">badongo</a> (檔案,影片,圖片) , <a href="http://www.nicovideo.jp/">NicoNico Video</a> , <a href="http://tw.youtube.com/">YouTube</a> , 如果有漏掉使用率高的網站請告知 <img src='http://pctao.org/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /></p>
+
+<p>使用方面, 在 Open PCMan , firefox , IE 可以圈選文字後呼叫三隻小豬解縮碼, 這些應該就夠方便了吧.</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2008/05/15/231">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/04/30/230">[漁人節?] 幫別人改 twbbs.org 網址- twbbs.org 管理介面的安全問題 Part 2</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-04-30T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/04/30/230#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/04/30/230">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>聲明:我並沒有刻意研究hack/crack相關技術, 這個洞實在太明顯, 我只是不小心看到而已…</strong></p>
+
+<p>twbbs.org 的管理者回信說<strong>已把該 bug 修正</strong>了, 那我就可以繼續<a href="http://pctao.org/2008/04/29/228/">上篇未寫完的部份</a>了.</p>
+
+<p>這個 bug 在&#8230; 修正網址設定時, 依靠的是</p>
+
+<p><code>&lt;input type="hidden" value="..." name="bbs_host"/&gt;</code></p>
+
+<p>只要將 value 的值改成其他站台, 就可以幫其他人修正了, 離譜的是後台收到資料, 並沒有核對該網址是否有權限修改, so&#8230;</p>
+
+<h3>改 value=&ldquo;godstick&rdquo;</h3>
+
+<p><a class="flickr-image" title="改 value=godstick" rel="flickr-mgr" href="http://www.flickr.com/photos/69004123@N00/2451273871/"><img class="flickr-medium" longdesc="http://farm3.static.flickr.com/2372/2451273871_d4feff7233_s.jpg" src="http://farm3.static.flickr.com/2372/2451273871_d4feff7233_m.jpg" alt="Screenshot-設定‧修改 網域 | TWBBS.org 自由網域 - Flock-1" /></a></p>
+
+<p>詳細的就請自行看圖吧</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2008/04/30/230">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/04/29/228">[漁人節?] 幫別人改 twbbs.org 網址- twbbs.org 管理介面的安全問題</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-04-29T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/04/29/228#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/04/29/228">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>應該只有愚人節才會看到bbs站互調, 但是今天 wretch.twbbs.org (應該是<a href="telnet://wretch.twbbs.org">無名bbs</a>用的網址) 變成 ptt 的 ip 了<br/>
+<a href="http://www.flickr.com/photos/taopaic/2451316007/" title="ptt or 無名? by TaopaiC, on Flickr"><img src="http://farm3.static.flickr.com/2079/2451316007_cdc3b8d0ca_m.jpg" alt="ptt or 無名?" width="240" height="189" /></a></p>
+
+<p><strong>我並沒有刻意研究hack/crack相關技術, 可是這個洞實在太明顯了, 誰都看的到吧&#8230;</strong></p>
+
+<p>兩個小時前已經寄信給 <a href="http://twbbs.org">twbbs.org</a> 的管理者希望他們能修正, 我原本打算等到漏洞補起來再來寫blog, 但現在<a href="http://www.ptt.cc/bbs/Gossiping/M.1209475071.A.41E.html">看到 wretch.twbbs.org 的 ip 被改掉</a> (當然不是我動的, 其他網路高手搶先一步..), 應該可以寫了吧&#8230;</p>
+
+<p>至於方法, 當然只能等漏洞修正以後再貼了&#8230; *update: 官方已修正, 所以方法請看<a href="http://pctao.org/2008/04/30/230/">這篇part 2</a><br/>
+影響層面, 轉址問題還小, 大家還記得 <a href="http://group.nctu.edu.tw/">Group.nctu.edu.tw 的轉信服務</a>的話, 如果有站台偽裝成別站的話, 就能收到該站的轉信&#8230; 其中或許包含隱版. 例如廣大的 ptt2 的個人看板..</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2008/04/29/228">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2008/04/29/229">[注意] twbbs.org 新系統需要使用者每六個月續用一次</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-04-29T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="/2008/04/29/229#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org/2008/04/29/229">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>上個月收到 twbbs.org 更新系統的會員信, 大意是說換新系統了, 換新系統很好啊, 我沒要更動設定, 就沒去注意以及註冊&#8230;</p>
+
+<p>今天在ptt2的i2某版看到<strong>需要六個月續用一次, 不然該轉址就會被收回</strong>.</p>
+
+<p><strong>翻桌啊!!</strong></p>
+
+<p>這麼重要的事怎麼沒有發會員信啊!! 哪天網址被網路蟑螂註冊走怎麼辦&#8230;<br/>
+至於哪裡有寫? 我找了一下..</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/2008/04/29/229">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/4/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/2/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/06/12/358">HTTP Redirect 和 URL Fragments</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/06/345">jQuery XSS With $(location.hash)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/08/329">安裝 Redmine 1.1.1 遇到 Version_requirements 的暫時解法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/305">2010年底近況更新</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/310">對你家美術好一點 @ Ruby Tuesday #15 的經驗分享</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - TaopaiC -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'taopaicsblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

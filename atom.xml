@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[TaopaiC 的異想世界]]></title>
+  <link href="http://blog.pctao.org/atom.xml" rel="self"/>
+  <link href="http://blog.pctao.org/"/>
+  <updated>2014-03-22T02:39:11+08:00</updated>
+  <id>http://blog.pctao.org/</id>
+  <author>
+    <name><![CDATA[TaopaiC]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[HTTP Redirect 和 URL Fragments]]></title>
+    <link href="http://blog.pctao.org/2011/06/12/358"/>
+    <updated>2011-06-12T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2011/06/12/http-redirect-%e5%92%8c-url-fragments</id>
+    <content type="html"><![CDATA[<p>最近在改 javascript 程式碼, 才注意到各家瀏覽器對 HTTP Redirect + URL Fragments 的行為不一樣.</p>
+
+<p>規格書沒有規定瀏覽器要把 hash 的部份傳回伺服器 , 所以我們無法在 server 端接收到 <code>http://foo/#photo/bar</code> , 就直接在 Location 裡轉成 <code>http://foo/photo/#bar</code> , 因為伺服器端可能只收到 <code>http://foo/</code> . 這是題外話, 今天的重點不是這個.</p>
+
+<p>今天討論的狀況比較簡單, 當使用者到 <code>http://foo/#photo/id</code> , 希望重導到某網頁, 所以伺服器端回應 HTTP 302 FOUND , 且 Location 欄位裡填上 <code>http://foo/bar/</code> 或是 <code>http://foo/bar/#picture</code> 時, 各家瀏覽器的行為不一樣.<!--more--></p>
+
+<p>查到<a href="http://blogs.msdn.com/b/ieinternals/archive/2011/05/17/url-fragments-and-redirects-anchor-hash-missing.aspx">這篇</a> (<a href="https://www.fiddler2.com/test/redir/fragment/">測試頁在此</a>)把幾種瀏覽器都測過了, 節錄結果如下:</p>
+
+<blockquote><p>當 <code>http://foo/#Origin</code> &ndash;> <code>http://foo/bar/</code> 時</p>
+
+<ul>
+<li>Firefox / Chrome / Opera / Firefox for Android 會導到 <code>http://foo/bar/#Origin</code></li>
+<li>IE / Safari / Mobile Safari / Android 會導到 <code>http://foo/bar/</code></li>
+</ul>
+
+
+<p>當 <code>http://foo/#Origin</code> &ndash;> <code>http://foo/bar/#New</code> 時</p>
+
+<ul>
+<li>Firefox / Chrome / Opera 11.11+ / IE / Safari / Mobile Safari / Android / Firefox for Android 會導到 <code>http://foo/bar/#New</code></li>
+<li>Opera 11.01- 會導到 <code>http://foo/bar/#Origin</code></li>
+</ul>
+
+
+<p>註: 當 https &lt; &ndash;> http , 或是 #! (hash bang) , 情況都同上.</p></blockquote>
+
+<p>相關資料</p>
+
+<ul>
+<li><a href="http://blogs.msdn.com/b/ieinternals/archive/2011/05/17/url-fragments-and-redirects-anchor-hash-missing.aspx">URL Fragments and Redirects &#8211; EricLaw&#8217;s IEInternals</a></li>
+<li><a href="http://httpstat.us">httpstat.us</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[jQuery XSS With $(location.hash)]]></title>
+    <link href="http://blog.pctao.org/2011/06/06/345"/>
+    <updated>2011-06-06T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2011/06/06/jquery-xss-with-location-hash</id>
+    <content type="html"><![CDATA[<p>從 twitter 上看到 <a href="http://ma.la/jquery_xss/">new XSS pattern with jQuery</a> ,</p>
+
+<pre class="brush: jscript; title: ; notranslate" title="">http://ma.la/jquery_xss/#&lt;img src=/ onerror=alert(1)&gt;
+</pre>
+
+
+<p>原因是 jQuery 對以下三種狀況的處理:</p>
+
+<ol>
+<li><code>$("#id")</code> 是個 css selector</li>
+<li><code>$("&lt;img /&gt;")</code> 是 createElement</li>
+<li><code>$("#&lt;img /&gt;")</code> 也是 createElement</li>
+</ol>
+
+
+<p>所以如果直接使用 <code>$(location.hash)</code> , 而 <code>location.hash</code> 是 <code>"#&lt;img  onerror=.....&gt;"</code> 的話, 就出意外啦.</p>
+
+<p><code>$(location.hash)</code> 哪裡會用呢? 像是用 ajax 做多頁啦, tab 啦&#8230; 像是 <a href="http://jquerymobile.com/">jQuery mobile</a> 就中獎了 XDXD</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[安裝 Redmine 1.1.1 遇到 Version_requirements 的暫時解法]]></title>
+    <link href="http://blog.pctao.org/2011/03/08/329"/>
+    <updated>2011-03-08T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2011/03/08/%e5%ae%89%e8%a3%9d-redmine-1-1-1-%e9%81%87%e5%88%b0-version_requirements-%e7%9a%84%e6%9a%ab%e6%99%82%e8%a7%a3%e6%b3%95</id>
+    <content type="html"><![CDATA[<p>裝 redmine 1.1.1 會遇到</p>
+
+<pre class="brush: plain; title: ; notranslate" title="">undefined local variable or method `version_requirements' for #&lt;Rails::GemDependency:0x9031db8&gt;
+</pre>
+
+
+<p>幾種解法:</p>
+
+<ol>
+<li><p>將 gem 換回 1.4.2 <pre class="brush: bash; title: ; notranslate" title="">$ gem install rubygems-update -v=&lsquo;1.4.2&rsquo;
+$ gem uninstall rubygems-update -v=&lsquo;1.5.0&rsquo;
+$ update_rubygems
+</pre></p></li>
+<li><p>使用更新的 redmine , 例如 trunk 版本</p></li>
+<li>在 config/environment.rb 中, engines 之後, Initializer 之前加入 <pre class="brush: ruby; title: ; notranslate" title="">begin
+require File.join(File.dirname(<strong>FILE</strong>), &lsquo;../vendor/plugins/engines/boot&rsquo;)
+rescue LoadError
+
+<h1>Not available</h1>
+
+<p>end</p></li>
+</ol>
+
+
+<h1>加入這段</h1>
+
+<p>if Gem::VERSION &gt;= &ldquo;1.3.6&rdquo;</p>
+
+<pre><code>module Rails
+    class GemDependency
+        def requirement
+            r = super
+            (r == Gem::Requirement.default) ? nil : r
+        end
+    end
+end
+</code></pre>
+
+<p>end</p>
+
+<p>Rails::Initializer.run do |config|
+</pre></p>
+
+<ol>
+<li>在 rails 2.3 引入 Bundler , <a href="http://gembundler.com/rails23.html">教學</a></li>
+</ol>
+
+
+<p>我個人兩個站各是用 2,3 的方法.</p>
+
+<p>參考資料:</p>
+
+<ul>
+<li><a href="http://www.redmine.org/issues/7516#note-3">#7516 Redmine does not work with RubyGems 1.5.0</a></li>
+<li><a href="http://excid3.com/blog/2011/02/undefined-local-variable-or-method-version_requirements-for-nameerror/">undefined local variable or method `version_requirements’ for # (NameError) | Chris Oliver</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[2010年底近況更新]]></title>
+    <link href="http://blog.pctao.org/2010/12/31/305"/>
+    <updated>2010-12-31T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2010/12/31/2010%e5%b9%b4%e5%ba%95%e8%bf%91%e6%b3%81%e6%9b%b4%e6%96%b0</id>
+    <content type="html"><![CDATA[<p>離上一篇部落格文章快滿兩年了. 快速交代這兩年的事情吧</p>
+
+<ul>
+<li>新訓遇颱風, 下部隊在外島聯勤單位當雜魚兵, 退伍遇88風災, 在外島多等一兩天才能返台&#8230;</li>
+<li>退伍後, 意外進入線上出版業.</li>
+<li>現在在通訊產業做網站.</li>
+</ul>
+
+
+<p>這兩年以 Ruby on Rails 當主力, 以前熟悉的 C, Java 都快忘光光了&#8230;<br/>
+最近積極學習 Javascript , HTML , CSS 等前端技術.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[對你家美術好一點 @ Ruby Tuesday #15 的經驗分享]]></title>
+    <link href="http://blog.pctao.org/2010/12/31/310"/>
+    <updated>2010-12-31T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2010/12/31/%e5%b0%8d%e4%bd%a0%e5%ae%b6%e7%be%8e%e8%a1%93%e5%a5%bd%e4%b8%80%e9%bb%9e-ruby-tuesday-15-%e7%9a%84%e7%b6%93%e9%a9%97%e5%88%86%e4%ba%ab</id>
+    <content type="html"><![CDATA[<p>這是我在 <a href="http://ruby.tw/post/2413506617/ruby-tuesday-15-2010">Ruby Tuesday #15</a> 的經驗分享.</p>
+
+<div style="width:425px" id="__ss_6394165">
+  <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/TaopaiC/be-nice-to-your-designers" title="Be nice to your designers">Be nice to your designers</a></strong> <div style="padding:5px 0 12px">
+    View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/TaopaiC">Pai-Cheng Tao</a>.
+  </div>
+</div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[2008聖誕節與2009新年留守]]></title>
+    <link href="http://blog.pctao.org/2009/01/03/294"/>
+    <updated>2009-01-03T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2009/01/03/2007%e8%81%96%e8%aa%95%e7%af%80%e8%88%872008%e6%96%b0%e5%b9%b4%e7%95%99%e5%ae%88</id>
+    <content type="html"><![CDATA[<p>這兩個節日在單位裡沒啥感覺,頂多就元旦放個假而已.</p>
+
+<h3>平安夜</h3>
+
+<p>當天聽說<a href="http://www.cdnews.com.tw/cdnews_site/docDetail.jsp?coluid=108&amp;docid=100622304">南竿有跨年晚會</a>,但是北竿沒有活動 <img src='http://pctao.org/wp-includes/images/smilies/icon_sad.gif' alt=':(' class='wp-smiley' /></p>
+
+<p>晚上,連長開完會回來說:<strong>塘岐</strong>那邊的教會要辦傳福音的活動,有信基督教或是有興趣的可以由排長帶去.吃完晚餐,連同排長十個人就走到迎賓館,長官看到我們一行人,說:只要七八個人,你們單位就來十個人&#8230; 之後和營輔導長以及牧師練唱詩歌,參與人數大概十六左右吧,其中有信教的大概只有六七個吧. (我也沒信教) XD</p>
+
+<p>22點時,坐計程車到<strong>板里</strong>某營區沿路唱到村長家(?),再坐到<strong>橋仔</strong>走到<strong>莒光堡</strong>,<strong>塘岐</strong>,再走回我們單位. 沿路唱給民宅和據點的阿兵哥,最好玩的當然是站哨的士兵看到一群穿運動服的人出現,都會愣住&#8230; 等我們唱平安夜時,他才會心一笑.<br/>
+當晚累到連襪子都忘記掛了. 蠻特別的平安夜.</p>
+
+<h3>元旦</h3>
+
+<p>第一次留守,第一次做20人份的炒飯和湯麵.好險大家都隨便吃,安全渡過.今天則是我第一次的補假,直接跑網咖不出門,主要怕走在路上被軍糾抓啊&#8230;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[準備收第一把假]]></title>
+    <link href="http://blog.pctao.org/2008/12/08/291"/>
+    <updated>2008-12-08T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/12/08/%e6%ba%96%e5%82%99%e6%94%b6%e7%ac%ac%e4%b8%80%e6%8a%8a%e5%81%87</id>
+    <content type="html"><![CDATA[<p>今晚就要坐船回馬祖,沒坐過合富,只希望不要暈的太離譜.<br/>
+這次回來先受食勤訓,轉職當<strong>食勤兵</strong>. 如果你笑了,我不怪你,你不是第一個笑的&#8230;<!--more--></p>
+
+<p>煮飯不是我的專長,但到部後,其他新兵有合適專長的被分配任務,只剩下我資訊的沒路用,就進伙房了. 受訓同期的不全是食勤背景,有抽到<em>10頓半駕駛</em>(卡車)轉食勤,有<em>小選資訊專長</em>轉食勤,還有<em>一般A</em>抽到食勤.雖然我們有些人沒有相關背景,但受訓兩個禮拜下來,深深體驗到<strong>飯煮的好不好吃,最重要是用不用心</strong>.畢竟伙房要煮完飯才有休息時間,煮得久,就沒休息時間&#8230;</p>
+
+<p>放假的時候,除了和家人一起,回政大拜訪,就是在家試煮. 蔥油餅煎成燒餅,宮保雞丁煮成紅燒,京醬肉絲變成薑燒里肌條&#8230; 不過沒太大關係啦, 國軍都是吃黑胡椒豬/牛/羊肉片啦&#8230;</p>
+
+<p>據說我回來這段期間,單位被督導很嚴重,伙房裡的刀架和調味料架都重新上漆,全新感覺嘛?</p>
+
+<p>還不知道北竿有多冷,現在台北出太陽,晚上我要抱著一堆禦寒衣物去坐船吧?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[我在北竿天氣晴]]></title>
+    <link href="http://blog.pctao.org/2008/11/09/288"/>
+    <updated>2008-11-09T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/11/09/%e6%88%91%e5%9c%a8%e5%8c%97%e7%ab%bf%e5%a4%a9%e6%b0%a3%e6%99%b4</id>
+    <content type="html"><![CDATA[<p>從9月初的新訓, 現在到北竿也一個月了. 這個月中要回臺受訓再合併返台假&#8230;</p>
+
+<p>基本上<a href="http://pctao.org">敝網誌</a>將變成<strong>碎碎念無腦網誌</strong>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[Ubuntu] 掛載 Cue/bin 光碟映像檔]]></title>
+    <link href="http://blog.pctao.org/2008/09/01/282"/>
+    <updated>2008-09-01T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/09/01/ubuntu-%e6%8e%9b%e8%bc%89-cuebin-%e5%85%89%e7%a2%9f%e6%98%a0%e5%83%8f%e6%aa%94</id>
+    <content type="html"><![CDATA[<p><a href="http://cdemu.sourceforge.net/">cdemu</a> 可以在 linux 裡建立虛擬的光碟裝置, 再將映像檔掛上. 支援的映像檔包括 .B6T, .CCD, .CDI, .CUE, .ISO, .MDS, .NRG, .TOC , CIF, C2D, DAA .<!--more--></p>
+
+<h3>掛載 ISO 檔</h3>
+
+<p>如果只是 .iso 映像檔, linux 可以直接掛載<br/>
+<code>sudo mount -t iso9660 -o loop CDIMG.iso /tmp/example</code></p>
+
+<h3>掛載 cue/bin 檔方法一 &#8211; 轉成ISO檔</h3>
+
+<p>用 <a href="http://he.fi/bchunk/">bchunk</a> 將 cue/bin 轉成 iso 檔<br/>
+<code>sudo apt-get install bchunk</code><br/>
+<code>bchunk CDIMG.bin CDIMG.cue CDIMG</code></p>
+
+<h3>掛載 cue/bin 檔方法二 &#8211; 用 cdemu 掛載 cue/bin</h3>
+
+<p>在 /etc/apt/sources.list 或 /etc/apt/sources.list.d/cdemu.list 中加入<br/>
+<code>deb http://ppa.launchpad.net/cdemu/ubuntu hardy main&lt;br /&gt;
+deb-src http://ppa.launchpad.net/cdemu/ubuntu hardy main</code><br/>
+再更新並安裝<br/>
+<code>sudo apt-get update&lt;br /&gt;
+sudo apt-get install cdemu</code></p>
+
+<p>載入映像檔的方式<br/>
+<code>cdemu load 0 IMG.cue</code><br/>
+卸載時, 直接用 nautils 選 Eject 或是先卸載該光碟 (如從 nautils 卸載), 再從 cdemu 卸載映像檔<br/>
+<code>cdemu unload 0</code></p>
+
+<h4>備註</h4>
+
+<ol>
+<li>cdemu 預設是登入時啟動, 如果想改成開機啟動, 則去 /etc/default/cdemu-daemon 改設定.</li>
+<li>我使用時遇到 audio driver error 的錯誤, 我將 /etc/default/cdemu-daemon 的 AUDIO_DRIVER 改成 oss<br/>
+<code>AUDIO_DRIVER="oss"</code></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[Tip] 在 Wine 內自動安裝套件或函式庫 &#8211; Winetricks]]></title>
+    <link href="http://blog.pctao.org/2008/07/30/256"/>
+    <updated>2008-07-30T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/07/30/tip-%e5%9c%a8-wine-%e5%85%a7%e8%87%aa%e5%8b%95%e5%ae%89%e8%a3%9d%e5%a5%97%e4%bb%b6%e6%88%96%e5%87%bd%e5%bc%8f%e5%ba%ab-winetricks</id>
+    <content type="html"><![CDATA[<p>每次在 <a href="http://www.winehq.org/">wine</a> 裡安裝程式, 需要另外安裝 dll 時, 都要上 google 找或是從另外一台 windows 機器複製過來嗎? vb6 runtime, msxml3 這些東西又在哪下載呢?</p>
+
+<p>等等等, 救星來了! <a href="http://wiki.winehq.org/winetricks" target="_blank">winetricks</a> 這個小程式就可以自動安裝某些 dll 或函式庫.</p>
+
+<h3>安裝 winetricks</h3>
+
+<ol>
+<li><p>首先下載 winetricks</p>
+
+<blockquote><p>wget <a href="http://www.kegel.com/wine/winetricks">http://www.kegel.com/wine/winetricks</a></p></blockquote></li>
+<li><p>改成可執行</p>
+
+<blockquote><p>chmod +x winetricks</p></blockquote></li>
+<li><p>看客官希望把程式放哪, 例如 ~/bin</p>
+
+<blockquote><p>mv winetricks ~/bin/</p></blockquote></li>
+</ol>
+
+
+<h3>使用 winetricks</h3>
+
+<ul>
+<li><p>列出 winetricks 使用方法及支援的套件</p>
+
+<blockquote><p>winetricks &#8211;help</p></blockquote></li>
+<li><p>安裝套件</p>
+
+<blockquote><p>winetricks &lt; 套件名稱></p></blockquote>
+
+<p>例如安裝 VB6 runtime</p>
+
+<blockquote><p>winetricks vb6run</p></blockquote></li>
+<li><p>winetrick 有一個很*簡陋*的GUI (我寧可使用 cli 也不要用他的 gui )</p>
+
+<blockquote><p>winetricks</p></blockquote></li>
+</ul>
+
+
+<p>也可以指定安裝的 wine 目錄, 例如</p>
+
+<blockquote><p>env WINEPREFIX=~/.winetest winetricks mfc40</p></blockquote>
+
+<p>詳細說明請看 <a href="http://wiki.winehq.org/winetricks">winetricks 的說明頁</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[無名小站的圖片展開程式 書籤版本 (Bookmarklet)]]></title>
+    <link href="http://blog.pctao.org/2008/07/28/258"/>
+    <updated>2008-07-28T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/07/28/%e7%84%a1%e5%90%8d%e5%b0%8f%e7%ab%99%e7%9a%84%e5%9c%96%e7%89%87%e5%b1%95%e9%96%8b%e7%a8%8b%e5%bc%8f-%e6%9b%b8%e7%b1%a4%e7%89%88%e6%9c%ac-bookmarklet</id>
+    <content type="html"><![CDATA[<p>剛剛把 gslin 長輩的<a href="http://blog.gslin.org/archives/2007/09/15/1313/">無名小站的圖片展開程式</a>改寫成 bookmarklet , 所以也不再是 Firefox only , IE或Opera也能使用, 只要將下面這個連結加進書籤, 在看無名的相簿頁面時, 就可使用了.</p>
+
+<blockquote><p><a href="javascript:(function(){var">展開無名圖片</a></p></blockquote>
+
+<p>在 Firefox 3, IE7, Opera 9.5 上測試過, 都可使用.</p>
+
+<h3>更新紀錄</h3>
+
+<p>080728 將<a href="http://blog.gslin.org/archives/2007/09/15/1313/">gslin的gm script</a>改成bookmarklet,部份程式碼參考 <a href="http://www.learningjquery.com/2008/06/updated-jquery-bookmarklet">jQuery Bookmarklet</a>. 並保留照片註解.</p>
+
+<h3>使用示範</h3>
+
+<p>以下用 Firefox 3 作為示範, 其他遊覽器 IE, Opera 使用方法大同小異. 例子是彎彎的相簿.</p>
+
+<ol>
+<li>將 <strong>書籤</strong> 拉到<strong>書籤工具列</strong>, 或是加入<strong>我的最愛</strong>都行<a href="http://www.flickr.com/photos/69004123@N00/2708984684/" class="flickr-image"  title="Screenshot-無名小站的圖片展開程式 bookmarklet 版本 | TaopaiC的異想世界 - Mozilla Firefox (Build 2008071816)-1" rel="flickr-mgr[wretch]" ><img src="http://farm4.static.flickr.com/3027/2708984684_98d268f7b7.jpg" alt="Screenshot-無名小站的圖片展開程式 bookmarklet 版本 | TaopaiC的異想世界 - Mozilla Firefox (Build 2008071816)-1" class="flickr-original" longdesc="http://farm4.static.flickr.com/3027/2708984684_7efc582fd7_o.png" /></a></li>
+<li>在無名<strong>相簿內頁</strong>, 點剛剛紀錄的書籤. 並不支援相簿列表和相片頁<a href="http://www.flickr.com/photos/69004123@N00/2708984694/" class="flickr-image"  title="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)" rel="flickr-mgr[wretch]" ><img src="http://farm4.static.flickr.com/3221/2708984694_2a6e1275ba.jpg" alt="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)" class="flickr-original" longdesc="http://farm4.static.flickr.com/3221/2708984694_efd63699b2_o.png" /></a></li>
+<li>照片縮圖都放大了<a href="http://www.flickr.com/photos/69004123@N00/2708984706/" class="flickr-image"  title="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)-1" rel="flickr-mgr[wretch]" ><img src="http://farm4.static.flickr.com/3117/2708984706_65c92924ce.jpg" alt="Screenshot-無名小站 網路相簿 - cwwany的相簿 - Mozilla Firefox (Build 2008071816)-1" class="flickr-original" longdesc="http://farm4.static.flickr.com/3117/2708984706_dfe9755e0b_o.png" /></a></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[FX] 改善遊覽 &#8220;台北市大眾運輸公車路線查詢系統" 的問題]]></title>
+    <link href="http://blog.pctao.org/2008/06/28/246"/>
+    <updated>2008-06-28T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/06/28/fx-%e6%94%b9%e5%96%84%e9%81%8a%e8%a6%bd-%e5%8f%b0%e5%8c%97%e5%b8%82%e5%a4%a7%e7%9c%be%e9%81%8b%e8%bc%b8%e5%85%ac%e8%bb%8a%e8%b7%af%e7%b7%9a%e6%9f%a5%e8%a9%a2%e7%b3%bb%e7%b5%b1-%e7%9a%84%e5%95%8f</id>
+    <content type="html"><![CDATA[<p>早上查台北市公車路線時, 上 <a href="http://www.taipeibus.taipei.gov.tw/">台北市大眾運輸公車路線查詢系統</a> 查詢, 受一堆鳥氣.. 有用過該系統的都知道, 在路線和站牌的頁面, 無法以 &#8220;在新視窗開啟&#8221; 的方式開啟連結. 所以只能在該頁面上一頁下一頁的找. 乾脆花一點時間寫東西改善這個問題.</p>
+
+<p>這個 script 讓路線連結可以<strong>在新分頁開啟</strong>, 以及<strong>增加預覽功能</strong>.<!--more--></p>
+
+<h3>安裝</h3>
+
+<p>這是個 Firefox 的延伸套件: Greasemonkey 的 script , 所以需要 <a href="http://www.moztw.org/" target="_blank">Firefox</a> 以及安裝 <a href="https://addons.mozilla.org/zh-TW/firefox/addon/748" target="_blank">Greasemonkey</a> , 再到<a href="http://userscripts.org/scripts/show/29274" target="_blank">這網頁</a>安裝 script .</p>
+
+<h3>功能</h3>
+
+<ul>
+<li>將站牌與路線的連結從 javascript: 改成 直接連結 , 就可以在新分頁/視窗開啟, 找路線比較方便.<br/>
+<code>javascript:showBus('236')</code><br/>
+改成<br/>
+<code>http://www.taipeibus.taipei.gov.tw/emap/program/html/bus_cnt.asp?s=236</code></li>
+<li>增加 <a href="http://snap.com/" target="_blank">Snap.Shots</a> 的預覽功能.
+
+<ul>
+<li>公車站牌預覽<br/>
+<a class="flickr-image" title="Screenshot-公車停靠站位" rel="flickr-mgr[bus]" href="http://www.flickr.com/photos/69004123@N00/2617423395/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3241/2617423395_88086975a7_o.png" src="http://farm4.static.flickr.com/3241/2617423395_6b0f23b864_m.jpg" alt="Screenshot-公車停靠站位" /></a></li>
+<li>公車路線預覽<br/>
+<a class="flickr-image" title="Screenshot-公車路線" rel="flickr-mgr[bus]" href="http://www.flickr.com/photos/69004123@N00/2618246414/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3205/2618246414_3d3f992ec0_o.png" src="http://farm4.static.flickr.com/3205/2618246414_3e500b02fb_m.jpg" alt="Screenshot-公車路線" /></a></li>
+<li>公車路線PDF預覽<br/>
+<a class="flickr-image" title="Screenshot-公車路線 - pdf 預覽" rel="flickr-mgr[bus]" href="http://www.flickr.com/photos/69004123@N00/2617423157/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3004/2617423157_8a686c45ef_o.png" src="http://farm4.static.flickr.com/3004/2617423157_e59d9bf857_m.jpg" alt="Screenshot-公車路線 - pdf 預覽" /></a></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>測試</h3>
+
+<ul>
+<li><a href="http://www.taipeibus.taipei.gov.tw/emap/program/html/bus_cnt.asp?s=236" target="_blank">236公車</a></li>
+<li><a href="http://www.taipeibus.taipei.gov.tw/emap/program/html/bus_stationcnt.asp?s=1530" target="_blank">政大公車站</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[問] 有沒有無名小站換favicon的八卦?]]></title>
+    <link href="http://blog.pctao.org/2008/06/22/245"/>
+    <updated>2008-06-22T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/06/22/%e5%95%8f-%e6%9c%89%e6%b2%92%e6%9c%89%e7%84%a1%e5%90%8d%e5%b0%8f%e7%ab%99%e6%8f%9bfavicon%e7%9a%84%e5%85%ab%e5%8d%a6</id>
+    <content type="html"><![CDATA[<p><ins datetime="2008-06-22T20:05:42+00:00">update: 又換回綠色的&#8221;無&#8221;了&#8230;</ins></p>
+
+<p><a class="flickr-image" title="yahoo and wretch icon" rel="flickr-mgr" href="http://www.flickr.com/photos/69004123@N00/2597435821/"><img class="alignright flickr-original" style="float: right;" longdesc="http://farm4.static.flickr.com/3239/2597435821_be33f468bd_o.jpg" src="http://farm4.static.flickr.com/3239/2597435821_86e992a87b_m.jpg" alt="yahoo and wretch icon" /></a>剛剛發現無名的綠色圖案換成紅色的Y!圖案.<br/>
+舊圖案 <a href="http://www.wretch.cc/favicon.ico">http://www.wretch.cc/favicon.ico</a></p>
+
+<p>新圖案 <a href="http://l.yimg.com/wretch.yimg.com/favicon.ico">http://l.yimg.com/wretch.yimg.com/favicon.ico</a></p>
+
+<p><a class="flickr-image" title="Screenshot-原始碼:http:--www.wretch.cc- - Mozilla Firefox" rel="flickr-mgr" href="http://www.flickr.com/photos/69004123@N00/2597543831/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3161/2597543831_3bb04958e7_o.png" src="http://farm4.static.flickr.com/3161/2597543831_7db3927c4d.jpg" alt="Screenshot-原始碼:http:--www.wretch.cc- - Mozilla Firefox" /></a></p>
+
+<p>國外許多<strong>被收購且獨立運行</strong>的網站, 鮮有更改favicon成為母公司的圖案, 例如: <a href="http://del.icio.us/" target="_blank">del.icio.us</a> 和 <a href="http://flickr.com/" target="_blank">flickr</a> (被yahoo併) , <a href="http://www.youtube.com/" target="_blank">youtube</a>, <a href="http://jaiku.com/" target="_blank">jaiku</a> 和 <a href="http://www.panoramio.com/" target="_blank">panoramio</a> (被google併). 這次無名換圖案的原因是無名<span style="text-decoration: line-through;">信任感</span>名氣沒Y!大? 還是無名任務已達成可功能身退? 或者只是無原因換icon而已? <a href="http://blog.xdite.net/?page_id=109" target="_blank">誰知道無名在想什麼</a>啊&#8230;<!--more--></p>
+
+<p>複習一下最近無名大事件</p>
+
+<ul>
+<li>2006/12 雅虎奇摩(傳收購金額7億台幣)收購無名小站 [<a href="http://www.zdnet.com.tw/news/software/0,2000085678,20112925,00.htm">ZDNet Taiwan</a>]</li>
+<li>2008/5/31 無名小站將bbs捐贈給交大 [<a href="http://www.ithome.com.tw/itadm/article.php?c=48884">iThome</a>]</li>
+<li>2008/6/21 (?) 無名小站換favicon</li>
+</ul>
+
+
+<p>另外, <a href="http://www.ithome.com.tw/itadm/article.php?c=48884">此篇</a>中提到</p>
+
+<blockquote><p>另外無名小站事業部總監李卓勳今天也透露，今年底前會投入資源在企業部落格的經營上。無名希望幫助企業在無名經營部落格，這是由於雖然企業官方網站有較多功能，但是要和人互動就較困難。不過進一步的做法則要等到年底才會透露。</p></blockquote>
+
+<p><span style="text-decoration: line-through;">這是 興奇大聯盟部落格 從 <a href="http://partner-monday.blogspot.com/">blogspot</a> 搬到 <a rel="nofollow" href="http://www.wretch.cc/blog/PPMaDe">無名</a> 的原因嗎?</span><br/>
+update: <a href="http://tech.chinatimes.com/2007Cti/2007Cti-News/Inc/2007cti-news-Tech-inc/Tech-Content/0,4703,12050903+122008061800547,00.html">Yahoo!奇摩娶興奇 身價鍍金|中時電子報</a>, 雅虎奇摩將以18億台幣收購興奇科技, 這應該才是原因.<br/>
+註: <a href="http://buy.yahoo.com.tw/">Yahoo!奇摩購物中心</a>是由<a href="http://buy.yahoo.com.tw/help/helper.asp?p=company_about">興奇科技</a>經營的, 興奇大聯盟部落格是興奇科技的<a href="http://www.monday.com.tw/">興奇購物網</a>的廣告部落格.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[FX] Google Toolbar 開始支援 Firefox 3]]></title>
+    <link href="http://blog.pctao.org/2008/06/16/244"/>
+    <updated>2008-06-16T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/06/16/fx-google-toolbar-for-firefox-3</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/taopaic/321503168/" title="Screenshot-Google by TaopaiC, on Flickr"><img src="http://farm1.static.flickr.com/123/321503168_aee61c7dd4_o.png" alt="Screenshot-Google" width="273" height="83" /></a><br/>
+從 <a href="http://vsy.jaiku.com/presence/37655290" target="_blank">jaiku 上聽到</a>的, 久未更新的 <a href="http://toolbar.google.com/" target="_blank">Google Toolbar for Firefox</a> 終於更新並且支援 firefox 3 了.</p>
+
+<p>沒有看到新功能. 看來只是更新相容性. ( 版本號: 3.1.20080605L 及 3.1.30080605W )</p>
+
+<p><ins datetime="2008-06-17T04:07:16+00:00">update: 從<a href="http://groups.google.com/group/FFToolbar-suggestions/msg/448c3e052a8c82b6">討論區</a>看到, 還修正 上傳至 Google Docs 的bug</ins></p>
+
+<p>過了那麼久沒有GT的時間, 需要的功能也拿其他 addon 補齊了, 我找不到裝 GT 的動力了..</p>
+
+<p>不見官方部落格貼任何更新資訊, 難道要和 6/18 1:00 (台灣時間) 開始的 <a href="http://moztw.org/events/record2008/">Firefox Download Day</a> 活動一起寫一格?</p>
+
+<p><a href="http://moztw.org/firefox/" target="_blank"><img src="http://moztw.org/firefox/buttons/type06-3.png" border="0" alt="Firefox 3 火熱上映" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[FX] 離3.0正式版還差一步! 專為mac出 Firefox 3.0RC3]]></title>
+    <link href="http://blog.pctao.org/2008/06/11/243"/>
+    <updated>2008-06-11T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/06/11/ff-%e9%9b%a230%e6%ad%a3%e5%bc%8f%e7%89%88%e9%82%84%e5%b7%ae%e4%b8%80%e6%ad%a5-%e5%b0%88%e7%82%bamac%e5%87%ba-firefox-30rc3</id>
+    <content type="html"><![CDATA[<p>早上看到 ubuntu 的 hardy-proposed firefox <a href="https://bugs.launchpad.net/bugs/237690" target="_blank">更新</a>把 RC2 字樣拿掉, 我嚇一跳, 查了一下資料, 這個消息不太對.</p>
+
+<p>根據 <a href="http://wiki.mozilla.org/Firefox3/StatusMeetings/2008-06-10" target="_blank">Firefox 團隊的開會紀錄</a>, 6/11 還要為 Mac 出 RC3 版本, 修正一個<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=436575" target="_blank">關不掉的bug</a>. 而 Windows 和 Linux 則不會發行 RC3 版本. 這麼說的話, RC2 很接近正式版囉?</p>
+
+<p>下載: <a href="http://download.mozilla.org/?product=firefox-3.0rc2&amp;os=osx&amp;lang=zh-TW">中文正體Mac版本Firefox</a> (<a href="http://www.mozilla.com/en-US/firefox/all-rc.html" target="_blank">其他平台與語言</a>)</p>
+
+<p><ins datetime="2008-06-16T08:10:43+00:00">* UPDATE: Firefox 3 正式版將於 6/17 日發行 [<a href="http://developer.mozilla.org/devnews/index.php/2008/06/11/coming-tuesday-june-17th-firefox-3/" target="_blank">研發團隊blog</a>].</ins></p>
+
+<p>大家要記得參加 &#8220;超炫瀏覽器，手滑創紀錄&#8221;, 一起創紀錄!<br/>
+<a href="http://moztw.org/events/record2008/"><img src="http://forum.moztw.org/files/record2008_3_349.png" border="0" alt="火狐鬥陣拼紀錄，有你一份！" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[你的訊息可以傳多遠? &#8211; Twitter/jaiku/plurk比較]]></title>
+    <link href="http://blog.pctao.org/2008/06/11/242"/>
+    <updated>2008-06-11T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/06/11/%e4%bd%a0%e7%9a%84%e8%a8%8a%e6%81%af%e5%8f%af%e4%bb%a5%e5%82%b3%e5%a4%9a%e9%81%a0-twitterjaikuplurk%e6%af%94%e8%bc%83</id>
+    <content type="html"><![CDATA[<p><a class="flickr-image" title="jaiku 的訊息漣漪" rel="flickr-mgr" href="http://www.flickr.com/photos/69004123@N00/2568346524/"><img class="flickr-original alignleft" style="float: left;" longdesc="http://farm4.static.flickr.com/3160/2568346524_597167297a_o.png" src="http://farm4.static.flickr.com/3160/2568346524_a4f8bca08d_t.jpg" alt="jaiku 的訊息漣漪" /></a>前陣子 <a href="http://twitter.com/" target="_blank">twitter</a> 頻頻出現不穩定或停機, 許多人逃到 <a href="http://jaiku.com/" target="_blank">jaiku</a> 或是 <a href="http://plurk.com/" target="_blank">plurk</a> . 我也從 twitter 轉到 jaiku 了.<br/>
+使用過三者的服務之後, 我最喜歡 jaiku 的聊天方式, 發的訊息可以擴散較遠, 而且也可以加入別人的討論串, 使用一段時間之後, 我覺得 &#8220;水的漣漪&#8221; 最能代表 Jaiku 的訊息傳遞方式.</p>
+
+<h3>個案討論</h3>
+
+<p>先以範例講訊息圈的差異.</p>
+
+<h4>twitter 的情況</h4>
+
+<p>Amuro 發表:<em>今天看到一個外國正妹</em><br/>
+Amuro 的友人布萊特: <em>@Amuro 多正? 圖呢?</em><br/>
+Amuro 的友人 拉拉 看到,回應: <em>@Amuro 是我嗎? ^///^</em><br/>
+拉拉 的好友 Char <span style="color: #ff0000;"><strong>無意間</strong></span>看到看到 拉拉 的回應訊息, 則回應說: <em>@Amuro 連搬汽車的力都沒有,還敢說嘴..</em> (Amuro 看不到)<br/>
+Char: <em>@Amuro 死小鬼!!</em> (Amuro 還是看不到)<br/>
+Char: <em>@Amuro 死小鬼!!</em> (Amuro 還是看不到)<br/>
+Char: <em>@Amuro 死小鬼!!</em> (Amuro 還是看不到)<br/>
+Char: <em>@Amuro 死小鬼!!</em> (Amuro 還是看不到)<br/>
+Amuro: <em>@拉拉 明天來吃天鵝吧~</em><br/>
+隔天 Amuro 才在 replies 頁面看到 Char 的回應.</p>
+
+<h4>Plurk 的情況</h4>
+
+<p>Amuro 發表:<em>今天看到一個外國正妹</em><br/>
+Amuro 的友人布萊特: <em>多正? 圖呢?</em><br/>
+Amuro 的友人 拉拉 看到,在討論串回應: <em>是我嗎? ^///^</em><br/>
+拉拉 的好友 Char <strong><span style="color: #ff0000;">無意間</span></strong>看到看到 拉拉 的回應訊息, 則回應說: <em>@Amuro 連搬汽車的力都沒有,還敢說嘴..</em><br/>
+吉翁士兵A回應: <em>紅色有角三倍速!</em> ( 被Char叫來的 )<br/>
+吉翁士兵B回應: <em>上校最高!</em> ( 被Char叫來的 )<br/>
+吉翁士兵C回應: <em>紅色有角三倍速!</em> ( 被Char叫來的 )</p>
+
+<h4>Jaiku 的情況</h4>
+
+<p>Amuro 發表: <em>今天看到一個外國正妹</em><br/>
+Amuro 的友人布萊特: <em>多正? 圖呢?</em><br/>
+Amuro 的友人 拉拉 看到,在討論串回應: <em>是我嗎? ^///^</em><br/>
+拉拉 的好友 Char 看到 拉拉 的回應訊息, 則回應說: <em>連搬汽車的力都沒有,還敢說嘴..</em><br/>
+吉翁士兵A插嘴: <em>紅色有角三倍速!</em><br/>
+士兵A的上司雞西利雅: <em>戴面具的你還記得我嗎?~</em><!--more--></p>
+
+<h3>Twitter</h3>
+
+<p><a class="flickr-image" title="twitter web" rel="flickr-mgr[social]" href="http://www.flickr.com/photos/69004123@N00/2567598051/"><img class="alignright flickr-original" style="float: right;" longdesc="http://farm4.static.flickr.com/3042/2567598051_631198f92e_o.png" src="http://farm4.static.flickr.com/3042/2567598051_116b3c9628_m.jpg" alt="twitter web" /></a>Twitter 的訊息只會被你的訂閱者 (好友) 看到, 你也只看到你的好友發的訊息. 陌生人想加入討論? <del datetime="2008-06-11T17:06:59+00:00">只能用私密.</del> 需要到 replies 頁面才會看到. 並且<a href="http://help.twitter.com/index.php?pg=kb.page&amp;id=70">受限於一些特性</a>, 不是整個討論串的人會收到訊息, 但這也是避免訊息過多的手段.<br/>
+優點:</p>
+
+<ul>
+<li>訊息只有好友訊息.</li>
+<li>其他人無法亂入.</li>
+</ul>
+
+
+<p>缺點:</p>
+
+<ul>
+<li>只有互為好友的能討論, 其他人無法亂入.</li>
+<li>訊息往往不知道上下文. 你不知道別人回你的&#8221;好&#8221;, 是對哪個問題說好.</li>
+</ul>
+
+
+<p>交友模式:</p>
+
+<ul>
+<li>加入已知好友.</li>
+<li>訂閱訂閱你的人, 雙方成為朋友.</li>
+<li>訂閱朋友的朋友或網路名人, 對方也訂閱你, 那就能交談了.</li>
+<li>訂閱網路名人, 如果對方不<ins datetime="2008-06-11T17:06:59+00:00">主動回應</ins>你, 就只能單戀了.</li>
+</ul>
+
+
+<p><span style="color: #ff0000;">大問題! <strong>加的好友越多, 收到的訊息和回應訊息也越多, 到一定程度之後, 不是漏掉訊息就是退訂某些人&#8230;</strong></span></p>
+
+<p style="text-align: center;">
+  <a class="flickr-image" title="twitter 的訊息能見度" rel="flickr-mgr[social]" href="http://www.flickr.com/photos/69004123@N00/2568346696/"> <img class="flickr-original aligncenter" style="vertical-align: middle;" longdesc="http://farm4.static.flickr.com/3092/2568346696_e45083bdc8_o.png" src="http://farm4.static.flickr.com/3092/2568346696_1ee3cdedce_m.jpg" alt="twitter 的訊息能見度" /><br /> </a>
+</p>
+
+
+<h3>Plurk</h3>
+
+<p><a class="flickr-image" title="plurk web" rel="flickr-mgr[social]" href="http://www.flickr.com/photos/69004123@N00/2568421146/"><img class="alignright flickr-original" style="float: right;" longdesc="http://farm4.static.flickr.com/3265/2568421146_fee0365b02_o.png" src="http://farm4.static.flickr.com/3265/2568421146_795c4641ec_m.jpg" alt="plurk web" /></a>Plurk 的訊息只會被你的訂閱者 (好友) 看到, 你也只會看到你的好友發的訊息. 回應是以串列表示, 任何人都可以在串列中回應.<br/>
+優點:</p>
+
+<ul>
+<li>只顯示主題, 對主題有興趣才展開看回應.</li>
+<li>陌生人可以發表回應.</li>
+<li>時間線 (timeline)  (有人認為ui過多是缺點)</li>
+</ul>
+
+
+<p>plurk 解決訊息量過大的方法是用<span style="color: #ff0000;"><strong>討論串</strong></span> (thread) , 回應是置於訊息主題之內, <span style="color: #ff0000;">有興趣的再展開看</span>. 並可以對沒興趣但一直有回應的討論串設為<span style="color: #ff0000;">靜音</span> (mute, 6/11新增的功能). 另外以時間線 (timeline) 的表示方式讓許多人稱讚.</p>
+
+<p>好友的部份分為好友和FAN, 前者要對方確認之後列為雙向好友, 後者不需確認,僅單向看對方的訊息. 交友模式比twitter多一個, 會加有回應的人為朋友.</p>
+
+<p style="text-align: center;">
+  <a class="flickr-image" title="plurk 的訊息能見度" rel="flickr-mgr[social]" href="http://www.flickr.com/photos/69004123@N00/2567523859/"> <img class="flickr-original aligncenter" longdesc="http://farm4.static.flickr.com/3186/2567523859_a092cac050_o.png" src="http://farm4.static.flickr.com/3186/2567523859_7ab617e1b9_m.jpg" alt="plurk 的訊息能見度" /></a>
+</p>
+
+
+<h3>小結</h3>
+
+<p>twitter 和 plurk 都只能看到你訂閱的朋友, 差異只在plurk任何人可回應. 但是訊息圈還是侷限在 &#8220;已知好友&#8221; .</p>
+
+<h3>Jaiku</h3>
+
+<p><a class="flickr-image" title="Jaiku web" rel="flickr-mgr[social]" href="http://www.flickr.com/photos/69004123@N00/2567597865/"><img class="alignright flickr-original" style="float: right;" longdesc="http://farm4.static.flickr.com/3106/2567597865_b65d159faa_o.png" src="http://farm4.static.flickr.com/3106/2567597865_492ac74d70_m.jpg" alt="Jaiku web" /></a>Jaiku 的訊息會被你的訂閱者 (好友) 看見, <span style="color: #ff0000;"><strong>你的回應訊息也會發送給好友</strong></span>. 注意喔, 是你的回應訊息也會發送給好友, 也就是訊息會被送給回應者的好友.</p>
+
+<p>例如: A 回應你的訊息, 那 A 的好友 B 會看到 A 的回應訊息, 如果 B 有興趣的話, B 也可以加入討論.</p>
+
+<p><a class="flickr-image" title="jaiku thread" rel="flickr-mgr[social]" href="http://www.flickr.com/photos/69004123@N00/2567605085/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3158/2567605085_64366d1ced_o.png" src="http://farm4.static.flickr.com/3158/2567605085_415f2f86e2_m.jpg" alt="jaiku thread" /></a></p>
+
+<p>優點:</p>
+
+<ul>
+<li>訊息會傳的較廣.</li>
+<li>陌生人也可以發表回應.</li>
+</ul>
+
+
+<p>缺點:</p>
+
+<ul>
+<li>某些討論串太長, 到最後常常會離題&#8230;</li>
+</ul>
+
+
+<p>Jaiku 解決訊息量過大的方法也是用<span style="color: #ff0000;"><strong>討論串</strong></span> (thread), 即可對特定 feed 取消訂閱, 遊覽訊息時可以選擇<span style="color: #ff0000;">是否顯示回應文</span>, 讓遊覽訊息時, 更為簡潔清楚, 避免過多資訊.</p>
+
+<p><a class="flickr-image" title="jaiku 的訊息能見度" rel="flickr-mgr[social]" href="http://www.flickr.com/photos/69004123@N00/2568346836/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3006/2568346836_0ca2432a6b_o.png" src="http://farm4.static.flickr.com/3006/2568346836_992f2ccc8a_m.jpg" alt="jaiku 的訊息能見度" /></a></p>
+
+<p>Jaiku 的傳訊息方式, 像不像漣漪呢? 只要有人對訊息回應, 就會在發送給他的朋友, 在 Jaiku 上萬里尋母應該也是有可能的吧. 但不可不提的是, Jaiku 的<span style="color: #ff0000;">訊息量和離題可能性都大的多</span>, 但是有趣的話題會傳遞較多人知道.</p>
+
+<p style="text-align: center;">
+  <a class="flickr-image" title="jaiku 的訊息漣漪" rel="flickr-mgr[social]" href="http://www.flickr.com/photos/69004123@N00/2568346524/"><img class="flickr-original aligncenter" longdesc="http://farm4.static.flickr.com/3160/2568346524_597167297a_o.png" src="http://farm4.static.flickr.com/3160/2568346524_a4f8bca08d_m.jpg" alt="jaiku 的訊息漣漪" /></a>
+</p>
+
+
+<p>註: 不確定 Jaiku 的傳遞是否像我說的<strong>無限制</strong>擴散出去, 但傳遞兩三層是確定可以的.<br/>
+註2: 更新 twitter 的回應模式, plurk 與 jaiku 小部份更新</p>
+
+<h3>連結</h3>
+
+<ul>
+<li><a href="http://twitter.com/" target="_blank">twitter</a> &#8211; <a href="http://twitter.com/TaopaiC" target="_blank">我的 twitter</a></li>
+<li><a href="http://jaiku.com/" target="_blank">Jaiku</a> &#8211; <a href="http://taopaic.jaiku.com/" target="_blank">我的Jaiku</a> &#8211; 採邀請制, 需要邀請信. (我的發完了)</li>
+<li><a href="http://plurk.com/" target="_blank">Plurk</a> &#8211; <a href="http://plurk.com/redeemByURL?from_uid=28651&check=1549782893&s=1" target="_blank">我的介紹連結 (會加我為好友)</a> &#8211; <a href="http://www.plurk.com/user/TaopaiC" target="_blank">我的 Plurk</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[公開賣PTT帳號個資?]]></title>
+    <link href="http://blog.pctao.org/2008/06/08/241"/>
+    <updated>2008-06-08T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/06/08/%e5%85%ac%e9%96%8b%e8%b3%a3ptt%e5%b8%b3%e8%99%9f%e5%80%8b%e8%b3%87</id>
+    <content type="html"><![CDATA[<p>從 <a href="http://www.ptt.cc/bbs/Gossiping/index.html">ptt 八卦板</a>看到的<a href="http://www.ptt.cc/bbs/Gossiping/M.1212857572.A.C20.html">消息</a>, 有人在網路上公開賣 ptt 帳號的個資&#8230; 是去年<a href="http://taopaic.blogspot.com/2007/08/ptt.html">ptt大當機</a>和幾個大網站被盜個資那件事的後續嗎? <a class="flickr-image" title="PTT 帳號?" rel="flickr-mgr" href="http://www.flickr.com/photos/69004123@N00/2558147333/"><img class="alignright flickr-original" style="float: right;" longdesc="http://farm4.static.flickr.com/3003/2558147333_10bcf841e6_o.jpg" src="http://farm4.static.flickr.com/3003/2558147333_32ef1cdaae_m.jpg" alt="PTT 帳號?" /></a></p>
+
+<h3>延伸閱讀</h3>
+
+<ul>
+<li><a href="http://www.cib.gov.tw/news/news01_2.aspx?no=1788">去年 內政部警政署刑事警察局的新聞</a></li>
+<li><a href="http://www.libertytimes.com.tw/2008/new/may/16/today-t1.htm">洩個人資料 朝野共識最高賠10億 &#8211; 自由時報</a></li>
+<li><a href="http://www.dgbas.gov.tw/ct.asp?xItem=10116&amp;ctNode=2286">電腦處理個人資料保護法 &#8211; 行政院主計處</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[照片逛台灣景點 &#8211; Panoramio Look Around 也有台灣景點]]></title>
+    <link href="http://blog.pctao.org/2008/06/06/240"/>
+    <updated>2008-06-06T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/06/06/%e7%85%a7%e7%89%87%e9%80%9b%e5%8f%b0%e7%81%a3%e6%99%af%e9%bb%9e-panoramio-look-around-%e4%b9%9f%e6%9c%89%e5%8f%b0%e7%81%a3%e6%99%af%e9%bb%9e</id>
+    <content type="html"><![CDATA[<p><a class="flickr-image" title="大中至正" rel="flickr-mgr" href="http://www.flickr.com/photos/69004123@N00/2554610980/"><img class="alignleft flickr-original" style="float: left;" longdesc="http://farm3.static.flickr.com/2255/2554610980_1966ec0f1b_o.png" src="http://farm3.static.flickr.com/2255/2554610980_8452472b78_t.jpg" alt="大中至正" /></a><a href="http://pctao.org/2008/06/04/238/">上一篇介紹 Panoramio look around</a> 時, 我說台灣沒有 look around 的照片, 剛剛用 Google Earth 逛台北時, 我才發現我錯了. 找到台北有幾個景點也有 &#8220;look around&#8221; 的照片.</p>
+
+<ul>
+<li><a href="http://www.panoramio.com/photo/296154" target="_blank">中華民國總統府</a></li>
+<li><a href="http://www.panoramio.com/photo/7302381" target="_blank">自由廣場</a> (舊稱: 中正紀念堂)</li>
+<li><a href="http://www.panoramio.com/photo/1852166" target="_blank">國父紀念館</a></li>
+</ul>
+
+
+<p>(點進去之後, 點照片下方的 &#8220;look around&#8221;)<br/>
+如果網友還有發現台灣其他地方有 &#8220;look around&#8221; , 歡迎回應給我更新列表 <img src='http://pctao.org/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[宅在家裡不出門, 也能逛美國迪士尼樂園 &#8211; Google Earth 新增迪士尼樂園導覽圖層與更詳細的3D模型]]></title>
+    <link href="http://blog.pctao.org/2008/06/06/239"/>
+    <updated>2008-06-06T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/06/06/%e5%ae%85%e5%9c%a8%e5%ae%b6%e8%a3%a1%e4%b8%8d%e5%87%ba%e9%96%80-%e4%b9%9f%e8%83%bd%e9%80%9b%e7%be%8e%e5%9c%8b%e8%bf%aa%e5%a3%ab%e5%b0%bc%e6%a8%82%e5%9c%92-google-earth-%e6%96%b0%e5%a2%9e%e8%bf%aa</id>
+    <content type="html"><![CDATA[<p><a class="flickr-image" title="灰姑娘的城堡" rel="flickr-mgr[disney]" href="http://www.flickr.com/photos/69004123@N00/2554266312/"><img class="alignright flickr-original" style="float: right;" longdesc="http://farm4.static.flickr.com/3279/2554266312_0fc334e6b9_o.png" src="http://farm4.static.flickr.com/3279/2554266312_da5daeaf5f_m.jpg" alt="灰姑娘的城堡" /></a>還宅在家裏不出門嗎? 來 Google Earth 神遊美國迪士尼樂園吧.</p>
+
+<p><a href="http://earth.google.com/intl/zh-TW/">Google Earth</a> 最近新增迪士尼樂園導覽的圖層以及更為詳細的3D模型, 以下步驟要先<a href="http://flickr.com/photos/taopaic/2554266602/">切換成英文版</a>才有</p>
+
+<ol>
+<li>在 Google Earth 裡搜尋 Disney World</li>
+<li>會看到一個金米老鼠圖案, 點他會開啟一個視窗</li>
+<li>點 &#8220;Show this layer&#8221; 以及 &#8220;Show Disney World in 3D&#8221;</li>
+</ol>
+
+
+<p>(點小圖放大)</p>
+
+<p style="text-align: center;">
+  <a class="flickr-image" title="金米老鼠圖案" rel="flickr-mgr[disney]" href="http://www.flickr.com/photos/69004123@N00/2553442803/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3189/2553442803_0ed8c0b81e_o.png" src="http://farm4.static.flickr.com/3189/2553442803_c4a52c88c2_m.jpg" alt="金米老鼠圖案" /></a><a class="flickr-image" title="2008-06-06_013618" rel="flickr-mgr[disney]" href="http://www.flickr.com/photos/69004123@N00/2554267448/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3041/2554267448_b08f086c40_o.png" src="http://farm4.static.flickr.com/3041/2554267448_4256f2f557_m.jpg" alt="2008-06-06_013618" /></a>
+</p>
+
+
+<p>開啟導覽圖層會看到許多米老鼠圖, 以及顏色區塊, 都是該區域的介紹連結.<!--more--></p>
+
+<p>介紹視窗裡不只有文字與圖片, 有些還有<strong>互動flash</strong>或是<strong>影片</strong>.</p>
+
+<p style="text-align: center;">
+  <a class="flickr-image" title="2008-06-06_013539" rel="flickr-mgr[disney]" href="http://www.flickr.com/photos/69004123@N00/2554267084/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3159/2554267084_1517fbbf41_o.png" src="http://farm4.static.flickr.com/3159/2554267084_48419696c0_m.jpg" alt="2008-06-06_013539" /></a><a class="flickr-image" title="2008-06-06_014048" rel="flickr-mgr[disney]" href="http://www.flickr.com/photos/69004123@N00/2554267882/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3027/2554267882_d4f8e2c693_o.png" src="http://farm4.static.flickr.com/3027/2554267882_8beaac5226_m.jpg" alt="2008-06-06_014048" /></a><a class="flickr-image" title="2008-06-06_014215" rel="flickr-mgr[disney]" href="http://www.flickr.com/photos/69004123@N00/2554268260/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3100/2554268260_2dd35fbb5b_o.png" src="http://farm4.static.flickr.com/3100/2554268260_0465b7e3d8_m.jpg" alt="2008-06-06_014215" /></a>
+</p>
+
+
+<p>3D模型方面, 貼圖品質很不錯, 商店外的海報還清晰可見, 甚至還可看見某些菜單上的文字.</p>
+
+<p style="text-align: center;">
+  <a class="flickr-image" title="細緻的模型 in Disney World" rel="flickr-mgr[disney]" href="http://www.flickr.com/photos/69004123@N00/2554268852/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3055/2554268852_5caf646a7c_o.png" src="http://farm4.static.flickr.com/3055/2554268852_e17cb22811_m.jpg" alt="細緻的模型 in Disney World" /></a><a class="flickr-image" title="牆上海報清晰可見 in Disney World" rel="flickr-mgr[disney]" href="http://www.flickr.com/photos/69004123@N00/2553678671/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3168/2553678671_caf87aa5c0_o.png" src="http://farm4.static.flickr.com/3168/2553678671_0c0e2d4ee9_m.jpg" alt="牆上海報清晰可見 in Disney World" /></a>
+</p>
+
+
+<p>當然, 如果只有大型建物的模型, 就太無趣了, 連樹, 遮陽傘, 桌子許多物件也都有喔.</p>
+
+<p style="text-align: center;">
+  <a class="flickr-image" title="桌子和遮陽傘 in Disney World" rel="flickr-mgr[disney]" href="http://www.flickr.com/photos/69004123@N00/2553679565/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3127/2553679565_5ebe231f48_o.png" src="http://farm4.static.flickr.com/3127/2553679565_a5bf094994_m.jpg" alt="桌子和遮陽傘 in Disney World" /></a>
+</p>
+
+
+<p>Disney 在這個時間點推出這個服務, 想必是要搶暑假人潮, 讓遊客在虛擬世界裡面先看導覽, 搭配 Google Earth 裡已有的資源, 如 <a href="http://zh.wikipedia.org/">Wikipedia</a> 或是 <a href="http://panoramio.com/">panoramio</a> 使用者上傳的照片, 可說是超豐富的 3D電子導覽手冊, 這個如意算盤真是打的好.. 不久的未來就可看到許多旅遊景點在 Google Earth 裡做生意了&#8230; 話說回來, <a href="http://code.google.com/apis/maps/documentation/reference.html#GAdsManager">adsense in google map</a> 啥時才要開始?..</p>
+
+<p>ps. 這邊照片很密集, 當然也有 <a href="http://pctao.org/2008/06/04/238/">look around</a> 的照片 , 例如 <a href="http://www.panoramio.com/photo/9506877">灰姑娘城堡</a> , <a href="http://www.panoramio.com/photo/813229">Epcot</a> 等等..</p>
+
+<h3>參考文章</h3>
+
+<ul>
+<li><a href="http://www.disneyworld.com/3dParks">迪士尼樂園 in 3D</a> &#8211; 迪士尼樂園官方網頁</li>
+<li><a href="http://google-latlong.blogspot.com/2008/06/virtual-visit-to-where-dreams-come-true.html">A virtual visit to where dreams come true</a> &#8211; Google Earth 與 Maps 官方部落格</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[超炫的遊覽景點照片方式 &#8211; Panoramio Look Around]]></title>
+    <link href="http://blog.pctao.org/2008/06/04/238"/>
+    <updated>2008-06-04T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/06/04/%e8%b6%85%e7%82%ab%e7%9a%84%e9%81%8a%e8%a6%bd%e6%99%af%e9%bb%9e%e7%85%a7%e7%89%87%e6%96%b9%e5%bc%8f-panoramio-look-around</id>
+    <content type="html"><![CDATA[<p><a class="flickr-image" title="panoramio look around" rel="flickr-mgr[photo]" href="http://www.flickr.com/photos/69004123@N00/2549600362/"><img class="alignleft flickr-original" style="float: left;" longdesc="http://farm4.static.flickr.com/3138/2549600362_d13780fdd8_o.png" src="http://farm4.static.flickr.com/3138/2549600362_3c57f36047_m.jpg" alt="panoramio look around" /></a></p>
+
+<p>Google 旗下的 <a href="http://www.panoramio.com/">Panoramio</a> 相簿社群網站, 新增 &#8220;look around&#8221; 的功能, 可以讓你在虛擬的3D環境中逛照片. 可以看更近的照片等等功能, 如果你知道微軟的 PhotoSynth , 那這個就是網頁社群的版本了.</p>
+
+<!--more-->
+
+
+<p>如果不知道微軟的 <a href="http://www.labs.live.com/photosynth/">PhotoSynth</a> , 可以看看他們官網的介紹, 有 demo 與 <a href="http://www.labs.live.com/photosynth/video.html">video</a> 可以下載, 美國熱門影集 CSI:NY 在今年四月底時, 劇情有 PhotoSynth 幫助辦案的情節.</p>
+
+<p>影片說明:案發現場是個舉辦舞會的體育館, 從眾多參與者的手機裡取出幾百張照片, 交由 PhotoSynth 製作 3D 環境, 重建案發當晚的狀況. 不過省略照相時間問題, 怎麼可能特定時間點有一堆照片&#8230;<br/>
+PhotoSynth 也和 NASA 合作, 製作<a href="http://spaceworld.msnbc.com/">甘迺迪太空中心的場景</a>. 除了讓照片在虛擬的3D環境展現以外, 還可製作出大致的3D模型.</p>
+
+<p><a class="flickr-image" title="MS photosynth" rel="flickr-mgr[photo]" href="http://www.flickr.com/photos/69004123@N00/2548729793/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3112/2548729793_162a1f71cb_o.png" src="http://farm4.static.flickr.com/3112/2548729793_a77b6229de_m.jpg" alt="MS photosynth" /></a><a class="flickr-image" title="MS photosynth" rel="flickr-mgr[photo]" href="http://www.flickr.com/photos/69004123@N00/2549558988/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3016/2549558988_cc531735d7_o.png" src="http://farm4.static.flickr.com/3016/2549558988_a8c15d4deb_m.jpg" alt="MS photosynth" /></a><a class="flickr-image" title="MS photosynth" rel="flickr-mgr[photo]" href="http://www.flickr.com/photos/69004123@N00/2548730861/"><img class="flickr-original" longdesc="http://farm4.static.flickr.com/3260/2548730861_c47ebf76e6_o.png" src="http://farm4.static.flickr.com/3260/2548730861_8b70b7e980_m.jpg" alt="MS photosynth" /></a></p>
+
+<p>介紹完 PhotoSynth 後, 應該對 Panoramio look around 這個功能有點概念了吧, look around 在以下幾個景點已經有了, 快去看看吧! ( 景點後的連結是wikipedia的介紹 )</p>
+
+<ul>
+<li><a href="http://www.panoramio.com/photo/33128">羅馬聖伯多祿大殿</a>[<a href="http://zh.wikipedia.org/wiki/%E8%81%96%E4%BC%AF%E5%A4%9A%E7%A5%BF%E5%A4%A7%E6%AE%BF">聖伯多祿大殿</a>]</li>
+<li><a href="http://www.panoramio.com/photo/86272">阿爾罕布拉宮</a>[<a href="http://zh.wikipedia.org/wiki/%E9%98%BF%E5%B0%94%E7%BD%95%E5%B8%83%E6%8B%89%E5%AE%AB">阿爾罕布拉宮</a>]</li>
+<li><a href="http://www.panoramio.com/photo/4516078">拉什莫爾山的美國總統紀念公園</a> [<a href="http://zh.wikipedia.org/wiki/%E6%8B%89%E4%BB%80%E8%8E%AB%E5%B0%94%E5%B1%B1">拉什莫爾山</a>]</li>
+<li><a href="http://www.panoramio.com/photo/5984660">從 Santa Justa 看出去的葡萄牙里斯本</a>[<a href="http://en.wikipedia.org/wiki/Santa_Justa">Santa Justa</a>],[<a href="http://zh.wikipedia.org/wiki/%E9%87%8C%E6%96%AF%E6%9C%AC">里斯本</a>]</li>
+<li><a href="http://www.panoramio.com/photo/4788062">從 Hancock’s tower 看出去的芝加哥夜景</a>[<a href="http://en.wikipedia.org/wiki/John_Hancock_Tower">Hancock’s tower</a>]</li>
+<li><a href="http://www.panoramio.com/photo/2171018">從 Katarinahissen 看出去的斯德哥爾摩</a>[<a href="http://en.wikipedia.org/wiki/Katarinahissen">Katarinahissen</a>][<a href="http://zh.wikipedia.org/wiki/%E6%96%AF%E5%BE%B7%E5%93%A5%E5%B0%94%E6%91%A9">斯德哥爾摩</a>]</li>
+<li><a href="http://www.panoramio.com/photo/2264304">莫斯科的紅場</a>[<a href="http://zh.wikipedia.org/w/index.php?title=%E7%BA%A2%E5%9C%BA&amp;variant=zh-tw">莫斯科紅場</a>]</li>
+<li><a href="http://www.panoramio.com/photo/6795101">德國柏林的布蘭登堡門</a>[<a href="http://zh.wikipedia.org/w/index.php?title=%E5%8B%83%E5%85%B0%E7%99%BB%E5%A0%A1%E9%97%A8&amp;variant=zh-tw">布蘭登堡門</a>]</li>
+<li><a href="http://www.panoramio.com/photo/1975890">印度的泰姬瑪哈陵</a>[<a href="http://zh.wikipedia.org/wiki/%E6%B3%B0%E5%A7%AC%E9%99%B5">泰姬瑪哈陵</a>]</li>
+<li><a href="http://www.panoramio.com/photo/288737">澳洲雪梨歌劇院</a>[<a href="http://zh.wikipedia.org/w/index.php?title=%E6%82%89%E5%B0%BC%E6%AD%8C%E5%89%A7%E9%99%A2&amp;variant=zh-tw">雪梨歌劇院</a>]</li>
+</ul>
+
+
+<p>如何讓你的照片也有 &#8220;look around&#8221; 連結呢? 官方說法是去該地方多照幾張照片, 照片內容要有重疊, 大約 10-20 張就足夠, 上傳, 系統大約兩個禮拜處理一次, 就可以看到 &#8220;look around&#8221; 了.</p>
+
+<p>可惜沒有<a href="http://www.panoramio.com/map/#lt=25.035450&amp;#038;ln=121.568313&amp;#038;z=1&amp;#038;k=2&amp;#038;a=1&amp;#038;tab=1">從Taipei 101 看出去的夜景</a>或是其他台灣景點, 大家快拍照上傳吧!!</p>
+
+<h3>延伸閱讀</h3>
+
+<ul>
+<li><a href="http://www.panoramio.com/blog/hi-look-around/">Hi, look around! @ Panoramio blog</a> &#8211; Panoramio 官方部落格</li>
+<li><a href="http://www.labs.live.com/photosynth/default.html">Microsoft Live Labs: Photosynth</a> 微軟 Photosynth 官方網頁</li>
+<li><a href="http://research.microsoft.com/IVM/PhotoTours/">Photo Tourism: Exploring Photo Collections in 3D</a> 微軟2006年在ACM Transactions on Graphics發的文章</li>
+<li><a href="http://www.switched.com/2008/04/30/csi-shows-off-microsofts-cool-photo-synth-techology/">&#8216;CSI&#8217; Shows Off Microsoft&#8217;s Cool Photo Synth Technology</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

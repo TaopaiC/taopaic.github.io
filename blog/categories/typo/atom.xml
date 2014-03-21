@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: TYPO | TaopaiC 的異想世界]]></title>
+  <link href="http://blog.pctao.org/blog/categories/typo/atom.xml" rel="self"/>
+  <link href="http://blog.pctao.org/"/>
+  <updated>2014-03-22T02:39:11+08:00</updated>
+  <id>http://blog.pctao.org/</id>
+  <author>
+    <name><![CDATA[TaopaiC]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[一銀網銀的(小?)錯誤]]></title>
+    <link href="http://blog.pctao.org/2006/02/26/126"/>
+    <updated>2006-02-26T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2006/02/26/%e4%b8%80%e9%8a%80%e7%b6%b2%e9%8a%80%e7%9a%84%e5%b0%8f%e9%8c%af%e8%aa%a4</id>
+    <content type="html"><![CDATA[<p>剛剛線上申請<a href="http://www.firstbank.com.tw/">一銀</a>的<a href="http://nb1.firstbank.com.tw/">網銀</a>功能，只需要晶片卡讀卡機和晶片金融卡就可以申請，我申請完成後，按下網頁上導到網銀的網址，結果出現"無法顯示網頁" 的錯誤..<br/>
+仔細一看，他的網址打錯了， firstbank 打成 furstbank，結果就導到 <a href="http://nb1.furstbank.com.tw/">http://nb1.furstbank.com.tw/</a> 去了&#8230;</p>
+
+<p>沒有申請成功網頁的抓圖，只有寄到信箱中的信件，不過錯誤還是一樣!<br/>
+<a href="http://www.flickr.com/photos/taopaic/104549438"><img src="http://static.flickr.com/42/104549438_c2e1bba488_m.jpg" width="240" height="155" alt="firstbank_typo" border="0" /></a><br/>
+ps: 查 whois ，furstbank.com.tw 還沒有人申請&#8230; 應該不會有人做壞事吧 XD</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[PS2 手把震動器的官司]]></title>
+    <link href="http://blog.pctao.org/2005/03/28/74"/>
+    <updated>2005-03-28T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2005/03/28/ps2-e6898be68a8ae99c87e58b95e599a8e79a84e5ae98e58fb8</id>
+    <content type="html"><![CDATA[<p>Sony PS2 dual shock 手把因為侵權被判賠Immersion Corp. $90.7 million，原因是<strong>computer-controlled vibrating motors</strong>這個東西。<br/>
+<em>[via <a href="http://www.engadget.com/entry/1234000997037831/">engadget</a>]</em></p>
+
+<p><ins datetime="2005-03-28T14:48:03-08:00">update:<br /> <a href="http://news.yam.com/reuters/computer/200503/20050328658284.html">蕃薯藤-新聞-[電玩產業]美法院裁決Sony電玩部門需支付Immersion九千萬美元侵權賠償</a><br /> 標題寫九千萬美元，文章開頭也寫九千萬，到了文章結尾就變為九千億&#8230;</ins></p>
+
+<!--more-->
+
+
+<p>看到Immersion，想到五年前羅技出的振動滑鼠，剛上市快2000元，買了一隻回來玩，支援遊戲不多，過了一兩年，就沒有主流遊戲有支援了。滑鼠又大又重，最後還是丟到箱子裡。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[錯字?] 容量高達400MB 的新Seagate Barracuda SATA NCQ硬碟]]></title>
+    <link href="http://blog.pctao.org/2005/03/27/73"/>
+    <updated>2005-03-27T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2005/03/27/e98cafe5ad97-e5aeb9e9878fe9ab98e98194400mb-e79a84e696b0seagate-barracuda-sata-ncqe7a1ace7a29f</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/taopaic/267790064/" title="Photo Sharing"><img src="http://static.flickr.com/98/267790064_2f0d2fe9fb_o.jpg" alt="thumbSeagateSATANCQ" align="left" height="42" width="316" /></a><br/>
+今天到<a href="http://www.seagate-asia.com/sgt/taiwan/homepage.jsp">台灣Seagate</a>的網站看看最近在廣告的SATA NCQ硬碟，<a href="http://www.seagate-ap.com.sg/7200sata/tc/main.htm">[Link]</a>，看到簡介裡的介紹，"新的Seagate Barracuda SATA NCQ(容量高達<strong>400MB</strong>)7200.7系列具備的特性包括：&#8230;&ldquo;，第一個想法是這顆硬碟因為技術問題容量只能有400MB，或者是相對於其他只有8MB快取的硬碟，他高達400MB，兩個說法都不太對。相信這只是個TYPO&#8230;</p>
+
+<p>另外，今天才發現 <a href="http://www.seagate.com.tw/">www.seagate.com.tw</a> 並不是台灣Seagate網站，如網站上所說 &#8220;我知道很多人會誤闖這裡這裡，很抱歉本站沒有賣硬碟。"，網站上有說明原因。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[超強的筆記型電腦 &#8211; 10G CPU + 30000G HD]]></title>
+    <link href="http://blog.pctao.org/2005/03/24/71"/>
+    <updated>2005-03-24T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2005/03/24/e8b685e5bcb7e79a84e7ad86e8a898e59e8be99bbbe885a6</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/taopaic/267781687/" title="Photo Sharing"><img src="http://static.flickr.com/118/267781687_4a09530498_m.jpg" width="240" height="196" alt="vs" align="left" /></a><br/>
+話說最近在物色筆電&#8230;</p>
+
+<p>剛剛看到<a href="http://www.gizmodo.com">GIZMODO</a>講的這篇<a href="http://www.gizmodo.com/gadgets/laptops-pcs/viewsonics-amazing-10ghz-tablet-pc-036908.php">Viewsonic’s Amazing 10GHz Tablet PC</a>。</p>
+
+<p><strong>10.00G</strong>的AMD CPU 配上 <strong>30000G</strong> 的硬碟，有了這台電腦一定走路都有風，搞不好還會飛呢。</p>
+
+<p>順便抱怨一下，台灣HP平板電腦的網頁，是404 Not Found&#8230; !@#$<br/>
+TC4200只有在HP商業應用網找的到特惠活動，但還是沒有詳細規格。到底要不要上市啊!</p>
+]]></content>
+  </entry>
+  
+</feed>

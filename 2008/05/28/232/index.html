@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Google 幫忙 Host 幾個知名 JavaScript 函式庫 - TaopaiC 的異想世界</title>
+  <meta name="author" content="TaopaiC">
+
+  
+  <meta name="description" content="剛看到 google 推出 AJAX Libraries API , 實際上就是 google host 幾個知名的 JavaScript 函式庫, 包含: JQuery
+prototype
+script.aculo.us
+MooTools
+dojo 通常網站會將不常更動的函式庫做 gzip ( &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.pctao.org/2008/05/28/232">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="TaopaiC 的異想世界" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55755-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TaopaiC 的異想世界</a></h1>
+  
+    <h2>TaopaiC's blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.pctao.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Google 幫忙 Host 幾個知名 JavaScript 函式庫</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-28T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>剛看到 <a href="http://googleajaxsearchapi.blogspot.com/2008/05/speed-up-access-to-your-favorite.html">google 推出 AJAX Libraries API</a> , 實際上就是 google host 幾個知名的 JavaScript 函式庫, 包含:</p>
+
+<ul>
+<li>JQuery</li>
+<li>prototype</li>
+<li>script.aculo.us</li>
+<li>MooTools</li>
+<li>dojo</li>
+</ul>
+
+
+<p>通常網站會將不常更動的函式庫做 gzip (壓縮) 和 cache (快取) , 以節省訪客再次造訪的流量 (這裡和之後指的流量為該函式庫的流量), 但首次訪客還是要下載一次. 如果使用這個服務的話, 該訪客在其他也使用的網站下載過該函式庫, 就不需要下載第二次, 節省流量和增快開啟網頁的速度. 對網站主而言, 省了首次訪客的流量, 對使用者來說, 省了 n 個網站的流量. 聽起來真不錯.<!--more--></p>
+
+<p>使用方法也很簡單, 第一種直接使用<br/>
+<code>&lt;script src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.2/prototype.js"&gt;&lt;/script&gt;</code><br/>
+其他版本或函式庫的位置請查<a href="http://code.google.com/apis/ajaxlibs/documentation/index.html">官網說明</a></p>
+
+<p>第二種使用 google.load() 的方式,<br/>
+<code>&lt;script src="http://www.google.com/jsapi"&gt;&lt;/script&gt; &lt;script type="text/javascript"&gt;&lt;!--&lt;br /&gt;
+google.load("jquery", "1.2.3");&lt;br /&gt;
+google.setOnLoadCallback(function() {&lt;br /&gt;
+// init function...&lt;br /&gt;
+});&lt;br /&gt;
+// --&gt;&lt;br /&gt;
+&lt;/script&gt;&lt;br /&gt;
+</code><br/>
+如果要未壓縮過的版本,<br/>
+<code>google.load("jquery", "1.2.3", {uncompressed:true});</code><br/>
+google.load() 有自動版本的功能, 例如 1.2 則自動幫你找 1.2.X 的最高版本. 請見<a href="http://code.google.com/apis/ajax/documentation/#Versioning">官網說明</a></p>
+
+<h3>相關連結</h3>
+
+<ul>
+<li><a href="http://code.google.com/apis/ajaxlibs/">AJAX Libraries API</a> &#8211; 本次主角的說明文件</li>
+<li><a href="http://code.google.com/apis/ajax/documentation/">Google&#8217;s AJAX APIs Document</a> &#8211; google.load 的說明文件</li>
+<li><a href="http://ajaxian.com/archives/announcing-ajax-libraries-api-speed-up-your-ajax-apps-with-googles-infrastructure">Ajaxian » Announcing AJAX Libraries API: Speed up your Ajax apps with Google’s infrastructure</a> &#8211; <a href="http://ajaxian.com/about-us/#DionAlmaer">Dion Almaer</a> (AJAX Libraries API作者) 對於 AJAX lib API 的介紹</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">TaopaiC</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-05-28T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/google/'>Google</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/web/'>web</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2008/05/28/233" title="Previous Post: Facebook 計畫將平台以開放原始碼釋出">&laquo; Facebook 計畫將平台以開放原始碼釋出</a>
+      
+      
+        <a class="basic-alignment right" href="/2008/05/29/234" title="Next Post: 不再只是平面的Google地圖 &#8211; Google Earth 遊覽器外掛">不再只是平面的Google地圖 &#8211; Google Earth 遊覽器外掛 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/06/12/358">HTTP Redirect 和 URL Fragments</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/06/345">jQuery XSS With $(location.hash)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/08/329">安裝 Redmine 1.1.1 遇到 Version_requirements 的暫時解法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/305">2010年底近況更新</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/310">對你家美術好一點 @ Ruby Tuesday #15 的經驗分享</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - TaopaiC -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'taopaicsblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

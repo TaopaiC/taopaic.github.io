@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: WordPress | TaopaiC 的異想世界]]></title>
+  <link href="http://blog.pctao.org/blog/categories/wordpress/atom.xml" rel="self"/>
+  <link href="http://blog.pctao.org/"/>
+  <updated>2014-03-22T02:39:11+08:00</updated>
+  <id>http://blog.pctao.org/</id>
+  <author>
+    <name><![CDATA[TaopaiC]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[[Wordpress] Google AJAX Libraries API Plugin]]></title>
+    <link href="http://blog.pctao.org/2008/05/30/236"/>
+    <updated>2008-05-30T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/05/30/wordpress-google-ajax-libraries-api-plugin</id>
+    <content type="html"><![CDATA[<p>前幾天 <a href="http://pctao.org/2008/05/28/232/">Google 提供幾個知名 javascript 函式庫的hosting</a>, 就想到 wordpress blog 能不能也利用該服務, 好歹可以省掉 jquery (30K) 和 prototype (124K) 的流量, 尤其是放在(暴)慢的主機 ( 如 dreamhoXt &#8230; ) 效果非常明顯&#8230;<br/>
+用 google 找到 <a href="http://blog.clearskys.net/2008/05/28/google-ajax-libraries-api-plugin/">Google AJAX Libraries API Plugin</a> , <del datetime="2008-06-03T23:55:51+00:00">可惜有些問題, 寄修改檔給作者, 希望下一個版本能修正.</del><ins datetime="2008-06-03T23:55:51+00:00">作者已於0.6版本修正, 請至<a href="http://blog.clearskys.net/2008/05/28/google-ajax-libraries-api-plugin/">該作者網頁下載</a>.</ins></p>
+
+<p>==== GEEK 分隔線 ====<br/>
+<ins datetime="2008-06-03T23:55:51+00:00"><strong>UPDATE: v0.6已修正</strong></ins><br/>
+該 plugin 沒寫授權方法, 所以我不好意思直接修改放出&#8230;<br/>
+wordpress 用的是加上 jQuery.noConflict() 的 jquery , 而 google 提供的沒有, 以至於直接使用 google 的 jquery 會<a href="http://docs.jquery.com/Using_jQuery_with_Other_Libraries">導致和 prototype 衝突</a>. 我的修改方式是在 jquery script 之後, 再加入一個內容為 jQuery.noConflict() 的 script .<!--more--></p>
+
+<p>在 usegooglelibrary.php (0.5版本) 加入<br/>
+<code>function gs_add_jquery_noconflict( $js_array ) {&lt;br /&gt;
+if ( FALSE !== $jquery = array_search( 'jquery', $js_array ) ) {&lt;br /&gt;
+wp_register_script('jquery_noconflict', '/wp-content/plugins/j.js', array('jquery'), null);&lt;br /&gt;
+array_splice( $js_array, $jquery+1, 0, 'jquery_noconflict' );&lt;br /&gt;
+}&lt;br /&gt;
+return $js_array;&lt;br /&gt;
+}&lt;br /&gt;
+add_filter('print_scripts_array', 'gs_add_jquery_noconflict');</code><br/>
+以及在 wp-content/plugins 裡新增一個名為 j.js 的檔案, 內容為<br/>
+<code>jQuery.noConflict();</code><br/>
+就會在載入 jquery 之後, 載入 j.js . 且不會和 prototype 衝突. 效果請看<a href="http://pctao.org">筆者 blog</a> 的原始碼. 有錯誤/建議歡迎指教.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[兩個有趣的 Wordpress 應用]]></title>
+    <link href="http://blog.pctao.org/2008/02/07/223"/>
+    <updated>2008-02-07T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/02/07/%e5%85%a9%e5%80%8b%e6%9c%89%e8%b6%a3%e7%9a%84-wordpress-%e6%87%89%e7%94%a8</id>
+    <content type="html"><![CDATA[<p>這幾天看到兩個 <a href="http://wordpress.org">wordpress</a> 應用, 挺有趣的.<br/>
+第一個是類似 <a href="http://twitter.com/">twitter</a> 的東西, <a href="http://wordpress.com/blog/2008/01/28/introducing-prologue/">Prologue</a> .<br/>
+&lt;<a href="http://prologuedemo.wordpress.com/">demo 網站</a>><br/>
+<a href="http://www.flickr.com/photos/69004123@N00/2246883181/" title="prologue-screenshot.png"><img src="http://static.flickr.com/2209/2246883181_204dba713b_m.jpg" border="0" /></a></p>
+
+<p>第二個是當作電話簿, <a href="http://thedesigncanopy.com/downloads/wp-contact-manager/">WP Contact Manager</a> .<br/>
+&lt;<a href="http://people.thedesigncanopy.com/">demo 網站</a>><br/>
+<a href="http://www.flickr.com/photos/69004123@N00/2247677594/" title="ss-wpcm.png"><img src="http://static.flickr.com/2231/2247677594_d3e6d5535d_m.jpg" border="0" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[WP] 列出 Wp-cron 排程的內容]]></title>
+    <link href="http://blog.pctao.org/2008/01/21/208"/>
+    <updated>2008-01-21T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/01/21/wp-%e5%88%97%e5%87%ba-wp-cron-%e6%8e%92%e7%a8%8b%e7%9a%84%e5%85%a7%e5%ae%b9</id>
+    <content type="html"><![CDATA[<p>WordPress 自從 <a href="http://wordpress.org/development/2007/01/ella-21/">2.1</a> 之後就引入 <a href="http://wordpress.org/extend/plugins/wp-cron/">wp-cron</a> 的工作排程功能, 又稱為 <a href="http://codex.wordpress.org/Category:WP-Cron_Functions">Psuedo-cron functionality</a> , 可惜沒有提供管理介面. 如果想看有什麼工作被排程的話, 可以安裝這兩個 plugin 來看.</p>
+
+<!--more-->
+
+
+<ol>
+<li><a href="http://wordpress.org/extend/plugins/wp-crontrol/">WP-Crontrol</a><br/>
+提供 add , delete , list 的功能.</li>
+</ol>
+
+
+<p><a href="http://www.flickr.com/photos/69004123@N00/2206607694/" title="WP-Crontrol"><img src="http://static.flickr.com/2308/2206607694_808fe948a1_d.jpg" border="0" /></a></p>
+
+<ol>
+<li><a href="http://codex.wordpress.org/wp-cron-dashboard.php">WP-Cron-dashboard</a> [<a href="http://martin.cleaver.org/blog/2007/09/22/pseudo-cron-dashboard-display-for-wordpress/">作者的blog</a>]<br/>
+提供 delete 和 list 的功能.</li>
+</ol>
+
+
+<p><a href="http://www.flickr.com/photos/69004123@N00/2205819843/" title="wp-cron-dashboard"><img src="http://static.flickr.com/2159/2205819843_0efc8976bf_d.jpg" border="0" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[字太小]]></title>
+    <link href="http://blog.pctao.org/2006/10/11/154"/>
+    <updated>2006-10-11T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2006/10/11/%e5%ad%97%e5%a4%aa%e5%b0%8f</id>
+    <content type="html"><![CDATA[<p>被 <a href="http://blog.gslin.org/archives/2006/10/11/789/" target="_blank">gslin 點名</a>, 才發現敝blog字真的太小.<br/>
+<a href="http://www.flickr.com/photos/taopaic/266820986/" title="Photo Sharing"><img src="http://static.flickr.com/92/266820986_f33f8a689f_m.jpg" alt="Screenshot-TaopaiC的自言自語" height="197" width="240" /></a></p>
+
+<!--more-->
+
+
+<p>之前我並沒有察覺字這麼小, 因為我在用的 <a href="http://www.mozilla.com/firefox/" target="_blank">firefox</a> 不知道怎麼設定, 把小字變大了 XD<br/>
+<a href="http://www.flickr.com/photos/taopaic/266820987/" title="Photo Sharing"><img src="http://static.flickr.com/114/266820987_c2d67dd4b3_m.jpg" alt="Screenshot-TaopaiC的自言自語 - 2" height="195" width="240" /></a></p>
+
+<p>可以明顯看出兩個字型大小差很多, 難怪很久沒看到小字的網站了 /.\</p>
+]]></content>
+  </entry>
+  
+</feed>

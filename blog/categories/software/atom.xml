@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Software | TaopaiC 的異想世界]]></title>
+  <link href="http://blog.pctao.org/blog/categories/software/atom.xml" rel="self"/>
+  <link href="http://blog.pctao.org/"/>
+  <updated>2014-03-22T02:39:11+08:00</updated>
+  <id>http://blog.pctao.org/</id>
+  <author>
+    <name><![CDATA[TaopaiC]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[[FX] Google Toolbar 開始支援 Firefox 3]]></title>
+    <link href="http://blog.pctao.org/2008/06/16/244"/>
+    <updated>2008-06-16T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/06/16/fx-google-toolbar-for-firefox-3</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/taopaic/321503168/" title="Screenshot-Google by TaopaiC, on Flickr"><img src="http://farm1.static.flickr.com/123/321503168_aee61c7dd4_o.png" alt="Screenshot-Google" width="273" height="83" /></a><br/>
+從 <a href="http://vsy.jaiku.com/presence/37655290" target="_blank">jaiku 上聽到</a>的, 久未更新的 <a href="http://toolbar.google.com/" target="_blank">Google Toolbar for Firefox</a> 終於更新並且支援 firefox 3 了.</p>
+
+<p>沒有看到新功能. 看來只是更新相容性. ( 版本號: 3.1.20080605L 及 3.1.30080605W )</p>
+
+<p><ins datetime="2008-06-17T04:07:16+00:00">update: 從<a href="http://groups.google.com/group/FFToolbar-suggestions/msg/448c3e052a8c82b6">討論區</a>看到, 還修正 上傳至 Google Docs 的bug</ins></p>
+
+<p>過了那麼久沒有GT的時間, 需要的功能也拿其他 addon 補齊了, 我找不到裝 GT 的動力了..</p>
+
+<p>不見官方部落格貼任何更新資訊, 難道要和 6/18 1:00 (台灣時間) 開始的 <a href="http://moztw.org/events/record2008/">Firefox Download Day</a> 活動一起寫一格?</p>
+
+<p><a href="http://moztw.org/firefox/" target="_blank"><img src="http://moztw.org/firefox/buttons/type06-3.png" border="0" alt="Firefox 3 火熱上映" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[FX] 離3.0正式版還差一步! 專為mac出 Firefox 3.0RC3]]></title>
+    <link href="http://blog.pctao.org/2008/06/11/243"/>
+    <updated>2008-06-11T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/06/11/ff-%e9%9b%a230%e6%ad%a3%e5%bc%8f%e7%89%88%e9%82%84%e5%b7%ae%e4%b8%80%e6%ad%a5-%e5%b0%88%e7%82%bamac%e5%87%ba-firefox-30rc3</id>
+    <content type="html"><![CDATA[<p>早上看到 ubuntu 的 hardy-proposed firefox <a href="https://bugs.launchpad.net/bugs/237690" target="_blank">更新</a>把 RC2 字樣拿掉, 我嚇一跳, 查了一下資料, 這個消息不太對.</p>
+
+<p>根據 <a href="http://wiki.mozilla.org/Firefox3/StatusMeetings/2008-06-10" target="_blank">Firefox 團隊的開會紀錄</a>, 6/11 還要為 Mac 出 RC3 版本, 修正一個<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=436575" target="_blank">關不掉的bug</a>. 而 Windows 和 Linux 則不會發行 RC3 版本. 這麼說的話, RC2 很接近正式版囉?</p>
+
+<p>下載: <a href="http://download.mozilla.org/?product=firefox-3.0rc2&amp;os=osx&amp;lang=zh-TW">中文正體Mac版本Firefox</a> (<a href="http://www.mozilla.com/en-US/firefox/all-rc.html" target="_blank">其他平台與語言</a>)</p>
+
+<p><ins datetime="2008-06-16T08:10:43+00:00">* UPDATE: Firefox 3 正式版將於 6/17 日發行 [<a href="http://developer.mozilla.org/devnews/index.php/2008/06/11/coming-tuesday-june-17th-firefox-3/" target="_blank">研發團隊blog</a>].</ins></p>
+
+<p>大家要記得參加 &#8220;超炫瀏覽器，手滑創紀錄", 一起創紀錄!<br/>
+<a href="http://moztw.org/events/record2008/"><img src="http://forum.moztw.org/files/record2008_3_349.png" border="0" alt="火狐鬥陣拼紀錄，有你一份！" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Micropolis &#8211; 模擬城市原始碼釋出]]></title>
+    <link href="http://blog.pctao.org/2008/01/21/209"/>
+    <updated>2008-01-21T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/01/21/micropolis-%e6%a8%a1%e6%93%ac%e5%9f%8e%e5%b8%82%e5%8e%9f%e5%a7%8b%e7%a2%bc%e9%87%8b%e5%87%ba</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/69004123@N00/2208072803/" title="Micropolis"><img src="http://static.flickr.com/2284/2208072803_ea20ede5d9_m.jpg" align="right" border="0" /></a>上禮拜的消息, <a href="http://developers.slashdot.org/article.pl?sid=08/01/12/1846256">SimCity Source Code Is Now Open</a> , 程式碼以GPLv3釋出, 程式名字改成 Micropolis 為了規避sim city的商標問題. 詳細的發展歷史請看<a href="http://www.donhopkins.com/drupal/node/131">Don Hopkins (移植者) 的blog</a>.<br/>
+<a href="http://www.getdeb.net/">GetDeb</a>有編譯好的套件包, <a href="http://www.getdeb.net/app.php?name=Micropolis">下載安裝</a>即可.<br/>
+執行時, 如果發現按鈕都沒作用的話, 按建盤上的 Num Lock 鍵即可.<br/>
+如果想自己編譯的話, <!--more-->可以從</p>
+
+<p><a href="http://www.donhopkins.com/home/micropolis/">這</a>下載原始碼, 編譯的步驟請參考 <a href="http://ubuntuforums.org/showthread.php?t=665844">ubuntuforums 的討論串</a>.<br/>
+但編譯起來, 遊戲執行有問題, 地圖不會顯示.<br/>
+<a href="http://www.flickr.com/photos/69004123@N00/2208072909/" title="micropolis"><img src="http://static.flickr.com/2243/2208072909_5fb7962648_m.jpg" border="0" /></a><br/>
+這也是為何拖了這麼多天, 才寫這篇的原因 /_\</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[在 Linux 上幫照片加上GPS資訊]]></title>
+    <link href="http://blog.pctao.org/2008/01/10/206"/>
+    <updated>2008-01-10T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2008/01/10/%e5%9c%a8-linux-%e4%b8%8a%e5%b9%ab%e7%85%a7%e7%89%87%e5%8a%a0%e4%b8%8agps%e8%b3%87%e8%a8%8a</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/69004123@N00/2181415707/" title="Screenshot-Google Earth.png"><img src="http://static.flickr.com/2316/2181415707_1e97476a40_m.jpg" align="right" border="0" /></a>我用 ubuntu linux, 但我使用的軟體並不限 gnome 的, KDE 的東西我也有用, 像是 <a href="http://www.digikam.org/">digiKam</a> 和 <a href="http://amarok.kde.org/">Amarok</a> 等優秀軟體. digiKam 是個很棒的照片管理程式, 記得要加裝 kipi-plugins , 這個套件提供許多功能, 像是上傳至flickr,編輯meta data,還有本篇重點 Geolocalization Editor .<!--more--></p>
+
+<p><a href="http://www.kipi-plugins.org/">kipi</a> 是 <strong>K</strong>DE <strong>I</strong>mage <strong>P</strong>lugin <strong>I</strong>nterface 的簡稱 , 其實並不只有 <a href="http://www.digikam.org/">digiKam</a> 能用, <a href="http://ktown.kde.org/kphotoalbum/">KPhotoAlbum</a> ,<a href="http://www.jalix.org/projects/showimg">Showimg</a> , <a href="http://gwenview.sourceforge.net/">GwenView</a> 等也能使用, 挑喜歡的用即可.</p>
+
+<p><a href="http://www.flickr.com/photos/69004123@N00/2181298217/" title="Screenshot-CIMG8334.JPG - Edit Geographical Coordinates - digiKam.png"><img src="http://static.flickr.com/2350/2181298217_c33a69c125_m.jpg" align="left" border="0" /></a>首先挑選照片, 使用 圖像->Geolocalization->Edit Coordinates , 則會開啟一個有 GMAP 的視窗, 在 GMAP 上點選位置即可.</p>
+
+<p>如果你有 GPS 紀錄的話, 則可以使用 圖像->Geolocalization->Correlator , 載入 GPX 檔案, 自動填上資料, 再手動微調即可 <img src='http://pctao.org/wp-includes/images/smilies/icon_biggrin.gif' alt=':D' class='wp-smiley' /> ~<a href="http://www.flickr.com/photos/69004123@N00/2181298045/" title="Screenshot-Geolocalization - digiKam-1.png"><img src="http://static.flickr.com/2225/2181298045_83efefcfab_m.jpg" align="right" border="0" /></a></p>
+
+<p>如果, 你忘記調整相機時間, 造成GPS和照片的時間不一樣, 做GPS Sync時則會有誤差. kipi-plugins可以編輯 EXIF , 但是 Geolocalization Editor 並不認識編輯過的 EXIF .<br/>
+這時可以搬出 jhead ,這個程式也可以批次處理 EXIF . 例: 我要將照片時間往前2分鐘</p>
+
+<blockquote><p>jhead -ta-00:02 *.jpg</p></blockquote>
+
+<p>-ta 的參數是-ta&lt;+|&ndash;>h[:mm[:ss]] , 可以指定要加或減時間.</p>
+
+<p>時間處理好, 再重做 GPS SYNC , 地理資訊就是對的了.</p>
+
+<p>最後看是要直接輸出成 KML檔案, 或者是上傳到flickr再用<a href="http://www2.adamfranco.com/photosetToKML.php">Flickr Photo Set to KML</a>, 搭配 Google Map 就可以在網頁上展示, 或者搭配 Google Earth 觀看也可.</p>
+
+<p><a href="http://www.flickr.com/photos/69004123@N00/2181415707/" title="Screenshot-Google Earth.png"><img src="http://static.flickr.com/2316/2181415707_1e97476a40_d.jpg" border="0" /></a></p>
+
+<p><small><a href="http://maps.google.com/maps?f=q&hl=en&geocode=&time=&date=&ttype=&q=http:%2F%2Fpctao.org%2Fwp-content%2F20072008.kml&ie=UTF8&om=1&ll=25.039785,121.564987&spn=0.009332,0.013733&z=16&source=embed" style="color: #0000ff; text-align: left">View Larger Map</a></small></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Skype 2.0 Beta for Linux &#8212; 新增視訊功能!]]></title>
+    <link href="http://blog.pctao.org/2007/11/09/201"/>
+    <updated>2007-11-09T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2007/11/09/skype-20-beta-for-linux-%e6%96%b0%e5%a2%9e%e8%a6%96%e8%a8%8a%e5%8a%9f%e8%83%bd</id>
+    <content type="html"><![CDATA[<p><a href="http://share.skype.com/sites/linux/2007/11/skype_20_beta_for_linux_with_video.html">新版的 Skype for Linux</a> 終於加上 windows 版本早有的視訊功能!<br/>
+<a href="http://www.flickr.com/photos/69004123@N00/1924089730/" title="skypelinux_video"><img src="http://static.flickr.com/2294/1924089730_128e885953_d.jpg" border="0" /></a><br/>
+快下載試用吧!! <a href="http://www.skype.com/intl/en/download/skype/linux/beta/">原廠下載連結</a><br/>
+這版本主要新增視訊功能, 其他修改請查<a href="https://developer.skype.com/LinuxSkype">原廠網站.</a></p>
+
+<p>相關連結:</p>
+
+<ul>
+<li><a href="http://share.skype.com/sites/linux/2007/11/skype_20_beta_for_linux_with_video.html">Skype 2.0 beta for Linux: the Great Revolution &#8211; Skype for Linux</a></li>
+<li><a href="https://developer.skype.com/LinuxSkype">LinuxSkype &#8211; Skype Developer Zone</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

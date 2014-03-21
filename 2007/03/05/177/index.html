@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Ubuntu Feisty 的問題: xcb_xlib.c:50: Xcb_xlib_unlock: Assertion `c->xlib.lock&#8217; Failed. - TaopaiC 的異想世界</title>
+  <meta name="author" content="TaopaiC">
+
+  
+  <meta name="description" content="自從2月初的 libxcb-xlib0 的更新之後, 一些視窗程式都會發生 assertion , 像是 java , vmware 都有影響. java: xcb_xlib.c:50: xcb_xlib_unlock: Assertion `c->xlib.lock&#8217; failed &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.pctao.org/2007/03/05/177">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="TaopaiC 的異想世界" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55755-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TaopaiC 的異想世界</a></h1>
+  
+    <h2>TaopaiC's blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.pctao.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Ubuntu Feisty 的問題: xcb_xlib.c:50: Xcb_xlib_unlock: Assertion `c->xlib.lock&#8217; Failed.</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-03-05T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>自從2月初的 libxcb-xlib0 的更新之後, 一些視窗程式都會發生 assertion , 像是 java , vmware 都有影響.</p>
+
+<blockquote><p>java: xcb_xlib.c:50: xcb_xlib_unlock: Assertion `c->xlib.lock&#8217; failed.</p></blockquote>
+
+<p><a href="http://xcb.freedesktop.org/wiki/" title="XCB">X protocol C-language Binding</a> (xcb) 將取代 xlib , 且提供 transport layer 讓尚未修改的程式使用 ( <a href="http://xcb.freedesktop.org/wiki/XlibXcb" title="Xlib/XCB">Xlib/XCB</a> ). 如果原本使用 xlib 的程式沒有照規矩來, 就會發生 assertion. JRE , vmware 這些程式又不是說改就改, 我原本打算等官方做修正, 等了一個月還是沒有, 只好自己動手了.<!--more-->網路上的暫時解法不外兩種, 一個是退回 xlib , 另外一個就是自己編譯, 把 assert 檢查拿掉.</p>
+
+<p>我用後者的方法</p>
+
+<blockquote><p>apt-get source libxcb-xlib0<br/>
+sudo apt-get build-dep libxcb-xlib0<br/>
+cd libxcb-1.0<br/>
+edit src/xcb_xlib.c<br/>
+dpkg-buildpackage -rfakeroot -b -uc<br/>
+sudo dpkg -i ../libxcb-xlib0_1.0-1.1_i386.deb</p></blockquote>
+
+<p>重點是 src/xcb_xlib.c 的第 41 , 50 行的 assert 都註解掉. 我參考 <a href="http://cvs.archlinux.org/cgi-bin/viewcvs.cgi/x11-libs/libxcb/xcb_xlib-no-assert-on-lock.patch?rev=1.1&amp;content-type=text/vnd.viewcvs-markup">archlinux 的 patch</a> , 把 assert 換成 if . 如下:</p>
+
+<blockquote><p>void xcb_xlib_lock(xcb_connection_t *c)<br/>
+{<br/>
+_xcb_lock_io&copy;;<br/>
+// assert(!c->xlib.lock);<br/>
+if (!c->xlib.lock) {<br/>
+c->xlib.lock = 1;<br/>
+c->xlib.thread = pthread_self();<br/>
+}<br/>
+_xcb_unlock_io&copy;;<br/>
+}</p>
+
+<p>void xcb_xlib_unlock(xcb_connection_t *c)<br/>
+{<br/>
+_xcb_lock_io&copy;;<br/>
+// assert(c->xlib.lock);<br/>
+if (c->xlib.lock) {<br/>
+assert(pthread_equal(c->xlib.thread, pthread_self()));<br/>
+c->xlib.lock = 0;<br/>
+pthread_cond_broadcast(&amp;c->xlib.cond);<br/>
+}<br/>
+_xcb_unlock_io&copy;;<br/>
+}</p></blockquote>
+
+<p>安裝之後, java, vmware 都能執行, 雖然不知有啥缺點, 但是 java 能跑最要緊!</p>
+
+<p>參考: <a href="http://ubuntuforums.org/showthread.php?t=368462&amp;page=2">ubuntu forums</a></p>
+
+<p>UPDATE: ubuntu feisty 已預設關掉xcb檢查. 請參閱<a href="http://pctao.org/2007/03/10/179/" title=""[fixed] ubuntu feisty & libxcb 的問題" 的永久鏈接">[fixed] ubuntu feisty &amp; libxcb 的問題</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">TaopaiC</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-03-05T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/java/'>Java</a>, <a class='category' href='/blog/categories/linux/'>Linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2007/01/07/176" title="Previous Post: Ubuntu edgy 連到 windows vista 的遠端桌面">&laquo; Ubuntu edgy 連到 windows vista 的遠端桌面</a>
+      
+      
+        <a class="basic-alignment right" href="/2007/03/06/178" title="Next Post: MSN 的 IM 圖案">MSN 的 IM 圖案 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/06/12/358">HTTP Redirect 和 URL Fragments</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/06/345">jQuery XSS With $(location.hash)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/08/329">安裝 Redmine 1.1.1 遇到 Version_requirements 的暫時解法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/305">2010年底近況更新</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/310">對你家美術好一點 @ Ruby Tuesday #15 的經驗分享</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - TaopaiC -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'taopaicsblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

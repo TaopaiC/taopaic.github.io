@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: General | TaopaiC 的異想世界]]></title>
+  <link href="http://blog.pctao.org/blog/categories/general/atom.xml" rel="self"/>
+  <link href="http://blog.pctao.org/"/>
+  <updated>2014-03-22T02:39:11+08:00</updated>
+  <id>http://blog.pctao.org/</id>
+  <author>
+    <name><![CDATA[TaopaiC]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[2010年底近況更新]]></title>
+    <link href="http://blog.pctao.org/2010/12/31/305"/>
+    <updated>2010-12-31T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2010/12/31/2010%e5%b9%b4%e5%ba%95%e8%bf%91%e6%b3%81%e6%9b%b4%e6%96%b0</id>
+    <content type="html"><![CDATA[<p>離上一篇部落格文章快滿兩年了. 快速交代這兩年的事情吧</p>
+
+<ul>
+<li>新訓遇颱風, 下部隊在外島聯勤單位當雜魚兵, 退伍遇88風災, 在外島多等一兩天才能返台&#8230;</li>
+<li>退伍後, 意外進入線上出版業.</li>
+<li>現在在通訊產業做網站.</li>
+</ul>
+
+
+<p>這兩年以 Ruby on Rails 當主力, 以前熟悉的 C, Java 都快忘光光了&#8230;<br/>
+最近積極學習 Javascript , HTML , CSS 等前端技術.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[對你家美術好一點 @ Ruby Tuesday #15 的經驗分享]]></title>
+    <link href="http://blog.pctao.org/2010/12/31/310"/>
+    <updated>2010-12-31T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2010/12/31/%e5%b0%8d%e4%bd%a0%e5%ae%b6%e7%be%8e%e8%a1%93%e5%a5%bd%e4%b8%80%e9%bb%9e-ruby-tuesday-15-%e7%9a%84%e7%b6%93%e9%a9%97%e5%88%86%e4%ba%ab</id>
+    <content type="html"><![CDATA[<p>這是我在 <a href="http://ruby.tw/post/2413506617/ruby-tuesday-15-2010">Ruby Tuesday #15</a> 的經驗分享.</p>
+
+<div style="width:425px" id="__ss_6394165">
+  <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/TaopaiC/be-nice-to-your-designers" title="Be nice to your designers">Be nice to your designers</a></strong> <div style="padding:5px 0 12px">
+    View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/TaopaiC">Pai-Cheng Tao</a>.
+  </div>
+</div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[Fix] FeedJack 抓取 Yahoo! Blog 的日期格式]]></title>
+    <link href="http://blog.pctao.org/2006/10/21/167"/>
+    <updated>2006-10-21T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2006/10/21/fix-feedjack-%e6%8a%93%e5%8f%96-yahoo-blog-%e7%9a%84%e6%97%a5%e6%9c%9f%e6%a0%bc%e5%bc%8f</id>
+    <content type="html"><![CDATA[<p>最近用 <a href="http://www.feedjack.org/">FeedJack</a> 架好一個 <a href="http://planet.nccucs.org/">planet</a> . 安裝的 step-by-step 過幾天有空再寫.<br/>
+試抓幾個 blog , 都很順利, 但是抓<a href="http://tw.myblog.yahoo.com/l314kimo">學弟</a>在 <a href="http://tw.blog.yahoo.com/">Yahoo!奇摩部落格 beta</a> 出現問題. 抓回來的時間不正確, 10/18 的文章變成 10/1 的文章.</p>
+
+<p>仔細看 RSS 內容, 日期格式是這樣</p>
+
+<blockquote><p><pubDate>2006/10/20 00:29:09</pubDate></p></blockquote>
+
+<p>和 <a href="http://blogs.law.harvard.edu/tech/rss">RSS v2 的規格書</a>不一樣, 要符合<a href="http://asg.web.cmu.edu/rfc/rfc822.html">RFC 822</a>, 以wordpress產生為例</p>
+
+<blockquote><p><pubDate>Mon, 16 Oct 2006 18:13:48 +0000</pubDate></p></blockquote>
+
+<p>用 <a href="http://feedvalidator.org/">Feed validator</a> 檢查, 也是說日期欄位不對.</p>
+
+<p>拜託學弟用 <a href="http://www.feedburner.com/">Feed Burner</a> 燒燒看, 問題還是一樣.<br/>
+乾脆拜託學弟寄抱怨信給 Yahoo!奇摩. XD</p>
+
+<p>問了 google , 果然也有人有<a href="http://www.archivesat.com/Planet_development_discussion_(and_user_support)/thread1752542.htm">這個問題</a>.<!--more--></p>
+
+<p>FeedJack 用來處理 feed 的 <a href="http://www.feedparser.org/">FeedParser</a> 可以自己寫處理日期的 handler . 參考範例改的程式, 可以正確辨識日期.</p>
+
+<blockquote><p>import feedparser<br/>
+import re</p>
+
+<p>_my_date_pattern = re.compile( \<br/>
+r&#8217;(\d{,4})/(\d{,2})/(\d{2}) (\d{,2}):(\d{2}):(\d{2})&#8217;)</p>
+
+<p>def myDateHandler(aDateString):<br/>
+&#8220;&ldquo;"parse a UTC date in MM/DD/YYYY HH:MM:SS format&rdquo;&ldquo;"<br/>
+year, month, day, hour, minute, second = \<br/>
+_my_date_pattern.search(aDateString).groups()<br/>
+return (int(year), int(month), int(day), \<br/>
+int(hour), int(minute), int(second), 0, 0, 0)</p>
+
+<p>feedparser.registerDateHandler(myDateHandler)<br/>
+d = feedparser.parse(&#8220;<a href="http://tw.myblog.yahoo.com/l314kimo/rss">http://tw.myblog.yahoo.com/l314kimo/rss</a>")<br/>
+e = d.entries[0]<br/>
+print e.updated<br/>
+print e.updated_parsed</p></blockquote>
+
+<p>如果程式判斷的日期正確就成功了</p>
+
+<blockquote><p>pctao@pcsh [~/tmp] [4:23/W6] python testfeed.py<br/>
+2006/10/21 01:22:32<br/>
+(2006, 10, 21, 1, 22, 32, 0, 0, 0)</p></blockquote>
+
+<p>再去修改 feedjack_update.py , FreeBSD 是裝在</p>
+
+<blockquote><p>/usr/local/lib/python2.4/site-packages/Feedjack-0.9.7-py2.4.egg/EGG-INFO/scripts/feedjack_update.py</p></blockquote>
+
+<p>現在 planet運作正常!</p>
+
+<p>PS. 我還不會寫 python , 如果有錯歡迎指教.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[漢堡王華堡日]]></title>
+    <link href="http://blog.pctao.org/2006/10/17/164"/>
+    <updated>2006-10-17T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2006/10/17/%e6%bc%a2%e5%a0%a1%e7%8e%8b%e8%8f%af%e5%a0%a1%e6%97%a5</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/taopaic/271370589/" title="Photo Sharing"><img src="http://static.flickr.com/83/271370589_0e0c672d8d_m.jpg" alt="CIMG4386" align="right" height="240" width="180" /></a>以前漢堡王每星期一的華堡買一送一, 從今天 ( 10/16 )開始需要用折價卷 (可從<a href="http://www.burgerking.dachan.com/">官網</a>列印) 才有這個優惠了.</p>
+
+<p>今天點兩個生菜,醬都double的特製華堡, 店員還威脅說要等10分鐘喔, 明明兩分鐘後就拿給我, 是怎樣&#8230;<br/>
+每次點華堡總是會聽到旁邊人說 &#8220;華堡變小了" , 跟別人提到漢堡王, 也是要先聽 &#8220;華堡變小了" 的抱怨&#8230; 對不起, 我是吃漢堡王的新手&#8230;</p>
+
+<!--more-->
+
+
+<ul>
+<li>兩個華堡<br/>
+<a href="http://www.flickr.com/photos/taopaic/271372886/" title="Photo Sharing"><img src="http://static.flickr.com/86/271372886_a552c1756b_m.jpg" alt="CIMG4387" height="180" width="240" /></a></li>
+<li>側面圖. 可惜照不出滿滿料的樣子<br/>
+<a href="http://www.flickr.com/photos/taopaic/271371709/" title="Photo Sharing"><img src="http://static.flickr.com/111/271371709_b0ee5e4310_m.jpg" alt="CIMG4402" height="180" width="240" /></a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[有必要這麼克難嘛? 用電氣膠布綁的人行路燈按鈕]]></title>
+    <link href="http://blog.pctao.org/2006/09/07/145"/>
+    <updated>2006-09-07T00:00:00+08:00</updated>
+    <id>http://blog.pctao.org/2006/09/07/%e6%9c%89%e5%bf%85%e8%a6%81%e9%80%99%e9%ba%bc%e5%85%8b%e9%9b%a3%e5%98%9b-%e7%94%a8%e9%9b%bb%e6%b0%a3%e8%86%a0%e5%b8%83%e7%b6%81%e7%9a%84%e4%ba%ba%e8%a1%8c%e8%b7%af%e7%87%88%e6%8c%89%e9%88%95</id>
+    <content type="html"><![CDATA[<p>晚上看到上禮拜在維修的人行路燈按鈕居然是用電器膠布綁在柱子上, 太克難了吧&#8230;</p>
+
+<p><a href="http://www.flickr.com/photos/taopaic/236069531/" class="tt-flickr"><img src="http://static.flickr.com/87/236069531_08e6a91b8d_m.jpg" alt="??¨????°??? ????????????????" border="0" height="240" width="180" /></a> 在台北市市民大道四段附近</p>
+]]></content>
+  </entry>
+  
+</feed>

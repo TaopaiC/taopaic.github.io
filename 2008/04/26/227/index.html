@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>[Ubuntu] 安裝uvc Webcam - TaopaiC 的異想世界</title>
+  <meta name="author" content="TaopaiC">
+
+  
+  <meta name="description" content="前幾天買了一個新的webcam, 不幸的是 ubuntu 8.04 內附的 uvcvideo 並不支援, 需要更新的 uvcvideo 才能使用.
+自己編譯其實不麻煩, 用svn下載新的程式碼,make,make install就可以收工了 壞消息是 uvcvideo 只支援新的 Linux 的 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.pctao.org/2008/04/26/227">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="TaopaiC 的異想世界" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55755-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TaopaiC 的異想世界</a></h1>
+  
+    <h2>TaopaiC's blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.pctao.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">[Ubuntu] 安裝uvc Webcam</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-04-26T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>前幾天買了一個新的webcam, 不幸的是 ubuntu 8.04 內附的 <a href="http://linux-uvc.berlios.de/">uvcvideo</a> 並不支援, 需要更新的 uvcvideo 才能使用.<br/>
+自己編譯其實不麻煩, 用svn下載新的程式碼,make,make install就可以收工了</p>
+
+<p>壞消息是 uvcvideo 只支援新的 Linux 的 Video API: V4L2 (Video For Linux 2), 並不向下支援 V4L1 , 也就是說 <a href="http://camorama.fixedgear.org/">camorama</a> 等軟體都不能使用. 可以安裝 luvcview 測試有沒有安裝成功.</p>
+
+<p>我買的是 <a href="http://www.microsoft.com/taiwan/hardware/digitalcommunication/productdetails.aspx?pid=011">Microsoft LifeCam VX-7000</a> , usb id 是 045e:0723 .<!--more--></p>
+
+<div>
+  <a href="http://partner.monday.com.tw/pub/gotobuy.ashx?gdid=675261&mcode=MV9jWkhDUnNmbGxVa2NyU2tpMDlGa3ZnZWVKU0psU1VXNEV5d092ZVNEa0IwPQ=="><img src="http://partner.monday.com.tw/pub/gd.ashx?s=2&gdid=675261&mcode=MV9jWkhDUnNmbGxVa2NyU2tpMDlGa3ZnZWVKU0psU1VXNEV5d092ZVNEa0IwPQ==" border="0" alt="微軟網路攝影機 VX-7000 (銀) " width="135" height="135" align="right" /></a>(含廣告推薦連結) <a href="http://shopping.pchome.com.tw/ally.html?ally=A00003365&url=http://shopping.pchome.com.tw/?mod=item&func=exhibit&IT_NO=DCAD37-A16925144 ">PCHOME</a>或是<a href="http://partner.monday.com.tw/pub/gotobuy.ashx?gdid=675261&mcode=MV9jWkhDUnNmbGxVa2NyU2tpMDlGa3ZnZWVKU0psU1VXNEV5d092ZVNEa0IwPQ==">興奇購物</a>都有賣, 評價請看<a href="http://www.everythingusb.com/microsoft-lifecam-vx-7000-14105.html">國外這篇評論</a>, 我是買了才看到評論 <img src='http://pctao.org/wp-includes/images/smilies/icon_sad.gif' alt=':(' class='wp-smiley' /> 價錢跟L社便宜不少, 但是效果&#8230; 也還好啦 /_\</p> <h3>
+    uvcvideo 安裝過程
+  </h3>
+  
+  <h4>
+    下載程式碼
+  </h4>
+  
+  <p>
+    如果沒有安裝svn的話, 請先<br /> <code>sudo apt-get install subversion</code><br /> 用 svn 下載新版程式碼<br /> <code>svn checkout svn://svn.berlios.de/linux-uvc/linux-uvc/trunk</code>
+  </p>
+  
+  <h4>
+    安裝kernel header
+  </h4>
+  
+  <p>
+    <code>sudo apt-get install linux-headers-`uname -r`</code>
+  </p>
+  
+  <h4>
+    改makefile
+  </h4>
+  
+  <p>
+    因為ubuntu放uvcvideo.so的位置和預設的不太一樣,需要修改一下安裝位置<br /> <code>INSTALL_MOD_DIR := usb/media&lt;br />
+to&lt;br />
+INSTALL_MOD_DIR := ubuntu/media/usbvideo&lt;br />
+</code>
+  </p>
+  
+  <h4>
+    安裝
+  </h4>
+  
+  <p>
+    <code>make install</code>
+  </p>
+  
+  <h4>
+    重載 uvcvideo
+  </h4>
+  
+  <p>
+    <code>sudo modprobe -r uvcvideo&lt;br />
+sudo modprobe uvcvideo</code><br /> 應就可在dmesg看到
+  </p>
+  
+  <blockquote>
+    <p>
+      [46167.743036] uvcvideo: Found UVC 1.00 device Microsoft� LifeCam VX-7000 (045e:0723)<br /> [46167.744808] uvcvideo: Failed to query (135) UVC control 1 (unit 0) : -32 (exp. 26).<br /> [46167.754655] input: Microsoft� LifeCam VX-7000 as /devices/pci0000:00/0000:00:1d.7/usb5/5-2/5-2:1.0/input/input15<br /> [46167.779862] usbcore: registered new interface driver uvcvideo<br /> [46167.779873] USB Video Class driver (SVN r205)
+    </p>
+  </blockquote>
+  
+  <p>
+    每次更新 kernel 時都要重新編譯安裝.. 直到內建的 uvcvideo 支援為止.
+  </p>
+  
+  <h3>
+    luvcview &#8211; uvc webcam 的觀看程式
+  </h3>
+  
+  <p>
+    <code>sudo apt-get install luvcview</code>
+  </p>
+  
+  <h4>
+    簡易使用
+  </h4>
+  
+  <p>
+    <code>luvcview -d device&lt;br />
+例如&lt;br />
+luvcview -d /dev/video0</code>
+  </p>
+  
+  <h4>
+    常用參數
+  </h4>
+  
+  <p>
+    <code>-L 列出支援的格式&lt;br />
+-l  列出支援的控制或設定&lt;br />
+-s 影像大小 (寬x高)&lt;br />
+-f 影像格式 (jpg, yuv)</code><br /> 其他就請看 luvcview -h
+  </p>
+  
+  <h3>
+    參考連結
+  </h3>
+  
+  <ul>
+    <li>
+      <a href="http://linux-uvc.berlios.de/">Linux UVC driver & tools</a> &#8211; uvcvideo 首頁, 有支援硬體列表
+    </li>
+    <li>
+      <a href="https://help.ubuntu.com/community/UVC">UVC &#8211; Community Ubuntu Documentation</a>
+    </li>
+  </ul>
+</div>
+
+
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">TaopaiC</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-04-26T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>Linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2008/02/22/225" title="Previous Post: [GMap] 新功能 &#8211; 靜態地圖 &#8211; 不需 javascript 顯示地圖 (Google Static Maps)">&laquo; [GMap] 新功能 &#8211; 靜態地圖 &#8211; 不需 javascript 顯示地圖 (Google Static Maps)</a>
+      
+      
+        <a class="basic-alignment right" href="/2008/04/29/229" title="Next Post: [注意] twbbs.org 新系統需要使用者每六個月續用一次">[注意] twbbs.org 新系統需要使用者每六個月續用一次 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/06/12/358">HTTP Redirect 和 URL Fragments</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/06/345">jQuery XSS With $(location.hash)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/08/329">安裝 Redmine 1.1.1 遇到 Version_requirements 的暫時解法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/305">2010年底近況更新</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/310">對你家美術好一點 @ Ruby Tuesday #15 的經驗分享</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - TaopaiC -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'taopaicsblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>[Fix] FeedJack 抓取 Yahoo! Blog 的日期格式 - TaopaiC 的異想世界</title>
+  <meta name="author" content="TaopaiC">
+
+  
+  <meta name="description" content="最近用 FeedJack 架好一個 planet . 安裝的 step-by-step 過幾天有空再寫.
+試抓幾個 blog , 都很順利, 但是抓學弟在 Yahoo!奇摩部落格 beta 出現問題. 抓回來的時間不正確, 10/18 的文章變成 10/1 的文章. 仔細看 RSS 內容, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.pctao.org/2006/10/21/167">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="TaopaiC 的異想世界" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55755-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TaopaiC 的異想世界</a></h1>
+  
+    <h2>TaopaiC's blog</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.pctao.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">[Fix] FeedJack 抓取 Yahoo! Blog 的日期格式</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-21T00:00:00+08:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.pctao.org">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>最近用 <a href="http://www.feedjack.org/">FeedJack</a> 架好一個 <a href="http://planet.nccucs.org/">planet</a> . 安裝的 step-by-step 過幾天有空再寫.<br/>
+試抓幾個 blog , 都很順利, 但是抓<a href="http://tw.myblog.yahoo.com/l314kimo">學弟</a>在 <a href="http://tw.blog.yahoo.com/">Yahoo!奇摩部落格 beta</a> 出現問題. 抓回來的時間不正確, 10/18 的文章變成 10/1 的文章.</p>
+
+<p>仔細看 RSS 內容, 日期格式是這樣</p>
+
+<blockquote><p><pubDate>2006/10/20 00:29:09</pubDate></p></blockquote>
+
+<p>和 <a href="http://blogs.law.harvard.edu/tech/rss">RSS v2 的規格書</a>不一樣, 要符合<a href="http://asg.web.cmu.edu/rfc/rfc822.html">RFC 822</a>, 以wordpress產生為例</p>
+
+<blockquote><p><pubDate>Mon, 16 Oct 2006 18:13:48 +0000</pubDate></p></blockquote>
+
+<p>用 <a href="http://feedvalidator.org/">Feed validator</a> 檢查, 也是說日期欄位不對.</p>
+
+<p>拜託學弟用 <a href="http://www.feedburner.com/">Feed Burner</a> 燒燒看, 問題還是一樣.<br/>
+乾脆拜託學弟寄抱怨信給 Yahoo!奇摩. XD</p>
+
+<p>問了 google , 果然也有人有<a href="http://www.archivesat.com/Planet_development_discussion_(and_user_support)/thread1752542.htm">這個問題</a>.<!--more--></p>
+
+<p>FeedJack 用來處理 feed 的 <a href="http://www.feedparser.org/">FeedParser</a> 可以自己寫處理日期的 handler . 參考範例改的程式, 可以正確辨識日期.</p>
+
+<blockquote><p>import feedparser<br/>
+import re</p>
+
+<p>_my_date_pattern = re.compile( \<br/>
+r&#8217;(\d{,4})/(\d{,2})/(\d{2}) (\d{,2}):(\d{2}):(\d{2})&#8217;)</p>
+
+<p>def myDateHandler(aDateString):<br/>
+&#8220;&ldquo;&#8221;parse a UTC date in MM/DD/YYYY HH:MM:SS format&rdquo;&ldquo;&#8221;<br/>
+year, month, day, hour, minute, second = \<br/>
+_my_date_pattern.search(aDateString).groups()<br/>
+return (int(year), int(month), int(day), \<br/>
+int(hour), int(minute), int(second), 0, 0, 0)</p>
+
+<p>feedparser.registerDateHandler(myDateHandler)<br/>
+d = feedparser.parse(&#8220;<a href="http://tw.myblog.yahoo.com/l314kimo/rss">http://tw.myblog.yahoo.com/l314kimo/rss</a>&#8221;)<br/>
+e = d.entries[0]<br/>
+print e.updated<br/>
+print e.updated_parsed</p></blockquote>
+
+<p>如果程式判斷的日期正確就成功了</p>
+
+<blockquote><p>pctao@pcsh [~/tmp] [4:23/W6] python testfeed.py<br/>
+2006/10/21 01:22:32<br/>
+(2006, 10, 21, 1, 22, 32, 0, 0, 0)</p></blockquote>
+
+<p>再去修改 feedjack_update.py , FreeBSD 是裝在</p>
+
+<blockquote><p>/usr/local/lib/python2.4/site-packages/Feedjack-0.9.7-py2.4.egg/EGG-INFO/scripts/feedjack_update.py</p></blockquote>
+
+<p>現在 planet運作正常!</p>
+
+<p>PS. 我還不會寫 python , 如果有錯歡迎指教.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">TaopaiC</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-21T00:00:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/general/'>General</a>, <a class='category' href='/blog/categories/software/'>Software</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2006/10/19/166" title="Previous Post: Linux Flash Player 9 beta !">&laquo; Linux Flash Player 9 beta !</a>
+      
+      
+        <a class="basic-alignment right" href="/2006/10/22/168" title="Next Post: 吹視窗..">吹視窗.. &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/06/12/358">HTTP Redirect 和 URL Fragments</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/06/345">jQuery XSS With $(location.hash)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/08/329">安裝 Redmine 1.1.1 遇到 Version_requirements 的暫時解法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/305">2010年底近況更新</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2010/12/31/310">對你家美術好一點 @ Ruby Tuesday #15 的經驗分享</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - TaopaiC -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'taopaicsblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
